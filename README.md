@@ -22,4 +22,4 @@ Based on [atom-unfancy-file-icons][atom-extension] package.
 ![Screenshot][screenshot]
 
 [atom-extension]: https://github.com/abe33/atom-unfancy-file-icons
-[screenshot]: https://github.com/alexesprit/vscode-unfancy-file-icons/media/screenshot.png?raw=true
+[screenshot]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot.png
