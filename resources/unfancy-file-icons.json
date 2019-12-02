@@ -225,11 +225,11 @@
         "exe": "_binary"
     },
     "fileNames": {
-        "Cakefile": "_src",
-        "Gemfile": "_ruby",
-        "Rakefile": "_ruby",
-        "Guardfile": "_ruby",
-        "Capfile": "_ruby",
+        "cakefile": "_src",
+        "gemfile": "_ruby",
+        "rakefile": "_ruby",
+        "guardfile": "_ruby",
+        "capfile": "_ruby",
         ".vscodeignore": "_meta_config",
         ".eslintignore": "_meta_config",
         ".editorconfig": "_meta_config",
@@ -241,13 +241,13 @@
         ".npmrc": "_meta_config",
         ".nvmrc": "_meta_config",
         ".htaccess": "_meta_config",
-        "Procfile": "_meta_config",
+        "procfile": "_meta_config",
         "tags": "_ctags",
-        "DS_Store": "_ds_store",
-        "LICENSE": "_doc",
-        "CHANGELOG": "_doc",
-        "CONTRIBUTING": "_doc",
-        "README": "_doc",
-        "HISTORY": "_doc"
+        "ds_store": "_ds_store",
+        "license": "_doc",
+        "changelog": "_doc",
+        "contributing": "_doc",
+        "readme": "_doc",
+        "history": "_doc"
     }
 }
