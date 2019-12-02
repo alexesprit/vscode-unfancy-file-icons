@@ -1,0 +1,29 @@
+{
+    "name": "vscode-unfancy-file-icons",
+    "displayName": "Unfancy file icons",
+    "description": "Octicons as file icons",
+    "categories": [
+        "Themes"
+    ],
+    "version": "0.1.0",
+    "publisher": "vscode",
+    "license": "MIT",
+    "engines": {
+        "vscode": "*"
+    },
+    "contributes": {
+        "iconThemes": [
+            {
+                "id": "vscode-unfancy-file-icons",
+                "label": "Unfancy file icons",
+                "path": "./resources/unfancy-file-icons.json"
+            }
+        ]
+    },
+    "dependencies": {
+        "octicons-webfont": "^1.2.1"
+    },
+    "scripts": {
+        "postinstall": "bash copy-fonts.sh"
+    }
+}
