@@ -224,6 +224,7 @@
         "Rakefile": "_ruby",
         "Guardfile": "_ruby",
         "Capfile": "_ruby",
+        ".vscodeignore": "_meta_config",
         ".eslintignore": "_meta_config",
         ".editorconfig": "_meta_config",
         ".gitignore": "_meta_config",
