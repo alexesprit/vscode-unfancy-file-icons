@@ -6,10 +6,14 @@
         "Themes"
     ],
     "version": "0.1.0",
-    "publisher": "vscode",
+    "publisher": "alexesprit",
     "license": "MIT",
     "engines": {
         "vscode": "*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexesprit/vscode-unfancy-file-icons.git"
     },
     "contributes": {
         "iconThemes": [
