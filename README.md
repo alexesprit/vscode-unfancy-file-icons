@@ -5,7 +5,6 @@ Based on [atom-unfancy-file-icons][atom-extension] package.
 
 ## Rules
 
-- Use only icons from Octicons (shipped with Atom)
 - Use a simple color code (with a few exceptions when it make more sense,
   like for ruby files) which works as follow:
   - green for source files
