@@ -20,14 +20,17 @@
             {
                 "id": "vscode-unfancy-file-icons",
                 "label": "Unfancy file icons",
-                "path": "./resources/unfancy-file-icons.json"
+                "path": "./icons.json"
             }
         ]
     },
     "dependencies": {
+        "color": "^3.1.2",
         "octicons-webfont": "^1.2.1"
     },
     "scripts": {
-        "postinstall": "bash copy-fonts.sh"
+        "postinstall": "bash copy-fonts.sh",
+        "build": "node generate-icons.js",
+        "dist": "npm run build && vsce package"
     }
 }

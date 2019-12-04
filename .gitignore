@@ -1,4 +1,5 @@
+fonts
 node_modules
-resources/fonts/**
 
 *.vsix
+icons.json

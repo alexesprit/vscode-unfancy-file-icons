@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 octicons_font=node_modules/octicons-webfont/build/octicons.woff
-target_dir=resources/fonts
+target_dir=fonts
 
 mkdir -p $target_dir
 

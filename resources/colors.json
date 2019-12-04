@@ -1,0 +1,21 @@
+{
+    "@yellow": "#ebCb8b",
+    "@orange": "#d08770",
+    "@strong-orange": "#ec7853",
+    "@red": "#ab7967",
+    "@strong-red": "#ce6844",
+    "@magenta": "#bf616a",
+    "@strong-magenta": "#e0404f",
+    "@violet": "#b48ead",
+    "@strong-violet": "#d072bf",
+    "@blue": "#8fa1b3",
+    "@strong-blue": "#73a1cf",
+    "@cyan": "#96b5b4",
+    "@strong-cyan": "#7bd0cd",
+    "@darken-cyan": "#4a6867",
+    "@green": "#a3be8c",
+    "@strong-green": "#a1d971",
+    "@darken-green": "#577140",
+    "@gray": "#a3a8ae",
+    "@darken-gray": "#565b62"
+}

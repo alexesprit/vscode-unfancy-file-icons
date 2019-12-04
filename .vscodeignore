@@ -1,6 +1,8 @@
 node_modules
 media
+resources
 
 .gitignore
 package-lock.json
+*.js
 *.sh
