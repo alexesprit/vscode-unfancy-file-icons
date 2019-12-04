@@ -20,7 +20,7 @@
             {
                 "id": "vscode-unfancy-file-icons",
                 "label": "Unfancy file icons",
-                "path": "./icons.json"
+                "path": "./resources/icons.json"
             }
         ]
     },

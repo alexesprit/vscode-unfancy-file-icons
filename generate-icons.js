@@ -3,10 +3,10 @@
 const Color = require('color');
 const fs = require('fs');
 
-const items = require('./resources/items.json');
-const colors = require('./resources/colors.json');
+const items = require('./src/items.json');
+const colors = require('./src/colors.json');
 
-const targetFileName = './icons.json';
+const targetFileName = './resources/icons.json';
 
 const darkenPercent = 0.4;
 

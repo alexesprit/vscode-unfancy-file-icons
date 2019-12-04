@@ -1,5 +1,4 @@
-fonts
 node_modules
+resources
 
 *.vsix
-icons.json
