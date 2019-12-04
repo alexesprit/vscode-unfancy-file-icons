@@ -1,4 +1,4 @@
-# Unfancy icons
+# Unfancy file icons
 
 A file icon theme for Visual Studio code.
 Based on [atom-unfancy-file-icons][atom-extension] package.
@@ -9,10 +9,12 @@ Based on [atom-unfancy-file-icons][atom-extension] package.
   like for ruby files) which works as follow:
   - green for source files
   - yellow for template and stylesheet files
-  - cyan for documentation files (markdown, latex, pdf, etc.)
-  - blue for media files (images, videos, art software files, etc.)
-  - violet for data files (json, yml, csv, etc.)
-  - magenta for configuration files (.gitignore, .ruby-version, etc.) and scripts
+  - violet for data files (`json`, `yml`, `csv`, etc)
+  - orange for executable files (`sh`, `bat`, `exe`, etc)
+  - cyan for documentation files (`markdown`, `latex`, `pdf`, etc)
+  - blue for media files (images, videos, art software files, etc)
+  - magenta for configuration files (`.gitignore`, `.ruby-version`, etc)
+  - gray for other files and directories
 - Use generic icons rather than trying to find one for each file extension
   (except when an icon in Octicons fit the file, like with ruby files)
 
