@@ -40,15 +40,15 @@
         },
         "map": {
             "fontCharacter": "\\f060",
-            "colorName": "@orange"
+            "colorName": "@blue"
         },
         "template": {
             "fontCharacter": "\\f05f",
             "colorName": "@yellow"
         },
-        "exe": {
+        "executable": {
             "fontCharacter": "\\f0c8",
-            "colorName": "@magenta"
+            "colorName": "@orange"
         },
         "diff": {
             "fontCharacter": "\\f04d",
@@ -56,7 +56,7 @@
         },
         "meta_config": {
             "fontCharacter": "\\f02f",
-            "colorName": "@strong-magenta"
+            "colorName": "@magenta"
         },
         "project_config": {
             "fontCharacter": "\\f07c",
@@ -80,7 +80,7 @@
         },
         "log": {
             "fontCharacter": "\\f091",
-            "colorName": "@orange"
+            "colorName": "@blue"
         },
         "archive": {
             "fontCharacter": "\\f0c4",
@@ -88,39 +88,39 @@
         },
         "doc": {
             "fontCharacter": "\\f102",
-            "colorName": "@strong-cyan"
+            "colorName": "@cyan"
         },
         "md": {
             "fontCharacter": "\\f0c9",
-            "colorName": "@strong-cyan"
+            "colorName": "@cyan"
         },
         "pdf": {
             "fontCharacter": "\\f014",
-            "colorName": "@strong-cyan"
+            "colorName": "@cyan"
         },
         "font": {
             "fontCharacter": "\\f063",
-            "colorName": "@strong-blue"
+            "colorName": "@blue"
         },
         "image": {
             "fontCharacter": "\\f012",
-            "colorName": "@strong-blue"
+            "colorName": "@blue"
         },
         "photoshop": {
             "fontCharacter": "\\f058",
-            "colorName": "@strong-blue"
+            "colorName": "@blue"
         },
         "sketch": {
             "fontCharacter": "\\f047",
-            "colorName": "@strong-blue"
+            "colorName": "@blue"
         },
         "media": {
             "fontCharacter": "\\f057",
-            "colorName": "@strong-blue"
+            "colorName": "@blue"
         },
         "binary": {
             "fontCharacter": "\\f094",
-            "colorName": "@strong-magenta"
+            "colorName": "@gray"
         }
     },
     "file": "file",
@@ -190,7 +190,7 @@
             "eco",
             "hbs"
         ],
-        "exe": [
+        "executable": [
             "sh",
             "cmd",
             "bat"
