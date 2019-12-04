@@ -18,6 +18,19 @@ Based on [atom-unfancy-file-icons][atom-extension] package.
 - Use generic icons rather than trying to find one for each file extension
   (except when an icon in Octicons fit the file, like with ruby files)
 
+## Build theme
+
+```sh
+# Install dependencies
+> npm install
+
+# Build theme
+> npm run build
+
+# Create package using `vsce` tool
+> npm run dist
+```
+
 ## Screenshot
 
 ![Screenshot][screenshot]
