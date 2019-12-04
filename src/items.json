@@ -4,7 +4,7 @@
             "id": "octicons",
             "src": [
                 {
-                    "path": "./fonts/octicons.woff",
+                    "path": "./octicons.woff",
                     "format": "woff"
                 }
             ],
