@@ -305,7 +305,9 @@
             ".npmrc",
             ".nvmrc",
             ".htaccess",
-            "procfile"
+            "procfile",
+            "makefile",
+            "dockerfile"
         ],
         "ctags": [
             "tags"
