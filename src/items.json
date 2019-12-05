@@ -15,111 +15,107 @@
     ],
     "iconDefinitions": {
         "folder": {
-            "fontCharacter": "\\f016",
+            "iconName": "file-directory",
             "colorName": "@gray"
         },
         "file": {
-            "fontCharacter": "\\f102",
+            "iconName": "file",
             "colorName": "@gray"
         },
         "src": {
-            "fontCharacter": "\\f010",
+            "iconName": "file-code",
             "colorName": "@green"
         },
         "html": {
-            "fontCharacter": "\\f05f",
+            "iconName": "code",
             "colorName": "@green"
         },
         "ruby": {
-            "fontCharacter": "\\f047",
+            "iconName": "ruby",
             "colorName": "@magenta"
         },
         "stylesheet": {
-            "fontCharacter": "\\f0d1",
+            "iconName": "paintcan",
             "colorName": "@yellow"
         },
         "map": {
-            "fontCharacter": "\\f060",
+            "iconName": "location",
             "colorName": "@blue"
         },
         "template": {
-            "fontCharacter": "\\f05f",
+            "iconName": "code",
             "colorName": "@yellow"
         },
         "executable": {
-            "fontCharacter": "\\f0c8",
+            "iconName": "terminal",
             "colorName": "@orange"
         },
         "diff": {
-            "fontCharacter": "\\f04d",
+            "iconName": "diff",
             "colorName": "@green"
         },
         "meta_config": {
-            "fontCharacter": "\\f02f",
+            "iconName": "gear",
             "colorName": "@magenta"
         },
         "project_config": {
-            "fontCharacter": "\\f07c",
+            "iconName": "settings",
             "colorName": "@violet"
         },
         "sheet": {
-            "fontCharacter": "\\f062",
+            "iconName": "list-ordered",
             "colorName": "@violet"
         },
         "database": {
-            "fontCharacter": "\\f096",
+            "iconName": "database",
             "colorName": "@violet"
         },
         "ctags": {
-            "fontCharacter": "\\f015",
+            "iconName": "tag",
             "colorName": "@violet"
         },
         "ds_store": {
-            "fontCharacter": "\\f02f",
+            "iconName": "gear",
             "colorName": "@violet"
         },
         "log": {
-            "fontCharacter": "\\f091",
+            "iconName": "bug",
             "colorName": "@blue"
         },
         "archive": {
-            "fontCharacter": "\\f0c4",
+            "iconName": "package",
             "colorName": "@violet"
         },
         "doc": {
-            "fontCharacter": "\\f102",
+            "iconName": "file",
             "colorName": "@cyan"
         },
         "md": {
-            "fontCharacter": "\\f0c9",
+            "iconName": "markdown",
             "colorName": "@cyan"
         },
         "pdf": {
-            "fontCharacter": "\\f014",
+            "iconName": "file-pdf",
             "colorName": "@cyan"
         },
         "font": {
-            "fontCharacter": "\\f063",
+            "iconName": "quote",
             "colorName": "@blue"
         },
         "image": {
-            "fontCharacter": "\\f012",
+            "iconName": "file-media",
             "colorName": "@blue"
         },
-        "photoshop": {
-            "fontCharacter": "\\f058",
-            "colorName": "@blue"
-        },
-        "sketch": {
-            "fontCharacter": "\\f047",
+        "image_src": {
+            "iconName": "pencil",
             "colorName": "@blue"
         },
         "media": {
-            "fontCharacter": "\\f057",
+            "iconName": "device-camera-video",
             "colorName": "@blue"
         },
         "binary": {
-            "fontCharacter": "\\f094",
+            "iconName": "file-binary",
             "colorName": "@gray"
         }
     },
@@ -263,13 +259,11 @@
             "svg",
             "ico"
         ],
-        "photoshop": [
+        "image_src": [
             "psd",
             "ai",
             "indd",
-            "afdesign"
-        ],
-        "sketch": [
+            "afdesign",
             "sketch"
         ],
         "media": [

@@ -5,6 +5,7 @@ const fs = require('fs');
 
 const items = require('./src/items.json');
 const colors = require('./src/colors.json');
+const codepoints = require('./src/codepoints.json');
 
 const targetFileName = './resources/icons.json';
 
@@ -35,11 +36,12 @@ function getIconTheme() {
         iconDefinitions: { /* empty */ },
     };
 
-    for (const iconName in iconDefinitions) {
-        const { colorName, fontCharacter } = iconDefinitions[iconName];
+    for (const iconEntry in iconDefinitions) {
+        const { colorName, iconName } = iconDefinitions[iconEntry];
 
         const fontColor = getColor(colorName);
-        const prefixedIconName = prefix(iconName);
+        const fontCharacter = getCharacter(iconName);
+        const prefixedIconName = prefix(iconEntry);
         iconTheme.iconDefinitions[prefixedIconName] = {
             fontColor, fontCharacter
         };
@@ -80,6 +82,21 @@ function getColor(colorName) {
     }
 
     throw new Error(`Invalid color name: ${colorName}`);
+}
+
+/**
+ * Get Octicons font character code by name.
+ *
+ * @param {String} iconName Icon name
+ * @return {String} Font character code in `\\xxxx` format
+ */
+function getCharacter(iconName) {
+    if (iconName in codepoints) {
+        const iconCodeStr = codepoints[iconName].toString(16);
+        return `\\${iconCodeStr}`;
+    }
+
+    throw new Error(`Invalid icon name: ${iconName}`);
 }
 
 /**
