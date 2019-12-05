@@ -31,6 +31,10 @@
     "scripts": {
         "postinstall": "bash copy-fonts.sh",
         "build": "node generate-icons.js",
-        "dist": "npm run build && vsce package"
+        "dist": "npm run build && vsce package",
+        "test": "ava"
+    },
+    "devDependencies": {
+        "ava": "^2.4.0"
     }
 }
