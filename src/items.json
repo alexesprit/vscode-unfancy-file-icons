@@ -156,7 +156,8 @@
             "hpp",
             "hxx",
             "h++",
-            "cc"
+            "cc",
+            "cs"
         ],
         "html": [
             "html",
