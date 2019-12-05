@@ -1,4 +1,4 @@
-# Unfancy file icons
+# Unfancy file icons [![Published version on Marketplace][badge]][marketplace]
 
 A file icon theme for Visual Studio code.
 Based on [atom-unfancy-file-icons][atom-extension] package.
@@ -37,3 +37,5 @@ Based on [atom-unfancy-file-icons][atom-extension] package.
 
 [atom-extension]: https://github.com/abe33/atom-unfancy-file-icons
 [screenshot]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot.png
+[badge]: https://img.shields.io/visual-studio-marketplace/v/alexesprit.vscode-unfancy-file-icons
+[marketplace]: https://marketplace.visualstudio.com/items?itemName=alexesprit.vscode-unfancy-file-icons
