@@ -212,7 +212,8 @@
             "json",
             "tern-project",
             "cson",
-            "yml"
+            "yml",
+            "yaml"
         ],
         "sheet": [
             "csv",
