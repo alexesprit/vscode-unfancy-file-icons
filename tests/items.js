@@ -13,11 +13,11 @@ function runTests() {
     for (const iconEntry in iconDefinitions) {
         const { iconName, colorName } = iconDefinitions[iconEntry];
 
-        test(`iconDefinitions.${iconEntry}.iconName is valid`, (t) => {
+        test(`iconDefinitions.${iconEntry}.iconName is valid icon name`, (t) => {
             t.true(iconName in codepoints);
         });
 
-        test(`iconDefinitions.${iconEntry}.colorName is valid`, (t) => {
+        test(`iconDefinitions.${iconEntry}.colorName is valid color name`, (t) => {
             t.true(colorName in colors);
         });
     }
