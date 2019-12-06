@@ -22,15 +22,14 @@ function runTests() {
         });
     }
 
-    for (const itemType in fileExtensions) {
-        test(`fileExtensions.${itemType} is valid item type`, (t) => {
-            t.true(itemType in iconDefinitions);
-        });
-    }
+    const definitions = { iconDefinitions, fileExtensions };
+    for (const defName in definitions) {
+        const definition = definitions[defName];
 
-    for (const itemType in fileNames) {
-        test(`fileNames.${itemType} is valid item type`, (t) => {
-            t.true(itemType in iconDefinitions);
-        });
+        for (const itemType in definition) {
+            test(`${defName}.${itemType} is valid item type`, (t) => {
+                t.true(itemType in iconDefinitions);
+            });
+        }
     }
 }
