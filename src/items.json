@@ -54,11 +54,11 @@
             "iconName": "diff",
             "iconColor": "@green"
         },
-        "meta_config": {
+        "config": {
             "iconName": "gear",
             "iconColor": "@magenta"
         },
-        "project_config": {
+        "data": {
             "iconName": "settings",
             "iconColor": "@violet"
         },
@@ -203,10 +203,10 @@
             "diff",
             "patch"
         ],
-        "meta_config": [
+        "config": [
             "ini"
         ],
-        "project_config": [
+        "data": [
             "example",
             "env",
             "cabal",
@@ -298,7 +298,7 @@
             "guardfile",
             "capfile"
         ],
-        "meta_config": [
+        "config": [
             ".vscodeignore",
             ".eslintignore",
             ".editorconfig",
