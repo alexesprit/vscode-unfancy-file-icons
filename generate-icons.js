@@ -37,10 +37,10 @@ function getIconTheme() {
     };
 
     for (const iconEntry in iconDefinitions) {
-        const { colorName, iconName } = iconDefinitions[iconEntry];
+        const { iconColor, iconName } = iconDefinitions[iconEntry];
 
-        const fontColor = getColor(colorName);
-        const fontCharacter = getCharacter(iconName);
+        const fontColor = getFontColor(iconColor);
+        const fontCharacter = getFontCharacter(iconName);
         const prefixedIconName = prefix(iconEntry);
         iconTheme.iconDefinitions[prefixedIconName] = {
             fontColor, fontCharacter
@@ -76,7 +76,7 @@ function getIconTheme() {
  * @param {String} colorName
  * @return {Number} Color
  */
-function getColor(colorName) {
+function getFontColor(colorName) {
     if (colorName in colors) {
         return colors[colorName];
     }
@@ -90,7 +90,7 @@ function getColor(colorName) {
  * @param {String} iconName Icon name
  * @return {String} Font character code in `\\xxxx` format
  */
-function getCharacter(iconName) {
+function getFontCharacter(iconName) {
     if (iconName in codepoints) {
         const iconCodeStr = codepoints[iconName].toString(16);
         return `\\${iconCodeStr}`;

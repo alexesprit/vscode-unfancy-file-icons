@@ -16,107 +16,107 @@
     "iconDefinitions": {
         "folder": {
             "iconName": "file-directory",
-            "colorName": "@gray"
+            "iconColor": "@gray"
         },
         "file": {
             "iconName": "file",
-            "colorName": "@gray"
+            "iconColor": "@gray"
         },
         "src": {
             "iconName": "file-code",
-            "colorName": "@green"
+            "iconColor": "@green"
         },
         "html": {
             "iconName": "code",
-            "colorName": "@green"
+            "iconColor": "@green"
         },
         "ruby": {
             "iconName": "ruby",
-            "colorName": "@magenta"
+            "iconColor": "@magenta"
         },
         "stylesheet": {
             "iconName": "paintcan",
-            "colorName": "@yellow"
+            "iconColor": "@yellow"
         },
         "map": {
             "iconName": "location",
-            "colorName": "@blue"
+            "iconColor": "@blue"
         },
         "template": {
             "iconName": "code",
-            "colorName": "@yellow"
+            "iconColor": "@yellow"
         },
         "executable": {
             "iconName": "terminal",
-            "colorName": "@orange"
+            "iconColor": "@orange"
         },
         "diff": {
             "iconName": "diff",
-            "colorName": "@green"
+            "iconColor": "@green"
         },
         "meta_config": {
             "iconName": "gear",
-            "colorName": "@magenta"
+            "iconColor": "@magenta"
         },
         "project_config": {
             "iconName": "settings",
-            "colorName": "@violet"
+            "iconColor": "@violet"
         },
         "sheet": {
             "iconName": "list-ordered",
-            "colorName": "@violet"
+            "iconColor": "@violet"
         },
         "database": {
             "iconName": "database",
-            "colorName": "@violet"
+            "iconColor": "@violet"
         },
         "ctags": {
             "iconName": "tag",
-            "colorName": "@violet"
+            "iconColor": "@violet"
         },
         "ds_store": {
             "iconName": "gear",
-            "colorName": "@violet"
+            "iconColor": "@violet"
         },
         "log": {
             "iconName": "bug",
-            "colorName": "@blue"
+            "iconColor": "@blue"
         },
         "archive": {
             "iconName": "package",
-            "colorName": "@violet"
+            "iconColor": "@violet"
         },
         "doc": {
             "iconName": "file",
-            "colorName": "@cyan"
+            "iconColor": "@cyan"
         },
         "md": {
             "iconName": "markdown",
-            "colorName": "@cyan"
+            "iconColor": "@cyan"
         },
         "pdf": {
             "iconName": "file-pdf",
-            "colorName": "@cyan"
+            "iconColor": "@cyan"
         },
         "font": {
             "iconName": "quote",
-            "colorName": "@blue"
+            "iconColor": "@blue"
         },
         "image": {
             "iconName": "file-media",
-            "colorName": "@blue"
+            "iconColor": "@blue"
         },
         "image_src": {
             "iconName": "pencil",
-            "colorName": "@blue"
+            "iconColor": "@blue"
         },
         "media": {
             "iconName": "device-camera-video",
-            "colorName": "@blue"
+            "iconColor": "@blue"
         },
         "binary": {
             "iconName": "file-binary",
-            "colorName": "@gray"
+            "iconColor": "@gray"
         }
     },
     "file": "file",
