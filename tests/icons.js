@@ -1,9 +1,6 @@
-'use strict';
-
 import test from 'ava';
 
 import * as icons from './../resources/icons.json';
-import { existsSync } from 'path';
 
 runTests();
 
@@ -26,7 +23,7 @@ function runTests() {
                 const fullEntryName = `${themeName} > ${defName} > ${entry}`;
                 test(`${fullEntryName} has a valid '${type}' type`, (t) => {
                     t.true(type in iconDefinitions);
-                })
+                });
             }
         }
     }

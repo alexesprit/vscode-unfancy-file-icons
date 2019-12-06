@@ -1,5 +1,3 @@
-'use strict';
-
 import test from 'ava';
 
 import * as items from './../src/items.json';
@@ -24,7 +22,7 @@ function runTests() {
         });
     }
 
-    const definitions = { iconDefinitions, fileExtensions };
+    const definitions = { fileNames, fileExtensions };
     for (const defName in definitions) {
         const definition = definitions[defName];
 

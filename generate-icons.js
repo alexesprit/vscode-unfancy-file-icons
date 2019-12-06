@@ -1,5 +1,3 @@
-'use strict';
-
 const Color = require('color');
 const fs = require('fs');
 
@@ -73,7 +71,7 @@ function getIconTheme() {
 /**
  * Get color in RGB format by color name.
  *
- * @param {String} colorName
+ * @param {String} colorName Color name defined in `colors.json`
  * @return {Number} Color
  */
 function getFontColor(colorName) {
