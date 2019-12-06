@@ -21,13 +21,11 @@ function runTests() {
         for (const defName of definitions) {
             const definition = theme[defName];
 
-            for (const entryName in definition) {
-                const entryType = definition[entryName];
-                const fullEntryName = `${themeName}.${defName}.${entryName}`;
-                const testDesc = `${fullEntryName} has a valid '${entryType}' type`;
-
-                test(testDesc, (t) => {
-                    t.true(entryType in iconDefinitions);
+            for (const entry in definition) {
+                const type = definition[entry];
+                const fullEntryName = `${themeName} > ${defName} > ${entry}`;
+                test(`${fullEntryName} has a valid '${type}' type`, (t) => {
+                    t.true(type in iconDefinitions);
                 })
             }
         }
