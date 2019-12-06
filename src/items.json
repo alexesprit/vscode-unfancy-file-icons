@@ -301,6 +301,11 @@
         "config": [
             ".vscodeignore",
             ".eslintignore",
+            ".eslintrc.js",
+            ".eslintrc.yaml",
+            ".eslintrc.yml",
+            ".eslintrc.json",
+            ".eslintrc",
             ".editorconfig",
             ".gitignore",
             ".gitattributes",
