@@ -10,8 +10,8 @@ Based on [atom-unfancy-file-icons][atom-extension] package.
   - green for source files
   - yellow for template and stylesheet files
   - violet for data files (`json`, `yml`, `csv`, etc)
-  - orange for executable files (`sh`, `bat`, `exe`, etc)
-  - cyan for documentation files (`markdown`, `latex`, `pdf`, etc)
+  - orange for executable files (`sh`, `bat`, `cmd`, etc)
+  - cyan for documentation files (`md`, `tex`, `pdf`, etc)
   - blue for media files (images, videos, art software files, etc)
   - magenta for configuration files (`.gitignore`, `.ruby-version`, etc)
   - gray for other files and directories
