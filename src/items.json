@@ -160,7 +160,8 @@
         "html": [
             "html",
             "xml",
-            "php"
+            "php",
+            "vue"
         ],
         "ruby": [
             "rb",
