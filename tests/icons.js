@@ -24,7 +24,7 @@ function runTests() {
             for (const entryName in definition) {
                 const entryType = definition[entryName];
                 const fullEntryName = `${themeName}.${defName}.${entryName}`;
-                const testDesc = `${fullEntryName} has a valid type (${entryType})`;
+                const testDesc = `${fullEntryName} has a valid '${entryType}' type`;
 
                 test(testDesc, (t) => {
                     t.true(entryType in iconDefinitions);
