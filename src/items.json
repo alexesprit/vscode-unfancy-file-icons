@@ -117,6 +117,10 @@
         "binary": {
             "iconName": "file-binary",
             "iconColor": "@gray"
+        },
+        "lock": {
+            "iconName": "lock",
+            "iconColor": "@magenta"
         }
     },
     "file": "file",
@@ -278,6 +282,9 @@
         "binary": [
             "pyc",
             "exe"
+        ],
+        "lock": [
+            "lock"
         ]
     },
     "fileNames": {
