@@ -325,6 +325,9 @@
             "contributing",
             "readme",
             "history"
+        ],
+        "lock": [
+            "package-lock.json"
         ]
     }
 }
