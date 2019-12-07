@@ -242,14 +242,12 @@
             "tex",
             "txt",
             "dvi",
-            "rdoc"
+            "rdoc",
+            "pdf"
         ],
         "md": [
             "md",
             "markdown"
-        ],
-        "pdf": [
-            "pdf"
         ],
         "font": [
             "woff",
