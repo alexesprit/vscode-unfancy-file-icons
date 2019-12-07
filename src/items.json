@@ -74,10 +74,6 @@
             "iconName": "tag",
             "iconColor": "@violet"
         },
-        "ds_store": {
-            "iconName": "gear",
-            "iconColor": "@violet"
-        },
         "log": {
             "iconName": "bug",
             "iconColor": "@blue"
@@ -345,9 +341,6 @@
         ],
         "ctags": [
             "tags"
-        ],
-        "ds_store": [
-            "ds_store"
         ],
         "doc": [
             "license",
