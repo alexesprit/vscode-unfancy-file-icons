@@ -84,7 +84,7 @@
         },
         "archive": {
             "iconName": "package",
-            "iconColor": "@violet"
+            "iconColor": "@gray"
         },
         "doc": {
             "iconName": "file",
