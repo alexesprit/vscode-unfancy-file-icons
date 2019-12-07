@@ -1,7 +1,9 @@
+.github
 node_modules
 media
 samples
 src
+tests
 
 .gitignore
 package-lock.json
