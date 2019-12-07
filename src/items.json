@@ -161,7 +161,8 @@
             "v",
             "sql",
             "java",
-            "lua"
+            "lua",
+            "rs"
         ],
         "html": [
             "html",
