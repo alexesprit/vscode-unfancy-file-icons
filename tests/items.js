@@ -1,35 +1,65 @@
 import test from 'ava';
 
-import * as items from './../src/items.json';
+import { iconDefinitions, fileExtensions, fileNames } from './../src/items.json';
 import * as colors from './../src/colors.json';
 import * as codepoints from './../src/codepoints.json';
 
 runTests();
 
 function runTests() {
-    const { iconDefinitions, fileExtensions, fileNames } = items;
-    for (const iconEntry in iconDefinitions) {
-        const { iconName, iconColor } = iconDefinitions[iconEntry];
+    testIconProp('iconColor', colors);
+    testIconProp('iconName', codepoints);
 
-        const fullEntryName1 = `iconDefinitions > ${iconEntry} > iconName`;
-        test(`${fullEntryName1} has a valid '${iconName}' value`, (t) => {
-            t.true(iconName in codepoints);
-        });
+    testFileDefinitions();
+}
 
-        const fullEntryName2 = `iconDefinitions > ${iconEntry} > iconColor`;
-        test(`${fullEntryName2} has a valid '${iconColor}' value`, (t) => {
-            t.true(iconColor in colors);
+function testFileDefinitions() {
+    const definitions = getFileDefinitions();
+    for (const entryName in definitions) {
+        const itemType = definitions[entryName];
+
+        test(`${entryName} is valid item type`, (t) => {
+            t.true(itemType in iconDefinitions);
         });
     }
+}
 
+function testIconProp(propName, propDefinitions) {
+    const iconProps = getIconProps(propName);
+    for (const entryName in iconProps) {
+        const propValue = iconProps[entryName];
+
+        test(`${entryName} has a valid '${propValue}' value`, (t) => {
+            t.true(propValue in propDefinitions);
+        });
+    }
+}
+
+function getIconProps(propName) {
+    const result = {};
+
+    for (const iconEntry in iconDefinitions) {
+        const propValue = iconDefinitions[iconEntry][propName];
+
+        const entryName = `iconDefinitions > ${iconEntry} > ${propName}`;
+        result[entryName] = propValue;
+    }
+
+    return result;
+}
+
+function getFileDefinitions() {
+    const result = {};
     const definitions = { fileNames, fileExtensions };
+
     for (const defName in definitions) {
         const definition = definitions[defName];
 
         for (const itemType in definition) {
-            test(`${defName}.${itemType} is valid item type`, (t) => {
-                t.true(itemType in iconDefinitions);
-            });
+            const entryName = `${defName} > ${itemType}`;
+            result[entryName] = itemType;
         }
     }
+
+    return result;
 }
