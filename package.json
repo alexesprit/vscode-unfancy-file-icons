@@ -29,7 +29,7 @@
         "octicons-webfont": "^1.2.1"
     },
     "scripts": {
-        "postinstall": "bash copy-fonts.sh",
+        "postinstall": "node copy-fonts.js",
         "build": "node generate-icons.js",
         "dist": "npm run build && vsce package",
         "test": "ava",
