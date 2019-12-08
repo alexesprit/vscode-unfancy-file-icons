@@ -59,10 +59,7 @@ function getIconTheme() {
 
     for (const propName of ['fileNames', 'fileExtensions']) {
         iconTheme[propName] = convertItems(items[propName]);
-
-        iconTheme.light[propName] = makeItemsForLightTheme(
-            iconTheme[propName], iconTheme.iconDefinitions
-        );
+        iconTheme.light[propName] = makeItemsForLightTheme(iconTheme[propName]);
     }
 
     return iconTheme;
