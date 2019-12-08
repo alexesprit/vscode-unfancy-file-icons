@@ -32,7 +32,7 @@
         "postinstall": "node copy-fonts.js",
         "build": "node generate-icons.js",
         "dist": "npm run build && vsce package",
-        "test": "ava",
+        "test": "npm run build && ava",
         "lint": "eslint ."
     },
     "devDependencies": {
