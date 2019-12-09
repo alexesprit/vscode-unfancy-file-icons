@@ -281,7 +281,8 @@
         ],
         "binary": [
             "pyc",
-            "exe"
+            "exe",
+            "dll"
         ],
         "lock": [
             "lock"
