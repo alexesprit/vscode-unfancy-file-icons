@@ -196,7 +196,8 @@
         "executable": [
             "sh",
             "cmd",
-            "bat"
+            "bat",
+            "vsh"
         ],
         "diff": [
             "diff",
