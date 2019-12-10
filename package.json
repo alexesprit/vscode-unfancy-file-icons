@@ -5,8 +5,13 @@
     "categories": [
         "Themes"
     ],
-    "keywords": ["icon-theme", "icons", "octicons", "customization"],
-    "version": "1.4.1",
+    "keywords": [
+        "icon-theme",
+        "icons",
+        "octicons",
+        "customization"
+    ],
+    "version": "1.5.0",
     "publisher": "alexesprit",
     "license": "MIT",
     "engines": {
