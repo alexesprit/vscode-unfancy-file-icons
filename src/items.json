@@ -26,6 +26,10 @@
             "iconName": "file-code",
             "iconColor": "@green"
         },
+        "headers": {
+            "iconName": "file-code",
+            "iconColor": "@yellow"
+        },
         "html": {
             "iconName": "code",
             "iconColor": "@green"
@@ -145,13 +149,9 @@
             "litcoffee",
             "coffee.md",
             "c",
-            "h",
             "cpp",
             "cxx",
             "c++",
-            "hpp",
-            "hxx",
-            "h++",
             "cc",
             "cs",
             "v",
@@ -159,6 +159,12 @@
             "java",
             "lua",
             "rs"
+        ],
+        "headers": [
+            "h",
+            "hpp",
+            "hxx",
+            "h++"
         ],
         "html": [
             "html",
