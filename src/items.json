@@ -158,7 +158,8 @@
             "sql",
             "java",
             "lua",
-            "rs"
+            "rs",
+            "go"
         ],
         "headers": [
             "h",
@@ -211,7 +212,8 @@
         ],
         "config": [
             "ini",
-            "toml"
+            "toml",
+            "mod"
         ],
         "data": [
             "example",
