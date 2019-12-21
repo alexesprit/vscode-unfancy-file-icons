@@ -127,6 +127,10 @@
     "folder": "folder",
     "fileExtensions": {
         "src": [
+            "clj",
+            "cljs",
+            "cljc",
+            "cljx",
             "hx",
             "hxsl",
             "hs",
@@ -232,7 +236,8 @@
             "yml",
             "yaml",
             "eyml",
-            "eyaml"
+            "eyaml",
+            "edn"
         ],
         "sheet": [
             "csv",
