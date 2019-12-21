@@ -40,7 +40,7 @@
         "build": "node generate-icons.js",
         "dist": "npm run build && vsce package",
         "test": "npm run build && ava",
-        "lint": "eslint ."
+        "lint": "eslint . && node check-dups.js"
     },
     "devDependencies": {
         "ava": "^2.4.0",
