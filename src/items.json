@@ -225,6 +225,7 @@
             "env",
             "cabal",
             "json",
+            "jsonc",
             "tern-project",
             "cson",
             "yml",
