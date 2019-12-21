@@ -185,6 +185,7 @@
             "php4",
             "php5",
             "phtml",
+            "cshtml",
             "vue"
         ],
         "ruby": [
