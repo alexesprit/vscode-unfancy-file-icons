@@ -174,7 +174,8 @@
             "vb",
             "groovy",
             "gvy",
-            "swift"
+            "swift",
+            "shader"
         ],
         "headers": [
             "h",
