@@ -159,7 +159,8 @@
             "java",
             "lua",
             "rs",
-            "go"
+            "go",
+            "vb"
         ],
         "headers": [
             "h",
@@ -206,6 +207,7 @@
             "cmd",
             "ksh",
             "sh",
+            "vbs",
             "vsh",
             "zsh"
         ],
