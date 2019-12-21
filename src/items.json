@@ -66,6 +66,10 @@
             "iconName": "settings",
             "iconColor": "@violet"
         },
+        "data_markup": {
+            "iconName": "code",
+            "iconColor": "@violet"
+        },
         "sheet": {
             "iconName": "list-ordered",
             "iconColor": "@violet"
@@ -180,7 +184,6 @@
         ],
         "hypertext": [
             "html",
-            "xml",
             "php",
             "php4",
             "php5",
@@ -214,7 +217,8 @@
             "ejs",
             "eco",
             "hbs",
-            "ctp"
+            "ctp",
+            "xsd"
         ],
         "executable": [
             "bash",
@@ -256,6 +260,11 @@
             "eyaml",
             "edn",
             "psd1"
+        ],
+        "data_markup": [
+            "xml",
+            "xsl",
+            "xslt"
         ],
         "sheet": [
             "csv",
