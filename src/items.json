@@ -201,10 +201,13 @@
             "hbs"
         ],
         "executable": [
-            "sh",
-            "cmd",
+            "bash",
             "bat",
-            "vsh"
+            "cmd",
+            "ksh",
+            "sh",
+            "vsh",
+            "zsh"
         ],
         "diff": [
             "diff",
