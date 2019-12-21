@@ -182,6 +182,9 @@
             "html",
             "xml",
             "php",
+            "php4",
+            "php5",
+            "phtml",
             "vue"
         ],
         "ruby": [
@@ -209,7 +212,8 @@
             "twig",
             "ejs",
             "eco",
-            "hbs"
+            "hbs",
+            "ctp"
         ],
         "executable": [
             "bash",
