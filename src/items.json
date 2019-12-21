@@ -159,6 +159,7 @@
             "c++",
             "cc",
             "cs",
+            "csx",
             "v",
             "sql",
             "java",
@@ -221,6 +222,7 @@
             "patch"
         ],
         "config": [
+            "cake",
             "ini",
             "mk",
             "toml",
