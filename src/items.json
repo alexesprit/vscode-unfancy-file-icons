@@ -183,7 +183,11 @@
             "swift",
             "shader",
             "m",
-            "mm"
+            "mm",
+            "fs",
+            "fsi",
+            "fsx",
+            "fsscript"
         ],
         "headers": [
             "h",
