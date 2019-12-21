@@ -30,7 +30,7 @@
             "iconName": "file-code",
             "iconColor": "@yellow"
         },
-        "html": {
+        "hypertext": {
             "iconName": "code",
             "iconColor": "@green"
         },
@@ -90,7 +90,7 @@
             "iconName": "file",
             "iconColor": "@cyan"
         },
-        "md": {
+        "markdown": {
             "iconName": "markdown",
             "iconColor": "@cyan"
         },
@@ -167,7 +167,7 @@
             "hxx",
             "h++"
         ],
-        "html": [
+        "hypertext": [
             "html",
             "xml",
             "php",
@@ -258,7 +258,7 @@
             "rdoc",
             "pdf"
         ],
-        "md": [
+        "markdown": [
             "md",
             "markdown"
         ],
