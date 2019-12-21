@@ -217,6 +217,7 @@
         ],
         "config": [
             "ini",
+            "mk",
             "toml",
             "mod"
         ],
