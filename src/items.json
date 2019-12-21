@@ -224,9 +224,11 @@
             "twig",
             "ejs",
             "eco",
-            "hbs",
             "ctp",
-            "xsd"
+            "xsd",
+            "handlebars",
+            "hbs",
+            "hjs"
         ],
         "executable": [
             "bash",
