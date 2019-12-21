@@ -187,7 +187,8 @@
             "fs",
             "fsi",
             "fsx",
-            "fsscript"
+            "fsscript",
+            "r"
         ],
         "headers": [
             "h",
