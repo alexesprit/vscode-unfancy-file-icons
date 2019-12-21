@@ -30,7 +30,7 @@
             "iconName": "file-code",
             "iconColor": "@yellow"
         },
-        "hypertext": {
+        "markup": {
             "iconName": "code",
             "iconColor": "@green"
         },
@@ -204,7 +204,7 @@
             "h++",
             "pyi"
         ],
-        "hypertext": [
+        "markup": [
             "html",
             "htm",
             "shtml",
