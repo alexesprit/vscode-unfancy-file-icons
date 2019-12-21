@@ -171,6 +171,10 @@
             "java",
             "lua",
             "py",
+            "pyw",
+            "rpy",
+            "cpy",
+            "ipy",
             "rs",
             "go",
             "vb",
@@ -183,7 +187,8 @@
             "h",
             "hpp",
             "hxx",
-            "h++"
+            "h++",
+            "pyi"
         ],
         "hypertext": [
             "html",
@@ -243,6 +248,8 @@
         "config": [
             "cake",
             "gradle",
+            "gyp",
+            "gypi",
             "ini",
             "mk",
             "mod",
