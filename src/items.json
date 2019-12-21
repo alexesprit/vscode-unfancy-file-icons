@@ -162,6 +162,7 @@
             "csx",
             "v",
             "sql",
+            "dsql",
             "java",
             "lua",
             "rs",
