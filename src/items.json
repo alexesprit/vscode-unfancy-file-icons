@@ -181,7 +181,9 @@
             "groovy",
             "gvy",
             "swift",
-            "shader"
+            "shader",
+            "m",
+            "mm"
         ],
         "headers": [
             "h",
