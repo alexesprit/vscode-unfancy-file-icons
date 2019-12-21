@@ -188,7 +188,14 @@
             "fsi",
             "fsx",
             "fsscript",
-            "r"
+            "r",
+            "pl",
+            "pm",
+            "psgi",
+            "p6",
+            "pl6",
+            "pm6",
+            "nqp"
         ],
         "headers": [
             "h",
@@ -212,7 +219,8 @@
             "php5",
             "phtml",
             "cshtml",
-            "vue"
+            "vue",
+            "pod"
         ],
         "ruby": [
             "rb",
