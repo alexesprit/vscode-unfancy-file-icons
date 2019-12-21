@@ -169,7 +169,8 @@
             "go",
             "vb",
             "groovy",
-            "gvy"
+            "gvy",
+            "swift"
         ],
         "headers": [
             "h",
