@@ -166,7 +166,9 @@
             "lua",
             "rs",
             "go",
-            "vb"
+            "vb",
+            "groovy",
+            "gvy"
         ],
         "headers": [
             "h",
@@ -223,6 +225,7 @@
         ],
         "config": [
             "cake",
+            "gradle",
             "ini",
             "mk",
             "mod",
@@ -342,6 +345,7 @@
             ".htaccess",
             "procfile",
             "makefile",
+            "jenkinsfile",
             "dockerfile",
             "CMakeLists.txt",
             ".nycrc",
