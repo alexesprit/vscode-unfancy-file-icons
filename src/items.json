@@ -246,7 +246,11 @@
             "mod",
             "tern-project",
             "toml",
-            "pssc"
+            "pssc",
+            "properties",
+            "cfg",
+            "conf",
+            "directory"
         ],
         "data": [
             "example",
