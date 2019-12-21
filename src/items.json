@@ -201,9 +201,12 @@
         ],
         "ruby": [
             "rb",
+            "rbi",
+            "rbx",
             "ru",
             "rake",
-            "gemspec"
+            "gemspec",
+            "podspec"
         ],
         "stylesheet": [
             "styl",
@@ -358,10 +361,11 @@
             "cakefile"
         ],
         "ruby": [
+            "capfile",
             "gemfile",
-            "rakefile",
             "guardfile",
-            "capfile"
+            "podfile",
+            "rakefile"
         ],
         "config": [
             ".vscodeignore",
