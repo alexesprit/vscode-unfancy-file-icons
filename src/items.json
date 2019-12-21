@@ -219,7 +219,10 @@
             "sh",
             "vbs",
             "vsh",
-            "zsh"
+            "zsh",
+            "ps1",
+            "psm1",
+            "psrc"
         ],
         "diff": [
             "diff",
@@ -232,7 +235,8 @@
             "mk",
             "mod",
             "tern-project",
-            "toml"
+            "toml",
+            "pssc"
         ],
         "data": [
             "example",
@@ -245,7 +249,8 @@
             "yaml",
             "eyml",
             "eyaml",
-            "edn"
+            "edn",
+            "psd1"
         ],
         "sheet": [
             "csv",
