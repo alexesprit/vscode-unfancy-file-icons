@@ -225,8 +225,9 @@
             "cake",
             "ini",
             "mk",
-            "toml",
-            "mod"
+            "mod",
+            "tern-project",
+            "toml"
         ],
         "data": [
             "example",
@@ -234,7 +235,6 @@
             "cabal",
             "json",
             "jsonc",
-            "tern-project",
             "cson",
             "yml",
             "yaml",
