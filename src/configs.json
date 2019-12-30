@@ -1,0 +1,6 @@
+[
+    "eslint",
+    "nyc",
+    "remark",
+    "stylelint"
+]

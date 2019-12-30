@@ -3,6 +3,7 @@ const fs = require('fs');
 
 const items = require('./src/items.json');
 const colors = require('./src/colors.json');
+const configs = require('./src/configs.json');
 const codepoints = require('./src/codepoints.json');
 
 const targetFileName = './resources/icons.json';
@@ -21,6 +22,13 @@ function main() {
 
 function getIconTheme() {
     const { iconDefinitions, fonts } = items;
+
+    for (const app of configs) {
+        const configNames = getConfigNames(app);
+        for (const name of configNames) {
+            items.fileNames.config.push(name);
+        }
+    }
 
     const iconTheme = {
         fonts,
@@ -142,6 +150,23 @@ function prefix(str) {
  */
 function light(str) {
     return `${str}_light`;
+}
+
+/**
+ * Return an array of config names for a given app.
+ *
+ * @param {String} app App name
+ */
+function getConfigNames(app) {
+    return [
+        `.${app}rc`,
+        `.${app}rc.js`,
+        `.${app}rc.yml`,
+        `.${app}rc.yaml`,
+        `.${app}rc.json`,
+        `${app}.config.js`,
+        `.${app}ignore`
+    ];
 }
 
 main();
