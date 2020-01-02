@@ -415,7 +415,8 @@
             ".markdownlint.json",
             ".markdownlint.yaml",
             ".markdownlint.yml",
-            ".markdownlintrc"
+            ".markdownlintrc",
+            "tsconfig.json"
         ],
         "ctags": [
             "tags"
