@@ -411,7 +411,11 @@
             "renovate.json5",
             ".renovaterc",
             ".renovaterc.json",
-            ".travis.yml"
+            ".travis.yml",
+            ".markdownlint.json",
+            ".markdownlint.yaml",
+            ".markdownlint.yml",
+            ".markdownlintrc"
         ],
         "ctags": [
             "tags"
