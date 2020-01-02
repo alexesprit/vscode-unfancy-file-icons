@@ -392,6 +392,7 @@
         ],
         "config": [
             ".vscodeignore",
+            ".dockerignore",
             ".editorconfig",
             ".gitignore",
             ".gitattributes",
