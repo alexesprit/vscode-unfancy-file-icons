@@ -39,6 +39,7 @@
         "octicons-webfont": "^1.2.1"
     },
     "scripts": {
+        "vscode:prepublish": "npm run build",
         "postinstall": "node copy-fonts.js",
         "build": "node generate-icons.js",
         "dist": "npm run build && vsce package",
