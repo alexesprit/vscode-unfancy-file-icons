@@ -26,9 +26,6 @@ Based on [atom-unfancy-file-icons][atom-extension] package.
 
 # Build theme
 > npm run build
-
-# Create package using `vsce` tool
-> npm run dist
 ```
 
 ## Screenshot
