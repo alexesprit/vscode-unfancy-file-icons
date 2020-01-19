@@ -146,7 +146,7 @@ function prefix(str) {
 }
 
 /**
- * Add 'light' prefix to string.
+ * Add 'light' suffix to string.
  *
  * @param {String} str String
  */
