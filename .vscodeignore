@@ -5,6 +5,7 @@ samples
 src
 tests
 
+.eslintignore
 .gitignore
 package-lock.json
 *.js
