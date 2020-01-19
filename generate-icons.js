@@ -6,7 +6,9 @@ const colors = require('./src/colors.json');
 const configs = require('./src/configs.json');
 const codepoints = require('./src/codepoints.json');
 
-const targetFileName = './resources/icons.json';
+const packageFile = require('./package.json');
+
+const targetFileName = packageFile.contributes.iconThemes[0].path;
 
 const darkenPercent = 0.4;
 

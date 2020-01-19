@@ -1,14 +1,14 @@
 import test from 'ava';
 
-import * as icons from './../resources/icons.json';
+import * as iconTheme from './../theme/unfancy-icon-theme.json';
 
 runTests();
 
 function runTests() {
-    const { iconDefinitions } = icons;
+    const { iconDefinitions } = iconTheme;
 
     const themes = {
-        dark: icons, light: icons.light
+        dark: iconTheme, light: iconTheme.light
     };
 
     for (const themeName in themes) {

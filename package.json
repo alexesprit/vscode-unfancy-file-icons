@@ -30,20 +30,18 @@
             {
                 "id": "vscode-unfancy-file-icons",
                 "label": "Unfancy file icons",
-                "path": "./resources/icons.json"
+                "path": "./theme/unfancy-icon-theme.json"
             }
         ]
     },
-    "dependencies": {
-        "color": "^3.1.2",
-        "octicons-webfont": "^1.2.1"
-    },
     "scripts": {
         "vscode:prepublish": "npm run build",
-        "postinstall": "node copy-fonts.js",
         "build": "node generate-icons.js",
         "test": "npm run build && ava",
         "lint": "eslint . && node check-dups.js"
+    },
+    "dependencies": {
+        "color": "^3.1.2"
     },
     "devDependencies": {
         "ava": "^2.4.0",
