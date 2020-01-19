@@ -1,5 +1,7 @@
 # Unfancy file icons [![Published version on Marketplace][badge]][marketplace] [![Test status][gaBadge]][ga]
 
+> Octicons as a file icon theme
+
 A file icon theme for Visual Studio code.
 Based on [atom-unfancy-file-icons][atom-extension] package.
 

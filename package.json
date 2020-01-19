@@ -1,7 +1,7 @@
 {
     "name": "vscode-unfancy-file-icons",
     "displayName": "Unfancy file icons",
-    "description": "Octicons as file icons",
+    "description": "Octicons as a file icon theme",
     "categories": [
         "Themes"
     ],
