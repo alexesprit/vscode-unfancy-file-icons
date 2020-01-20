@@ -87,7 +87,7 @@
             "iconColor": "@blue"
         },
         "archive": {
-            "iconName": "package",
+            "iconName": "file-zip",
             "iconColor": "@gray"
         },
         "doc": {
