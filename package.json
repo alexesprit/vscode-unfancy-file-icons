@@ -12,7 +12,7 @@
         "customization"
     ],
     "icon": "images/icon.png",
-    "version": "2.2.0",
+    "version": "2.3.0",
     "publisher": "alexesprit",
     "license": "MIT",
     "engines": {
