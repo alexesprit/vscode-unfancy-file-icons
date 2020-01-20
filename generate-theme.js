@@ -1,5 +1,6 @@
 const Color = require('color');
 const fs = require('fs');
+const path = require('path');
 
 const items = require('./src/items.json');
 const colors = require('./src/colors.json');
@@ -16,9 +17,15 @@ const darkenPercent = 0.4;
  * Entry point.
  */
 function main() {
+    generateTheme();
+}
+
+function generateTheme() {
     const iconTheme = getIconTheme();
     const contents = JSON.stringify(iconTheme, null, 4);
 
+    const targetDir = path.dirname(targetFileName);
+    fs.mkdirSync(targetDir, { recursive: true });
     fs.writeFileSync(targetFileName, contents);
 }
 
