@@ -334,7 +334,9 @@
             "tex",
             "txt",
             "dvi",
-            "rdoc",
+            "rdoc"
+        ],
+        "pdf": [
             "pdf"
         ],
         "markdown": [
