@@ -119,7 +119,7 @@
             "iconColor": "@blue"
         },
         "media": {
-            "iconName": "device-camera-video",
+            "iconName": "play",
             "iconColor": "@blue"
         },
         "binary": {
