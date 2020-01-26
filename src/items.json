@@ -377,7 +377,10 @@
             "mov",
             "flv",
             "swf",
-            "ogg"
+            "ogg",
+            "mp3",
+            "mp4",
+            "wma"
         ],
         "binary": [
             "pyc",
