@@ -44,7 +44,7 @@
         },
         "map": {
             "iconName": "location",
-            "iconColor": "@blue"
+            "iconColor": "@yellow"
         },
         "template": {
             "iconName": "code",
