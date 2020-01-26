@@ -94,6 +94,10 @@
             "iconName": "file",
             "iconColor": "@cyan"
         },
+        "todo": {
+            "iconName": "checklist",
+            "iconColor": "@cyan"
+        },
         "markdown": {
             "iconName": "markdown",
             "iconColor": "@cyan"
@@ -336,6 +340,9 @@
             "dvi",
             "rdoc"
         ],
+        "todo": [
+            "todo"
+        ],
         "pdf": [
             "pdf"
         ],
@@ -430,6 +437,11 @@
             "contributing",
             "readme",
             "history"
+        ],
+        "todo": [
+            "todo",
+            "todo.md",
+            "todo.txt"
         ],
         "lock": [
             "package-lock.json"
