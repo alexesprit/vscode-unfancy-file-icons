@@ -310,7 +310,8 @@
         "data_markup": [
             "xml",
             "xsl",
-            "xslt"
+            "xslt",
+            "xaml"
         ],
         "sheet": [
             "csv",
