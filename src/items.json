@@ -457,6 +457,7 @@
             "license.md"
         ],
         "lock": [
+            ".vpkg-lock.json",
             "package-lock.json"
         ]
     }
