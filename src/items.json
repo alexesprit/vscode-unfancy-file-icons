@@ -111,7 +111,7 @@
             "iconColor": "@cyan"
         },
         "font": {
-            "iconName": "quote",
+            "iconName": "text-size",
             "iconColor": "@blue"
         },
         "image": {
