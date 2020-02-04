@@ -98,6 +98,10 @@
             "iconName": "checklist",
             "iconColor": "@cyan"
         },
+        "license": {
+            "iconName": "law",
+            "iconColor": "@cyan"
+        },
         "markdown": {
             "iconName": "markdown",
             "iconColor": "@cyan"
@@ -446,6 +450,11 @@
             "todo",
             "todo.md",
             "todo.txt"
+        ],
+        "license": [
+            "license",
+            "license.txt",
+            "license.md"
         ],
         "lock": [
             "package-lock.json"
