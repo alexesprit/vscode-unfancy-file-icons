@@ -78,6 +78,10 @@
             "iconName": "database",
             "iconColor": "@violet"
         },
+        "database_src": {
+            "iconName": "database",
+            "iconColor": "@green"
+        },
         "ctags": {
             "iconName": "tag",
             "iconColor": "@violet"
@@ -174,8 +178,6 @@
             "cs",
             "csx",
             "v",
-            "sql",
-            "dsql",
             "java",
             "lua",
             "py",
@@ -325,6 +327,10 @@
             "sqlite",
             "sqlite3",
             "dump"
+        ],
+        "database_src": [
+            "sql",
+            "dsql"
         ],
         "ctags": [
             "ctags",
