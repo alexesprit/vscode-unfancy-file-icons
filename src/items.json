@@ -94,6 +94,10 @@
             "iconName": "bug",
             "iconColor": "@gray"
         },
+        "linker": {
+            "iconName": "link-external",
+            "iconColor": "@gray"
+        },
         "archive": {
             "iconName": "file-zip",
             "iconColor": "@gray"
@@ -346,6 +350,9 @@
         ],
         "debug": [
             "pdb"
+        ],
+        "linker": [
+            "ilk"
         ],
         "archive": [
             "zip",
