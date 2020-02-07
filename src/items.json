@@ -90,6 +90,10 @@
             "iconName": "bug",
             "iconColor": "@blue"
         },
+        "debug": {
+            "iconName": "bug",
+            "iconColor": "@gray"
+        },
         "archive": {
             "iconName": "file-zip",
             "iconColor": "@gray"
@@ -339,6 +343,9 @@
         ],
         "log": [
             "log"
+        ],
+        "debug": [
+            "pdb"
         ],
         "archive": [
             "zip",
