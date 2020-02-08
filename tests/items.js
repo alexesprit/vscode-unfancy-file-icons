@@ -2,15 +2,48 @@ import test from 'ava';
 
 import { iconDefinitions, fileExtensions, fileNames } from './../src/items.json';
 import * as colors from './../src/colors.json';
-import * as codepoints from './../src/codepoints.json';
 
 runTests();
 
 function runTests() {
-    testIconProp('iconColor', colors);
-    testIconProp('iconName', codepoints);
+    testIconColors();
+    testThemeItems();
 
     testFileDefinitions();
+}
+
+function testIconColors() {
+    testIconProp('generic', 'iconColor', (value) => value in colors);
+}
+
+function testThemeItems() {
+    const packageFile = require('./../package.json');
+    const { iconThemes } = packageFile.contributes;
+
+    for (const theme of iconThemes) {
+        const codepoints = require(`./../src/codepoints/${theme.id}.json`);
+        const iconMap = require(`./../src/iconmaps/${theme.id}.json`);
+
+        testIconNames(theme, codepoints, iconMap);
+        testIconMaps(theme, codepoints, iconMap);
+    }
+}
+
+function testIconNames(theme, codepoints, iconMap) {
+    testIconProp(theme.id, 'iconName', (value) => {
+        return value in codepoints || value in iconMap;
+    });
+}
+
+function testIconMaps(theme, codepoints, iconMap) {
+    for (const key in iconMap) {
+        const value = iconMap[key];
+        const fullEntryName = `[${theme.id}] iconmaps > ${key}`;
+
+        test(`${fullEntryName} has a valid ${value} value`, (t) => {
+            t.true(value in codepoints);
+        });
+    }
 }
 
 function testFileDefinitions() {
@@ -24,13 +57,14 @@ function testFileDefinitions() {
     }
 }
 
-function testIconProp(propName, propDefinitions) {
+function testIconProp(themeId, propName, condition) {
     const iconProps = getIconProps(propName);
     for (const entryName in iconProps) {
         const propValue = iconProps[entryName];
+        const fullEntryName = `[${themeId}] ${entryName}`;
 
-        test(`${entryName} has a valid '${propValue}' value`, (t) => {
-            t.true(propValue in propDefinitions);
+        test(`${fullEntryName} has a valid '${propValue}' value`, (t) => {
+            t.true(condition(propValue));
         });
     }
 }

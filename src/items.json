@@ -1,21 +1,7 @@
 {
-    "fonts": [
-        {
-            "id": "octicons",
-            "src": [
-                {
-                    "path": "./../resources/octicons.woff",
-                    "format": "woff"
-                }
-            ],
-            "weight": "normal",
-            "style": "normal",
-            "size": "120%"
-        }
-    ],
     "iconDefinitions": {
         "folder": {
-            "iconName": "file-directory",
+            "iconName": "folder",
             "iconColor": "@gray"
         },
         "file": {

@@ -1,0 +1,14 @@
+[
+    {
+        "id": "octicons",
+        "src": [
+            {
+                "path": "./../resources/octicons.woff",
+                "format": "woff"
+            }
+        ],
+        "weight": "normal",
+        "style": "normal",
+        "size": "120%"
+    }
+]

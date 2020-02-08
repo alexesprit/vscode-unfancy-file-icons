@@ -5,11 +5,9 @@ const path = require('path');
 const items = require('./src/items.json');
 const colors = require('./src/colors.json');
 const configs = require('./src/configs.json');
-const codepoints = require('./src/codepoints.json');
 
 const packageFile = require('./package.json');
-
-const targetFileName = packageFile.contributes.iconThemes[0].path;
+const { iconThemes } = packageFile.contributes;
 
 const darkenPercent = 0.4;
 
@@ -17,27 +15,31 @@ const darkenPercent = 0.4;
  * Entry point.
  */
 function main() {
-    generateTheme();
+    generateIconThemes();
 }
 
-function generateTheme() {
-    const iconTheme = getIconTheme();
+function generateIconThemes() {
+    applyConfigNames();
+
+    for (const theme of iconThemes) {
+        generateTheme(theme);
+    }
+}
+
+function generateTheme(theme) {
+    const iconTheme = getIconTheme(theme.id);
     const contents = JSON.stringify(iconTheme, null, 4);
 
-    const targetDir = path.dirname(targetFileName);
+    const outPath = theme.path;
+    const targetDir = path.dirname(outPath);
     fs.mkdirSync(targetDir, { recursive: true });
-    fs.writeFileSync(targetFileName, contents);
+    fs.writeFileSync(outPath, contents);
 }
 
-function getIconTheme() {
-    const { iconDefinitions, fonts } = items;
-
-    for (const app of configs) {
-        const configNames = getConfigNames(app);
-        for (const name of configNames) {
-            items.fileNames.config.push(name);
-        }
-    }
+function getIconTheme(themeId) {
+    const fonts = require(`./src/fonts/${themeId}.json`);
+    const iconMap = require(`./src/iconmaps/${themeId}.json`);
+    const codepoints = require(`./src/codepoints/${themeId}.json`);
 
     const iconTheme = {
         fonts,
@@ -51,11 +53,17 @@ function getIconTheme() {
         iconDefinitions: { /* empty */ },
     };
 
+    const { iconDefinitions } = items;
+
     for (const iconEntry in iconDefinitions) {
-        const { iconColor, iconName } = iconDefinitions[iconEntry];
+        let { iconColor, iconName } = iconDefinitions[iconEntry];
+
+        if (iconName in iconMap) {
+            iconName = iconMap[iconName];
+        }
 
         const fontColor = getFontColor(iconColor);
-        const fontCharacter = getFontCharacter(iconName);
+        const fontCharacter = getFontCharacter(iconName, codepoints);
         const prefixedIconName = prefix(iconEntry);
         iconTheme.iconDefinitions[prefixedIconName] = {
             fontColor, fontCharacter
@@ -82,6 +90,15 @@ function getIconTheme() {
     return iconTheme;
 }
 
+function applyConfigNames() {
+    for (const app of configs) {
+        const configNames = getConfigNames(app);
+        for (const name of configNames) {
+            items.fileNames.config.push(name);
+        }
+    }
+}
+
 /**
  * Get color in RGB format by color name.
  *
@@ -100,9 +117,10 @@ function getFontColor(colorName) {
  * Get Octicons font character code by name.
  *
  * @param {String} iconName Icon name
+ * @param {Object} codepoints Object contains font codepoints
  * @return {String} Font character code in `\\xxxx` format
  */
-function getFontCharacter(iconName) {
+function getFontCharacter(iconName, codepoints) {
     if (iconName in codepoints) {
         const iconCodeStr = codepoints[iconName].toString(16);
         return `\\${iconCodeStr}`;
