@@ -8,7 +8,7 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
 
 - Use icons from [Octicons][octicons] and [Codicons][codicons] only
 - Use a simple color code (with a few exceptions when it make more sense,
-  like for ruby files) which works as follow:
+  like for Ruby files) which works as follow:
   - green for source files
   - yellow for template and stylesheet files
   - violet for data files (`json`, `yml`, `csv`, etc)
@@ -18,7 +18,7 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
   - magenta for configuration files (`.gitignore`, `.ruby-version`, etc)
   - gray for other files and directories
 - Use generic icons rather than trying to find one for each file extension
-  (except when an icon fits the file type, like with ruby files)
+  (except when an icon fits the file type, like with Ruby files)
 
 ## Build theme
 
