@@ -1,11 +1,12 @@
 # Unfancy file icons [![Published version on Marketplace][badge]][marketplace] [![Test status][gaBadge]][ga]
 
-> Octicons as a file icon theme
+> Octicons and Codicons as file icon themes
 
-A file icon theme for Visual Studio Code. Based on [atom-unfancy-file-icons][atom-extension] package.
+File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom-extension] package.
 
 ## Rules
 
+- Use icons from [Octicons][octicons] and [Codicons][codicons] only
 - Use a simple color code (with a few exceptions when it make more sense,
   like for ruby files) which works as follow:
   - green for source files
@@ -17,7 +18,7 @@ A file icon theme for Visual Studio Code. Based on [atom-unfancy-file-icons][ato
   - magenta for configuration files (`.gitignore`, `.ruby-version`, etc)
   - gray for other files and directories
 - Use generic icons rather than trying to find one for each file extension
-  (except when an icon in Octicons fit the file, like with ruby files)
+  (except when an icon fits the file type, like with ruby files)
 
 ## Build theme
 
@@ -29,13 +30,40 @@ A file icon theme for Visual Studio Code. Based on [atom-unfancy-file-icons][ato
 > npm run build
 ```
 
-## Screenshot
+## Screenshots
 
-![Screenshot][screenshot]
+<details>
+  <summary>Click to view screenshots</summary>
 
+  ![Screenshot][octicons-dark]
+  *Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Octicons)*
+
+  ![Screenshot][octicons-light]
+  *Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Octicons)*
+
+  ![Screenshot][codicons-dark]
+  *Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Codicons)*
+
+  ![Screenshot][codicons-light]
+  *Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Codicons)*
+</details>
+
+## License
+
+See [LICENSE][codicons-license] for Codicons. See [LICENSE][octicons-license] for Octicons.
+
+Other files in this repository are licensed under the [MIT License](./LICENSE.md).
+
+[octicons]: https://octicons.github.com/
+[codicons]: https://microsoft.github.io/vscode-codicons/dist/codicon.html
 [atom-extension]: https://github.com/abe33/atom-unfancy-file-icons
-[screenshot]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot.png
+[octicons-dark]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-octicons-dark.png
+[octicons-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-octicons-light.png
+[codicons-dark]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-codicons-dark.png
+[codicons-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-codicons-light.png
 [badge]: https://img.shields.io/visual-studio-marketplace/v/alexesprit.vscode-unfancy-file-icons
 [marketplace]: https://marketplace.visualstudio.com/items?itemName=alexesprit.vscode-unfancy-file-icons
 [ga]: https://github.com/alexesprit/vscode-unfancy-file-icons/actions/
 [gaBadge]: https://img.shields.io/github/workflow/status/alexesprit/vscode-unfancy-file-icons/Test?label=test
+[codicons-license]: https://github.com/microsoft/vscode-codicons/blob/master/LICENSE
+[octicons-license]: https://github.com/primer/octicons/blob/master/LICENSE
