@@ -298,7 +298,8 @@
             "properties",
             "cfg",
             "conf",
-            "directory"
+            "directory",
+            "dockerfile"
         ],
         "data": [
             "example",
