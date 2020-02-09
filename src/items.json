@@ -135,6 +135,10 @@
         "notebook": {
             "iconName": "note",
             "iconColor": "@violet"
+        },
+        "search": {
+            "iconName": "search",
+            "iconColor": "@green"
         }
     },
     "file": "file",
@@ -418,6 +422,9 @@
         ],
         "notebook": [
             "ipynb"
+        ],
+        "search": [
+            "code-search"
         ]
     },
     "fileNames": {
