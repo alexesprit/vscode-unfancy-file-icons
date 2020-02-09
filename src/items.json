@@ -269,7 +269,8 @@
             "njk",
             "j2",
             "jinja2",
-            "ecr"
+            "ecr",
+            "slim"
         ],
         "executable": [
             "bash",
