@@ -203,7 +203,8 @@
             "p6",
             "pl6",
             "pm6",
-            "nqp"
+            "nqp",
+            "cr"
         ],
         "headers": [
             "h",
@@ -265,7 +266,8 @@
             "hjs",
             "njk",
             "j2",
-            "jinja2"
+            "jinja2",
+            "ecr"
         ],
         "executable": [
             "bash",
