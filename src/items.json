@@ -204,7 +204,9 @@
             "pl6",
             "pm6",
             "nqp",
-            "cr"
+            "cr",
+            "ex",
+            "exs"
         ],
         "headers": [
             "h",
