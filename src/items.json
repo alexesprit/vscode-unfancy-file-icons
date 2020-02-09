@@ -131,6 +131,10 @@
         "lock": {
             "iconName": "lock",
             "iconColor": "@magenta"
+        },
+        "notebook": {
+            "iconName": "note",
+            "iconColor": "@violet"
         }
     },
     "file": "file",
@@ -402,6 +406,9 @@
         ],
         "lock": [
             "lock"
+        ],
+        "notebook": [
+            "ipynb"
         ]
     },
     "fileNames": {
