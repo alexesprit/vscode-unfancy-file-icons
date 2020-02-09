@@ -206,7 +206,8 @@
             "nqp",
             "cr",
             "ex",
-            "exs"
+            "exs",
+            "hlsl"
         ],
         "headers": [
             "h",
