@@ -263,7 +263,9 @@
             "handlebars",
             "hbs",
             "hjs",
-            "njk"
+            "njk",
+            "j2",
+            "jinja2"
         ],
         "executable": [
             "bash",
