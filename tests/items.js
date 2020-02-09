@@ -1,5 +1,7 @@
 import test from 'ava';
 
+import { getThemeId } from './../src/utils';
+
 import { iconDefinitions, fileExtensions, fileNames } from './../src/items.json';
 import * as colors from './../src/colors.json';
 
@@ -21,8 +23,10 @@ function testThemeItems() {
     const { iconThemes } = packageFile.contributes;
 
     for (const theme of iconThemes) {
-        const codepoints = require(`./../src/codepoints/${theme.id}.json`);
-        const iconMap = require(`./../src/iconmaps/${theme.id}.json`);
+        const themeId = getThemeId(theme);
+
+        const codepoints = require(`./../src/codepoints/${themeId}.json`);
+        const iconMap = require(`./../src/iconmaps/${themeId}.json`);
 
         testIconNames(theme, codepoints, iconMap);
         testIconMaps(theme, codepoints, iconMap);
