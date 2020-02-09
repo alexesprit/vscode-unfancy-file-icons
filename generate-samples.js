@@ -1,4 +1,4 @@
-const { getMissingSamples, createSampleFiles } = require('./src/samples');
+const { getMissingSamples, createSampleFile } = require('./src/samples');
 
 const samplesDir = 'samples';
 
@@ -9,7 +9,11 @@ function main() {
     const missingSamples = getMissingSamples(samplesDir);
 
     if (missingSamples.length > 0) {
-        createSampleFiles(missingSamples, samplesDir);
+        for (const sample of missingSamples) {
+            createSampleFile(samplesDir, sample);
+
+            console.log(`Generated ${sample}`);
+        }
     } else {
         console.log('No missing samples are found');
     }

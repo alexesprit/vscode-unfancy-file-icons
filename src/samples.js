@@ -4,7 +4,7 @@ const { join } = require('path');
 /**
  * Exported functions.
  */
-module.exports = { getMissingSamples, createSampleFiles };
+module.exports = { getMissingSamples, createSampleFile };
 
 /**
  * Return a list of missing sample files.
@@ -38,16 +38,12 @@ function getMissingSamples(samplesDir) {
 /**
  * Make sample files.
  *
- * @param  {Array} fileNames List of sample file names
  * @param  {String} samplesDir Path to a directory with sample files
+ * @param  {String} fileName Sample file name
  */
-function createSampleFiles(fileNames, samplesDir) {
-    for (const fileName of fileNames) {
-        const outPath = join(samplesDir, fileName);
-
-        console.log(`Generate ${fileName}`);
-        closeSync(openSync(outPath, 'w'));
-    }
+function createSampleFile(samplesDir, fileName) {
+    const outPath = join(samplesDir, fileName);
+    closeSync(openSync(outPath, 'w'));
 }
 
 /**
