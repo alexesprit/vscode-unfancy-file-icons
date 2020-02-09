@@ -10,6 +10,7 @@ const packageFile = require('./package.json');
 const { iconThemes } = packageFile.contributes;
 
 const darkenPercent = 0.4;
+const themeIdPrefix = 'vscode-unfancy-file-icons';
 
 /**
  * Entry point.
@@ -27,7 +28,8 @@ function generateIconThemes() {
 }
 
 function generateTheme(theme) {
-    const iconTheme = getIconTheme(theme.id);
+    const themeId = getThemeId(theme);
+    const iconTheme = getIconTheme(themeId);
     const contents = JSON.stringify(iconTheme, null, 4);
 
     const outPath = theme.path;
@@ -194,6 +196,20 @@ function getConfigNames(app) {
         `${app}.config.js`,
         `.${app}ignore`
     ];
+}
+
+/**
+ * Return a theme ID.
+ *
+ * @param  {Object} theme `contributes.iconThemes` entry from `package.json`
+ * @return {String} Theme ID
+ */
+function getThemeId(theme) {
+    const themeId = theme.id;
+    if (themeId === themeIdPrefix) {
+        return 'octicons';
+    }
+    return themeId.split('-').pop();
 }
 
 main();

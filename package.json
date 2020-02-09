@@ -29,14 +29,14 @@
     "contributes": {
         "iconThemes": [
             {
-                "id": "codicons",
+                "id": "vscode-unfancy-file-icons-codicons",
                 "label": "Unfancy file icons (Codicons)",
-                "path": "./theme/unfancy-codicons-icon-theme.json"
+                "path": "./theme/unfancy-codicons.icon-theme.json"
             },
             {
-                "id": "octicons",
+                "id": "vscode-unfancy-file-icons",
                 "label": "Unfancy file icons (Octicons)",
-                "path": "./theme/unfancy-octicons-icon-theme.json"
+                "path": "./theme/unfancy-octicons.icon-theme.json"
             }
         ]
     },
