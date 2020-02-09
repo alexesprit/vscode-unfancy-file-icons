@@ -258,7 +258,8 @@
             "xsd",
             "handlebars",
             "hbs",
-            "hjs"
+            "hjs",
+            "njk"
         ],
         "executable": [
             "bash",
