@@ -323,7 +323,8 @@
             "eyml",
             "eyaml",
             "edn",
-            "psd1"
+            "psd1",
+            "webmanifest"
         ],
         "data_markup": [
             "xml",
