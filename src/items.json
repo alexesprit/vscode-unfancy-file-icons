@@ -57,7 +57,7 @@
             "iconColor": "@violet"
         },
         "sheet": {
-            "iconName": "list-ordered",
+            "iconName": "list-unordered",
             "iconColor": "@violet"
         },
         "database": {
