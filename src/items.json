@@ -410,7 +410,9 @@
             "ogg",
             "mp3",
             "mp4",
-            "wma"
+            "wma",
+            "m4a",
+            "flac"
         ],
         "binary": [
             "pyc",
