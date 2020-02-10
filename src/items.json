@@ -484,8 +484,11 @@
         ],
         "license": [
             "license",
+            "license.md",
             "license.txt",
-            "license.md"
+            "license-code",
+            "license-code.md",
+            "license-code.txt"
         ],
         "lock": [
             ".vpkg-lock.json",
