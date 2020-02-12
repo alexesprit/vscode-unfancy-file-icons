@@ -1,6 +1,6 @@
 const themeIdPrefix = 'vscode-unfancy-file-icons';
 
-const colors = require('./colors.json');
+const colors = require('./data/colors.json');
 
 /**
  * Exported functions.

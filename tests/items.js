@@ -2,8 +2,8 @@ import test from 'ava';
 
 import { getThemeId } from './../src/utils';
 
-import { iconDefinitions, fileExtensions, fileNames } from './../src/items.json';
-import * as colors from './../src/colors.json';
+import { iconDefinitions, fileExtensions, fileNames } from './../src/data/items.json';
+import * as colors from './../src/data/colors.json';
 
 runTests();
 

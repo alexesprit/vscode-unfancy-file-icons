@@ -61,7 +61,7 @@ function getExistingSamples(samplesDir) {
  * @return {Object} Result data
  */
 function getFlattenSampleFiles() {
-    const { fileNames, fileExtensions } = require('./items.json');
+    const { fileNames, fileExtensions } = require('./data/items.json');
     const sampleFiles = {};
 
     for (const type in fileNames) {

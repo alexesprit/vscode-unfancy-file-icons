@@ -134,8 +134,8 @@ function makeItemsForLightTheme(items) {
  * @return {Object} Source data
  */
 function getItems() {
-    const items = require('./items.json');
-    const configs = require('./configs.json');
+    const items = require('./data/items.json');
+    const configs = require('./data/configs.json');
 
     for (const app of configs) {
         const configNames = getConfigNames(app);
