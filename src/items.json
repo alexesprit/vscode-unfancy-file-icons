@@ -52,6 +52,10 @@
             "iconName": "settings",
             "iconColor": "@violet"
         },
+        "data-template": {
+            "iconName": "settings",
+            "iconColor": "@yellow"
+        },
         "data_markup": {
             "iconName": "code",
             "iconColor": "@violet"
@@ -325,6 +329,9 @@
             "edn",
             "psd1",
             "webmanifest"
+        ],
+        "data-template": [
+            "schema.json"
         ],
         "data_markup": [
             "xml",
