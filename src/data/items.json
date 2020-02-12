@@ -477,6 +477,9 @@
             ".markdownlintrc",
             "tsconfig.json"
         ],
+        "data": [
+            "v.mod"
+        ],
         "ctags": [
             "tags"
         ],
