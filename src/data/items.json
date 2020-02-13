@@ -222,7 +222,8 @@
             "hpp",
             "hxx",
             "h++",
-            "pyi"
+            "pyi",
+            "d.ts"
         ],
         "markup": [
             "html",
