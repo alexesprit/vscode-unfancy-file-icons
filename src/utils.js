@@ -1,6 +1,10 @@
 const themeIdPrefix = 'vscode-unfancy-file-icons';
 
 const colors = require('./data/colors.json');
+const configs = require('./data/configs.json');
+
+// eslint-disable-next-line no-template-curly-in-string
+const appPlaceholder = '${app}';
 
 /**
  * Exported functions.
@@ -29,19 +33,25 @@ function light(str) {
 }
 
 /**
- * Return an array of config names for a given app.
+ * Generate an array of config names from `configs.json`.
  *
- * @param {String} app App name
+ * @return {Array} List of config files
  */
-function getConfigNames(app) {
-    return [
-        `.${app}rc`,
-        `.${app}rc.js`,
-        `.${app}rc.yml`,
-        `.${app}rc.yaml`,
-        `.${app}rc.json`,
-        `${app}.config.js`
-    ];
+function getConfigNames() {
+    const configNames = [];
+
+    for (const entry of configs) {
+        const { apps, templates } = entry;
+
+        for (const appName of apps) {
+            for (const template of templates) {
+                const configName = template.replace(appPlaceholder, appName);
+                configNames.push(configName);
+            }
+        }
+    }
+
+    return configNames;
 }
 
 /**

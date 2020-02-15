@@ -474,10 +474,6 @@
             ".renovaterc",
             ".renovaterc.json",
             ".travis.yml",
-            ".markdownlint.json",
-            ".markdownlint.yaml",
-            ".markdownlint.yml",
-            ".markdownlintrc",
             "tsconfig.json"
         ],
         "ignore": [

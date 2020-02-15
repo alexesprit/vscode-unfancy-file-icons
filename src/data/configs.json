@@ -1,7 +1,30 @@
 [
-    "eslint",
-    "nyc",
-    "prettier",
-    "remark",
-    "stylelint"
+    {
+        "apps": [
+            "eslint",
+            "nyc",
+            "prettier",
+            "remark",
+            "stylelint"
+        ],
+        "templates": [
+            ".${app}rc",
+            ".${app}rc.js",
+            ".${app}rc.yml",
+            ".${app}rc.yaml",
+            ".${app}rc.json",
+            "${app}.config.js"
+        ]
+    },
+    {
+        "apps": [
+            "markdownlint"
+        ],
+        "templates": [
+            ".${app}rc",
+            ".${app}.yml",
+            ".${app}.yaml",
+            ".${app}.json"
+        ]
+    }
 ]

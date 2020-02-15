@@ -135,13 +135,10 @@ function makeItemsForLightTheme(items) {
  */
 function getItems() {
     const items = require('./data/items.json');
-    const configs = require('./data/configs.json');
+    const configs = getConfigNames();
 
     for (const app of configs) {
-        const configNames = getConfigNames(app);
-        for (const name of configNames) {
-            items.fileNames.config.push(name);
-        }
+        items.fileNames.config.push(app);
     }
 
     return items;
