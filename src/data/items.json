@@ -56,7 +56,7 @@
             "iconName": "settings",
             "iconColor": "@yellow"
         },
-        "data_markup": {
+        "data-markup": {
             "iconName": "code",
             "iconColor": "@violet"
         },
@@ -120,7 +120,7 @@
             "iconName": "file-media",
             "iconColor": "@blue"
         },
-        "image_src": {
+        "image-src": {
             "iconName": "pencil",
             "iconColor": "@blue"
         },
@@ -339,7 +339,7 @@
         "data-template": [
             "schema.json"
         ],
-        "data_markup": [
+        "data-markup": [
             "xml",
             "xsl",
             "xslt",
@@ -408,7 +408,7 @@
             "svg",
             "ico"
         ],
-        "image_src": [
+        "image-src": [
             "psd",
             "ai",
             "indd",
