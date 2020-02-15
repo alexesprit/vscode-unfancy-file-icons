@@ -380,7 +380,8 @@
             "tex",
             "txt",
             "dvi",
-            "rdoc"
+            "rdoc",
+            "rst"
         ],
         "todo": [
             "todo"
