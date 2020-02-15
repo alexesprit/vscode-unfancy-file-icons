@@ -492,7 +492,8 @@
         ],
         "data": [
             "v.mod",
-            "pipfile"
+            "pipfile",
+            "manifest.in"
         ],
         "ctags": [
             "tags"
