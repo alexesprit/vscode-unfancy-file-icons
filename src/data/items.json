@@ -491,7 +491,8 @@
             ".vscodeignore"
         ],
         "data": [
-            "v.mod"
+            "v.mod",
+            "pipfile"
         ],
         "ctags": [
             "tags"
