@@ -10,7 +10,7 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
 - Use a simple color code (with a few exceptions when it make more sense,
   like for Ruby files) which works as follow:
   - green for source files
-  - yellow for template and stylesheet files
+  - yellow for header, template, and stylesheet files
   - violet for data files (`json`, `yml`, `csv`, etc)
   - orange for executable files (`sh`, `bat`, `cmd`, etc)
   - cyan for documentation files (`md`, `tex`, `pdf`, etc)
