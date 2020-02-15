@@ -143,6 +143,10 @@
         "search": {
             "iconName": "search",
             "iconColor": "@green"
+        },
+        "ignore": {
+            "iconName": "circle-slash",
+            "iconColor": "@magenta"
         }
     },
     "file": "file",
@@ -450,10 +454,7 @@
             "rakefile"
         ],
         "config": [
-            ".vscodeignore",
-            ".dockerignore",
             ".editorconfig",
-            ".gitignore",
             ".gitattributes",
             ".gitkeep",
             ".keep",
@@ -477,6 +478,16 @@
             ".markdownlint.yml",
             ".markdownlintrc",
             "tsconfig.json"
+        ],
+        "ignore": [
+            ".dockerignore",
+            ".eslintignore",
+            ".gitignore",
+            ".nycignore",
+            ".prettierignore",
+            ".remarkignore",
+            ".stylelintignore",
+            ".vscodeignore"
         ],
         "data": [
             "v.mod"

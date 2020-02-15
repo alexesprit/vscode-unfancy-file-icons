@@ -40,8 +40,7 @@ function getConfigNames(app) {
         `.${app}rc.yml`,
         `.${app}rc.yaml`,
         `.${app}rc.json`,
-        `${app}.config.js`,
-        `.${app}ignore`
+        `${app}.config.js`
     ];
 }
 
