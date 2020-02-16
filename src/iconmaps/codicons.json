@@ -1,4 +1,5 @@
 {
     "pencil": "edit",
-    "terminal": "console"
+    "terminal": "console",
+    "clock": "history"
 }

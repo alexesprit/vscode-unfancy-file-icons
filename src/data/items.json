@@ -104,6 +104,10 @@
             "iconName": "law",
             "iconColor": "@cyan"
         },
+        "changelog": {
+            "iconName": "clock",
+            "iconColor": "@cyan"
+        },
         "markdown": {
             "iconName": "markdown",
             "iconColor": "@cyan"
@@ -496,10 +500,8 @@
             "tags"
         ],
         "doc": [
-            "changelog",
             "contributing",
-            "readme",
-            "history"
+            "readme"
         ],
         "todo": [
             "todo",
@@ -513,6 +515,14 @@
             "license-code",
             "license-code.md",
             "license-code.txt"
+        ],
+        "changelog": [
+            "changelog",
+            "changelog.md",
+            "changelog.txt",
+            "history",
+            "history.md",
+            "history.txt"
         ],
         "lock": [
             ".vpkg-lock.json",
