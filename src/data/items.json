@@ -319,7 +319,6 @@
             "gypi",
             "ini",
             "mk",
-            "mod",
             "tern-project",
             "toml",
             "pssc",
@@ -330,19 +329,20 @@
             "dockerfile"
         ],
         "data": [
-            "example",
-            "env",
             "cabal",
+            "cson",
+            "edn",
+            "env",
+            "example",
+            "eyaml",
+            "eyml",
             "json",
             "jsonc",
-            "cson",
-            "yml",
-            "yaml",
-            "eyml",
-            "eyaml",
-            "edn",
+            "mod",
             "psd1",
-            "webmanifest"
+            "webmanifest",
+            "yaml",
+            "yml"
         ],
         "data-template": [
             "schema.json"
@@ -531,7 +531,6 @@
             }
         ],
         "data": [
-            "v.mod",
             "pipfile",
             "manifest.in"
         ],
