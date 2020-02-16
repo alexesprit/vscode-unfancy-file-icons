@@ -105,7 +105,7 @@
             "iconColor": "@cyan"
         },
         "changelog": {
-            "iconName": "clock",
+            "iconName": "history",
             "iconColor": "@cyan"
         },
         "info": {
