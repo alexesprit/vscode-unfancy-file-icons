@@ -4,7 +4,7 @@ const { mkdirSync, writeFileSync } = require('fs');
 const Color = require('color');
 
 const {
-    getThemeId, getConfigNames,
+    getThemeId, getExpandedItems,
     getFontColor, getFontCharacter,
     prefix, light
 } = require('./utils');
@@ -41,7 +41,7 @@ function generateIconTheme(theme) {
  * @return {Object} Theme object
  */
 function getIconTheme(themeId) {
-    const items = getItems();
+    const items = getExpandedItems();
 
     const fonts = require(`./fonts/${themeId}.json`);
     const iconMap = require(`./iconmaps/${themeId}.json`);
@@ -126,20 +126,4 @@ function makeItemsForLightTheme(items) {
     }
 
     return newProps;
-}
-
-/**
- * Get source data for building themes.
- *
- * @return {Object} Source data
- */
-function getItems() {
-    const items = require('./data/items.json');
-    const configs = getConfigNames();
-
-    for (const app of configs) {
-        items.fileNames.config.push(app);
-    }
-
-    return items;
 }

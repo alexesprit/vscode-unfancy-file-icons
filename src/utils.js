@@ -1,17 +1,16 @@
 const themeIdPrefix = 'vscode-unfancy-file-icons';
 
 const colors = require('./data/colors.json');
-const configs = require('./data/configs.json');
 
 // eslint-disable-next-line no-template-curly-in-string
-const appPlaceholder = '${app}';
+const namePlaceholder = '${name}';
 
 /**
  * Exported functions.
  */
 module.exports = {
     prefix, light,
-    getConfigNames, getThemeId, getFontColor, getFontCharacter
+    getExpandedItems, getThemeId, getFontColor, getFontCharacter
 };
 
 /**
@@ -33,25 +32,72 @@ function light(str) {
 }
 
 /**
+ * Get source data for building themes.
+ *
+ * @return {Object} Source data
+ */
+function getExpandedItems() {
+    const items = require('./data/items.json');
+
+    for (const type in items.fileNames) {
+        const expandedFileNames = [];
+
+        for (const val of items.fileNames[type]) {
+            switch (typeof val) {
+                case 'string': {
+                    expandedFileNames.push(val);
+                    break;
+                }
+
+                case 'object': {
+                    const fileNames = getFileNamesFromTemplate(val);
+                    for (const name of fileNames) {
+                        expandedFileNames.push(name);
+                    }
+                    break;
+                }
+
+                default: {
+                    throw new Error(`Invalid property: ${val}`);
+                }
+            }
+        }
+
+        // console.log(expandedFileNames);
+
+        items.fileNames[type] = expandedFileNames;
+    }
+
+    return items;
+}
+
+/**
  * Generate an array of config names from `configs.json`.
+ *
+ * @param  {Object} templateObj Object contains template data
  *
  * @return {Array} List of config files
  */
-function getConfigNames() {
-    const configNames = [];
+function getFileNamesFromTemplate(templateObj) {
+    const replacedNames = [];
+    const { names, templates } = templateObj;
 
-    for (const entry of configs) {
-        const { apps, templates } = entry;
+    if (!names || names.len === 0) {
+        throw new Error('Invalid template object: no names are found');
+    }
 
-        for (const appName of apps) {
-            for (const template of templates) {
-                const configName = template.replace(appPlaceholder, appName);
-                configNames.push(configName);
-            }
+    if (!templates || templates.len === 0) {
+        throw new Error('Invalid template object: no templates are found');
+    }
+
+    for (const name of names) {
+        for (const template of templates) {
+            const replacedName = template.replace(namePlaceholder, name);
+            replacedNames.push(replacedName);
         }
     }
 
-    return configNames;
+    return replacedNames;
 }
 
 /**

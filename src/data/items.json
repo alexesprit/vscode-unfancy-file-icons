@@ -478,18 +478,53 @@
             ".renovaterc",
             ".renovaterc.json",
             ".travis.yml",
-            "tsconfig.json"
+            "tsconfig.json",
+            {
+                "names": [
+                    "eslint",
+                    "nyc",
+                    "prettier",
+                    "remark",
+                    "stylelint"
+                ],
+                "templates": [
+                    ".${name}rc",
+                    ".${name}rc.js",
+                    ".${name}rc.yml",
+                    ".${name}rc.yaml",
+                    ".${name}rc.json",
+                    "${name}.config.js"
+                ]
+            },
+            {
+                "names": [
+                    "markdownlint"
+                ],
+                "templates": [
+                    ".${name}rc",
+                    ".${name}.yml",
+                    ".${name}.yaml",
+                    ".${name}.json"
+                ]
+            }
         ],
         "ignore": [
-            ".dockerignore",
-            ".eslintignore",
-            ".gitignore",
-            ".npmignore",
-            ".nycignore",
-            ".prettierignore",
-            ".remarkignore",
-            ".stylelintignore",
-            ".vscodeignore"
+            {
+                "names": [
+                    "docker",
+                    "eslint",
+                    "git",
+                    "npm",
+                    "nyc",
+                    "prettier",
+                    "remark",
+                    "stylelint",
+                    "vscode"
+                ],
+                "templates": [
+                    ".${name}ignore"
+                ]
+            }
         ],
         "data": [
             "v.mod",
@@ -509,20 +544,30 @@
             "todo.txt"
         ],
         "license": [
-            "license",
-            "license.md",
-            "license.txt",
-            "license-code",
-            "license-code.md",
-            "license-code.txt"
+            {
+                "names": [
+                    "license",
+                    "license-code"
+                ],
+                "templates": [
+                    "${name}",
+                    "${name}.md",
+                    "${name}.txt"
+                ]
+            }
         ],
         "changelog": [
-            "changelog",
-            "changelog.md",
-            "changelog.txt",
-            "history",
-            "history.md",
-            "history.txt"
+            {
+                "names": [
+                    "changelog",
+                    "history"
+                ],
+                "templates": [
+                    "${name}",
+                    "${name}.md",
+                    "${name}.txt"
+                ]
+            }
         ],
         "lock": [
             ".vpkg-lock.json",

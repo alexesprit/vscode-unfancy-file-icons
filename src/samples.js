@@ -1,6 +1,8 @@
 const { readdirSync, openSync, closeSync } = require('fs');
 const { join } = require('path');
 
+const { getExpandedItems } = require('./utils');
+
 /**
  * Exported functions.
  */
@@ -61,7 +63,7 @@ function getExistingSamples(samplesDir) {
  * @return {Object} Result data
  */
 function getFlattenSampleFiles() {
-    const { fileNames, fileExtensions } = require('./data/items.json');
+    const { fileNames, fileExtensions } = getExpandedItems();
     const sampleFiles = {};
 
     for (const type in fileNames) {
