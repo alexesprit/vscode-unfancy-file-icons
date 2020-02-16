@@ -108,6 +108,10 @@
             "iconName": "clock",
             "iconColor": "@cyan"
         },
+        "info": {
+            "iconName": "info",
+            "iconColor": "@cyan"
+        },
         "markdown": {
             "iconName": "markdown",
             "iconColor": "@cyan"
@@ -535,8 +539,7 @@
             "tags"
         ],
         "doc": [
-            "contributing",
-            "readme"
+            "contributing"
         ],
         "todo": [
             "todo",
@@ -561,6 +564,18 @@
                 "names": [
                     "changelog",
                     "history"
+                ],
+                "templates": [
+                    "${name}",
+                    "${name}.md",
+                    "${name}.txt"
+                ]
+            }
+        ],
+        "info": [
+            {
+                "names": [
+                    "readme"
                 ],
                 "templates": [
                     "${name}",
