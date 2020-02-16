@@ -539,7 +539,10 @@
             "tags"
         ],
         "doc": [
-            "contributing"
+            "contributing",
+            "code_of_conduct",
+            "issue_template",
+            "pull_request_template"
         ],
         "todo": [
             "todo",
