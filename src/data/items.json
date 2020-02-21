@@ -238,22 +238,23 @@
             "d.ts"
         ],
         "markup": [
-            "html",
-            "htm",
-            "shtml",
-            "xhtml",
-            "jsp",
             "asp",
             "aspx",
+            "cshtml",
+            "htm",
+            "html",
             "jshtm",
-            "rhtml",
+            "jsp",
             "php",
             "php4",
             "php5",
             "phtml",
-            "cshtml",
+            "pod",
+            "rhtml",
+            "shtml",
+            "svelte",
             "vue",
-            "pod"
+            "xhtml"
         ],
         "ruby": [
             "rb",
