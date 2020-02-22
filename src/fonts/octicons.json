@@ -1,14 +1,14 @@
 [
     {
         "id": "octicons",
+        "size": "120%",
         "src": [
             {
-                "path": "./../resources/octicons.woff",
-                "format": "woff"
+                "format": "woff",
+                "path": "./../resources/octicons.woff"
             }
         ],
-        "weight": "normal",
         "style": "normal",
-        "size": "120%"
+        "weight": "normal"
     }
 ]

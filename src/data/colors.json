@@ -1,11 +1,11 @@
 {
-    "@yellow": "#ebCb8b",
-    "@orange": "#fc9776",
-    "@red": "#ab7967",
-    "@magenta": "#e0404f",
-    "@violet": "#c280b6",
     "@blue": "#73a1cf",
     "@cyan": "#7bd0cd",
+    "@gray": "#a3a8ae",
     "@green": "#a1d971",
-    "@gray": "#a3a8ae"
+    "@magenta": "#e0404f",
+    "@orange": "#fc9776",
+    "@red": "#ab7967",
+    "@violet": "#c280b6",
+    "@yellow": "#ebCb8b"
 }

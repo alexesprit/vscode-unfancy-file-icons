@@ -1,14 +1,14 @@
 [
     {
         "id": "codicons",
+        "size": "120%",
         "src": [
             {
-                "path": "./../resources/codicons.woff",
-                "format": "woff"
+                "format": "woff",
+                "path": "./../resources/codicons.woff"
             }
         ],
-        "weight": "normal",
         "style": "normal",
-        "size": "120%"
+        "weight": "normal"
     }
 ]
