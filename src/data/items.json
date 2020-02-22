@@ -2,9 +2,13 @@
     "file": "file",
     "fileExtensions": {
         "archive": [
+            "7z",
+            "bz2",
             "gz",
             "rar",
-            "zip"
+            "tar",
+            "zip",
+            "xz"
         ],
         "binary": [
             "dll",
