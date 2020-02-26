@@ -316,6 +316,7 @@
             ".editorconfig",
             ".gitattributes",
             ".gitkeep",
+            ".gitmodules",
             ".htaccess",
             ".keep",
             ".npmrc",
