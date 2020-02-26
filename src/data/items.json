@@ -430,6 +430,9 @@
             "podfile",
             "rakefile"
         ],
+        "script": [
+            "gradlew"
+        ],
         "src": [
             "cakefile"
         ],
