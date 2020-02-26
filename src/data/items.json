@@ -85,7 +85,7 @@
             "tex",
             "txt"
         ],
-        "executable": [
+        "script": [
             "bash",
             "bat",
             "cmd",
@@ -493,7 +493,7 @@
             "iconColor": "@cyan",
             "iconName": "file"
         },
-        "executable": {
+        "script": {
             "iconColor": "@orange",
             "iconName": "terminal"
         },
