@@ -375,6 +375,9 @@
             "issue_template",
             "pull_request_template"
         ],
+        "funding": [
+            "funding.yml"
+        ],
         "ignore": [
             {
                 "names": [
@@ -511,6 +514,10 @@
         "font": {
             "iconColor": "@blue",
             "iconName": "text-size"
+        },
+        "funding": {
+            "iconColor": "@violet",
+            "iconName": "credit-card"
         },
         "headers": {
             "iconColor": "@yellow",
