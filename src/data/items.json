@@ -332,6 +332,7 @@
             "procfile",
             "renovate.json",
             "renovate.json5",
+            "stale.yml",
             "tsconfig.json",
             {
                 "names": [
