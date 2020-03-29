@@ -32,6 +32,9 @@
             "tern-project",
             "toml"
         ],
+        "config-src": [
+            "config.js"
+        ],
         "ctags": [
             "ctags",
             "gemtags",
@@ -343,11 +346,9 @@
                 ],
                 "templates": [
                     ".${name}rc",
-                    ".${name}rc.js",
-                    ".${name}rc.yml",
-                    ".${name}rc.yaml",
                     ".${name}rc.json",
-                    "${name}.config.js"
+                    ".${name}rc.yaml",
+                    ".${name}rc.yml"
                 ]
             },
             {
@@ -359,6 +360,21 @@
                     ".${name}.yml",
                     ".${name}.yaml",
                     ".${name}.json"
+                ]
+            }
+        ],
+        "config-src": [
+            "gruntfile.js",
+            {
+                "names": [
+                    "eslint",
+                    "nyc",
+                    "prettier",
+                    "remark",
+                    "stylelint"
+                ],
+                "templates": [
+                    ".${name}rc.js"
                 ]
             }
         ],
@@ -461,6 +477,10 @@
         },
         "config": {
             "iconColor": "@magenta",
+            "iconName": "gear"
+        },
+        "config-src": {
+            "iconColor": "@green",
             "iconName": "gear"
         },
         "ctags": {
