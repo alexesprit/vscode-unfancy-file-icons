@@ -7,6 +7,13 @@
             "gz",
             "rar",
             "tar",
+            "taz",
+            "tbz",
+            "tbz2",
+            "tgz",
+            "tlz",
+            "txz",
+            "tzo",
             "zip",
             "xz"
         ],
