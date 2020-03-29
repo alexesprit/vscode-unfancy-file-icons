@@ -16,7 +16,7 @@
             "pyc",
             "so"
         ],
-        "config": [
+         "config": [
             "cake",
             "cfg",
             "conf",
@@ -314,6 +314,9 @@
                 ]
             }
         ],
+        "codeowners": [
+            "codeowners"
+        ],
         "config": [
             ".editorconfig",
             ".gitattributes",
@@ -474,6 +477,10 @@
         "changelog": {
             "iconColor": "@cyan",
             "iconName": "history"
+        },
+        "codeowners": {
+            "iconColor": "@cyan",
+            "iconName": "organization"
         },
         "config": {
             "iconColor": "@magenta",
