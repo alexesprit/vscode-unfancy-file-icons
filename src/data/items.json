@@ -69,7 +69,7 @@
             "sqlite",
             "sqlite3"
         ],
-        "database_src": [
+        "database-src": [
             "dsql",
             "sql"
         ],
@@ -503,7 +503,7 @@
             "iconColor": "@violet",
             "iconName": "database"
         },
-        "database_src": {
+        "database-src": {
             "iconColor": "@green",
             "iconName": "database"
         },
