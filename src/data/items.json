@@ -375,6 +375,7 @@
         ],
         "config-src": [
             "gruntfile.js",
+            "gulpfile.js",
             {
                 "names": [
                     "eslint",
