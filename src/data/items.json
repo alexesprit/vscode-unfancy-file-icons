@@ -466,6 +466,10 @@
         "src": [
             "cakefile"
         ],
+        "security": [
+            "security",
+            "security.md"
+        ],
         "todo": [
             "todo",
             "todo.md",
@@ -629,6 +633,10 @@
         "src": {
             "iconColor": "@green",
             "iconName": "file-code"
+        },
+        "security": {
+            "iconColor": "@blue",
+            "iconName": "shield"
         },
         "stylesheet": {
             "iconColor": "@yellow",
