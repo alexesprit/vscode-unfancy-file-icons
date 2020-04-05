@@ -402,9 +402,6 @@
             "issue_template",
             "pull_request_template"
         ],
-        "funding": [
-            "funding.yml"
-        ],
         "ignore": [
             {
                 "names": [
@@ -469,6 +466,9 @@
         "security": [
             "security",
             "security.md"
+        ],
+        "support": [
+            "funding.yml"
         ],
         "todo": [
             "todo",
@@ -554,10 +554,6 @@
             "iconColor": "@blue",
             "iconName": "text-size"
         },
-        "funding": {
-            "iconColor": "@violet",
-            "iconName": "credit-card"
-        },
         "headers": {
             "iconColor": "@yellow",
             "iconName": "file-code"
@@ -641,6 +637,10 @@
         "stylesheet": {
             "iconColor": "@yellow",
             "iconName": "paintcan"
+        },
+        "support": {
+            "iconColor": "@magenta",
+            "iconName": "heart"
         },
         "template": {
             "iconColor": "@yellow",
