@@ -633,7 +633,7 @@
             "iconName": "file-code"
         },
         "security": {
-            "iconColor": "@blue",
+            "iconColor": "@cyan",
             "iconName": "shield"
         },
         "stylesheet": {
