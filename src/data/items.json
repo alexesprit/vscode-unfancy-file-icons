@@ -468,7 +468,9 @@
             "security.md"
         ],
         "support": [
-            "funding.yml"
+            "funding.yml",
+            "support",
+            "support.md"
         ],
         "todo": [
             "todo",
