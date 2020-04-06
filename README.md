@@ -35,16 +35,16 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
 <details>
   <summary>Click to view screenshots</summary>
 
-  ![Screenshot][octicons-dark]
+  ![Screenshot][octicons-dark]\
   *Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Octicons)*
 
-  ![Screenshot][octicons-light]
+  ![Screenshot][octicons-light]\
   *Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Octicons)*
 
-  ![Screenshot][codicons-dark]
+  ![Screenshot][codicons-dark]\
   *Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Codicons)*
 
-  ![Screenshot][codicons-light]
+  ![Screenshot][codicons-light]\
   *Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Codicons)*
 </details>
 
