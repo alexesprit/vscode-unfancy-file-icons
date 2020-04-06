@@ -40,6 +40,7 @@
             "toml"
         ],
         "config-src": [
+            "conf.js",
             "config.js"
         ],
         "ctags": [
