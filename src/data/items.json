@@ -323,6 +323,7 @@
             }
         ],
         "codeowners": [
+            "authors",
             "codeowners"
         ],
         "config": [
