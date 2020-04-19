@@ -61,9 +61,9 @@ Other files in this repository are licensed under the [MIT License](./LICENSE.md
 [octicons-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-octicons-light.png
 [codicons-dark]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-codicons-dark.png
 [codicons-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-codicons-light.png
-[badge]: https://img.shields.io/visual-studio-marketplace/v/alexesprit.vscode-unfancy-file-icons
+[badge]: https://img.shields.io/visual-studio-marketplace/v/alexesprit.vscode-unfancy-file-icons?logo=visual-studio-code&logoColor=white
 [marketplace]: https://marketplace.visualstudio.com/items?itemName=alexesprit.vscode-unfancy-file-icons
 [ga]: https://github.com/alexesprit/vscode-unfancy-file-icons/actions/
-[gaBadge]: https://img.shields.io/github/workflow/status/alexesprit/vscode-unfancy-file-icons/Test?label=test
+[gaBadge]: https://img.shields.io/github/workflow/status/alexesprit/vscode-unfancy-file-icons/Test?label=test&logo=github&logoColor=white
 [codicons-license]: https://github.com/microsoft/vscode-codicons/blob/master/LICENSE
 [octicons-license]: https://github.com/primer/octicons/blob/master/LICENSE
