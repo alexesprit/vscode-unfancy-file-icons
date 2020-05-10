@@ -352,6 +352,18 @@
             "tsconfig.json",
             {
                 "names": [
+                    "babel"
+                ],
+                "templates": [
+                    ".${name}rc",
+                    ".${name}rc.cjs",
+                    ".${name}rc.js",
+                    ".${name}rc.json",
+                    ".${name}rc.mjs"
+                ]
+            },
+            {
+                "names": [
                     "eslint",
                     "nyc",
                     "prettier",
