@@ -333,6 +333,7 @@
             ".gitkeep",
             ".gitmodules",
             ".htaccess",
+            ".htmlvalidate.json",
             ".keep",
             ".npmrc",
             ".nvmrc",
