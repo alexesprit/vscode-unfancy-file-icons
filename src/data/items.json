@@ -41,7 +41,10 @@
         ],
         "config-src": [
             "conf.js",
-            "config.js"
+            "config.cjs",
+            "config.js",
+            "config.json",
+            "config.mjs"
         ],
         "ctags": [
             "ctags",
