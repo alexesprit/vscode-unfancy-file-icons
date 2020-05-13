@@ -595,8 +595,8 @@
             "iconName": "file-media"
         },
         "image-src": {
-            "iconColor": "@blue",
-            "iconName": "pencil"
+            "iconColor": "@green",
+            "iconName": "file-media"
         },
         "info": {
             "iconColor": "@cyan",
