@@ -39,10 +39,22 @@ function light(str) {
 function getExpandedItems() {
     const items = require('./data/items.json');
 
-    for (const type in items.fileNames) {
+    expandItems(items.fileNames);
+    expandItems(items.fileExtensions);
+
+    return items;
+}
+
+/**
+ * Expand items inside of a given object.
+ *
+ * @param {Object} data Items to expand
+ */
+function expandItems(data) {
+    for (const type in data) {
         const expandedFileNames = [];
 
-        for (const val of items.fileNames[type]) {
+        for (const val of data[type]) {
             switch (typeof val) {
                 case 'string': {
                     expandedFileNames.push(val);
@@ -63,12 +75,8 @@ function getExpandedItems() {
             }
         }
 
-        // console.log(expandedFileNames);
-
-        items.fileNames[type] = expandedFileNames;
+        data[type] = expandedFileNames;
     }
-
-    return items;
 }
 
 /**
