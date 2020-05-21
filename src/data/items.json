@@ -307,6 +307,20 @@
             "twig",
             "xsd"
         ],
+        "test": [
+            {
+                "names": [
+                    "spec",
+                    "test"
+                ],
+                "templates": [
+                    "${name}.js",
+                    "${name}.jsx",
+                    "${name}.ts",
+                    "${name}.tsx"
+                ]
+            }
+        ],
         "todo": [
             "todo"
         ]
@@ -674,6 +688,10 @@
         "template": {
             "iconColor": "@yellow",
             "iconName": "code"
+        },
+        "test": {
+            "iconColor": "@green",
+            "iconName": "beaker"
         },
         "todo": {
             "iconColor": "@cyan",
