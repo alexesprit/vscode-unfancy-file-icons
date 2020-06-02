@@ -357,7 +357,7 @@
             ".renovaterc",
             ".renovaterc.json",
             ".travis.yml",
-            "CMakeLists.txt",
+            "cmakelists.txt",
             "cname",
             "dockerfile",
             "jakefile",
