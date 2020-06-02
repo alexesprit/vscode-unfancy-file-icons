@@ -358,6 +358,7 @@
             ".renovaterc.json",
             ".travis.yml",
             "CMakeLists.txt",
+            "cname",
             "dockerfile",
             "jakefile",
             "jenkinsfile",
