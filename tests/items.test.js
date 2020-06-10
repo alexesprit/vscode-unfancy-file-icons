@@ -1,13 +1,13 @@
-import test from 'ava';
+const test = require('ava');
 
-import { getThemeId } from './../src/utils';
+const { getThemeId } = require('./../src/utils');
 
-import {
+const {
 	iconDefinitions,
 	fileExtensions,
 	fileNames,
-} from './../src/data/items.json';
-import * as colors from './../src/data/colors.json';
+} = require('./../src/data/items.json');
+const colors = require('./../src/data/colors.json');
 
 runTests();
 

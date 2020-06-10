@@ -1,4 +1,4 @@
-import test from 'ava';
+const test = require('ava');
 
 const packageFile = require('./../package.json');
 const { iconThemes } = packageFile.contributes;
