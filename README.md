@@ -1,4 +1,4 @@
-# Unfancy file icons [![Published version on Marketplace][badge]][marketplace] [![Test status][gaBadge]][ga]
+# Unfancy file icons [![Published version on Marketplace][badge]][marketplace] [![Test status][gabadge]][ga]
 
 > Octicons and Codicons as file icon themes
 
@@ -6,19 +6,19 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
 
 ## Rules
 
-- Use icons from [Octicons][octicons] and [Codicons][codicons] only
-- Use a simple color code (with a few exceptions when it make more sense,
-  like for Ruby files) which works as follow:
-  - green for source files
-  - yellow for header, template, and stylesheet files
-  - violet for data files (`json`, `yml`, `csv`, etc)
-  - orange for scripts (`sh`, `bat`, `cmd`, etc)
-  - cyan for documentation files (`md`, `tex`, `pdf`, etc)
-  - blue for media files (images, videos, art software files, etc)
-  - magenta for configuration files (`.gitignore`, `.ruby-version`, etc)
-  - gray for other files and directories
-- Use generic icons rather than trying to find one for each file extension
-  (except when an icon fits the file type, like with Ruby files)
+-   Use icons from [Octicons][octicons] and [Codicons][codicons] only
+-   Use a simple color code (with a few exceptions when it make more sense,
+    like for Ruby files) which works as follow:
+    -   green for source files
+    -   yellow for header, template, and stylesheet files
+    -   violet for data files (`json`, `yml`, `csv`, etc)
+    -   orange for scripts (`sh`, `bat`, `cmd`, etc)
+    -   cyan for documentation files (`md`, `tex`, `pdf`, etc)
+    -   blue for media files (images, videos, art software files, etc)
+    -   magenta for configuration files (`.gitignore`, `.ruby-version`, etc)
+    -   gray for other files and directories
+-   Use generic icons rather than trying to find one for each file extension
+    (except when an icon fits the file type, like with Ruby files)
 
 ## Build theme
 
@@ -35,17 +35,18 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
 <details>
   <summary>Click to view screenshots</summary>
 
-  ![Screenshot][octicons-dark]\
-  *Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Octicons)*
+![Screenshot][octicons-dark]\
+ _Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Octicons)_
 
-  ![Screenshot][octicons-light]\
-  *Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Octicons)*
+![Screenshot][octicons-light]\
+ _Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Octicons)_
 
-  ![Screenshot][codicons-dark]\
-  *Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Codicons)*
+![Screenshot][codicons-dark]\
+ _Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Codicons)_
 
-  ![Screenshot][codicons-light]\
-  *Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Codicons)*
+![Screenshot][codicons-light]\
+ _Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Codicons)_
+
 </details>
 
 ## License
@@ -64,6 +65,6 @@ Other files in this repository are licensed under the [MIT License](./LICENSE.md
 [badge]: https://img.shields.io/visual-studio-marketplace/v/alexesprit.vscode-unfancy-file-icons?logo=visual-studio-code&logoColor=white
 [marketplace]: https://marketplace.visualstudio.com/items?itemName=alexesprit.vscode-unfancy-file-icons
 [ga]: https://github.com/alexesprit/vscode-unfancy-file-icons/actions/
-[gaBadge]: https://img.shields.io/github/workflow/status/alexesprit/vscode-unfancy-file-icons/Test?label=test&logo=github&logoColor=white
+[gabadge]: https://img.shields.io/github/workflow/status/alexesprit/vscode-unfancy-file-icons/Test?label=test&logo=github&logoColor=white
 [codicons-license]: https://github.com/microsoft/vscode-codicons/blob/master/LICENSE
 [octicons-license]: https://github.com/primer/octicons/blob/master/LICENSE

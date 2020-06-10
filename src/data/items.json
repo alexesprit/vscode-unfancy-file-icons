@@ -1,702 +1,516 @@
 {
-    "file": "file",
-    "fileExtensions": {
-        "archive": [
-            "7z",
-            "bz2",
-            "gz",
-            "rar",
-            "tar",
-            "taz",
-            "tbz",
-            "tbz2",
-            "tgz",
-            "tlz",
-            "txz",
-            "tzo",
-            "zip",
-            "xz"
-        ],
-        "binary": [
-            "dll",
-            "exe",
-            "pyc",
-            "so"
-        ],
-         "config": [
-            "cake",
-            "cfg",
-            "conf",
-            "directory",
-            "dockerfile",
-            "gradle",
-            "gyp",
-            "gypi",
-            "ini",
-            "mk",
-            "properties",
-            "pssc",
-            "tern-project",
-            "toml"
-        ],
-        "config-src": [
-            "conf.js",
-            "config.cjs",
-            "config.js",
-            "config.json",
-            "config.mjs"
-        ],
-        "ctags": [
-            "ctags",
-            "gemtags",
-            "tags"
-        ],
-        "data": [
-            "cabal",
-            "cson",
-            "edn",
-            "env",
-            "eyaml",
-            "eyml",
-            "json",
-            "jsonc",
-            "mod",
-            "psd1",
-            "webmanifest",
-            "yaml",
-            "yml"
-        ],
-        "data-markup": [
-            "xaml",
-            "xml",
-            "xsl",
-            "xslt"
-        ],
-        "data-template": [
-            "schema.json"
-        ],
-        "database": [
-            "dump",
-            "sqlite",
-            "sqlite3"
-        ],
-        "database-src": [
-            "dsql",
-            "sql"
-        ],
-        "debug": [
-            "pdb"
-        ],
-        "diff": [
-            "diff",
-            "patch"
-        ],
-        "doc": [
-            "dvi",
-            "rdoc",
-            "rst",
-            "tex",
-            "txt"
-        ],
-        "script": [
-            "bash",
-            "bat",
-            "cmd",
-            "ksh",
-            "ps1",
-            "psm1",
-            "psrc",
-            "sh",
-            "vbs",
-            "vsh",
-            "zsh"
-        ],
-        "font": [
-            "eot",
-            "otf",
-            "ttf",
-            "woff",
-            "woff2"
-        ],
-        "headers": [
-            "d.ts",
-            "h",
-            "h++",
-            "hpp",
-            "hxx",
-            "pyi"
-        ],
-        "image": [
-            "gif",
-            "ico",
-            "jpg",
-            "png",
-            "svg"
-        ],
-        "image-src": [
-            "afdesign",
-            "ai",
-            "indd",
-            "psd",
-            "sketch"
-        ],
-        "linker": [
-            "ilk"
-        ],
-        "lock": [
-            "lock"
-        ],
-        "log": [
-            "log"
-        ],
-        "map": [
-            "map"
-        ],
-        "markdown": [
-            "markdown",
-            "md"
-        ],
-        "markup": [
-            "asp",
-            "aspx",
-            "cshtml",
-            "htm",
-            "html",
-            "jshtm",
-            "jsp",
-            "php",
-            "php4",
-            "php5",
-            "phtml",
-            "pod",
-            "rhtml",
-            "shtml",
-            "svelte",
-            "vue",
-            "xhtml"
-        ],
-        "media": [
-            "avi",
-            "flac",
-            "flv",
-            "m4a",
-            "mov",
-            "mp3",
-            "mp4",
-            "mpg",
-            "ogg",
-            "swf",
-            "wma"
-        ],
-        "notebook": [
-            "ipynb"
-        ],
-        "pdf": [
-            "pdf"
-        ],
-        "ruby": [
-            "gemspec",
-            "podspec",
-            "rake",
-            "rb",
-            "rbi",
-            "rbx",
-            "ru"
-        ],
-        "search": [
-            "code-search"
-        ],
-        "sheet": [
-            "csv",
-            "tsv"
-        ],
-        "src": [
-            "c",
-            "c++",
-            "cc",
-            "cjs",
-            "clj",
-            "cljc",
-            "cljs",
-            "cljx",
-            "coffee",
-            "cpp",
-            "cpy",
-            "cr",
-            "cs",
-            "csx",
-            "cxx",
-            "es",
-            "es6",
-            "ex",
-            "exs",
-            "fs",
-            "fsi",
-            "fsscript",
-            "fsx",
-            "go",
-            "groovy",
-            "gs",
-            "gvy",
-            "hlsl",
-            "hs",
-            "htc",
-            "hx",
-            "hxsl",
-            "iced",
-            "ipy",
-            "java",
-            "js",
-            "jscad",
-            "jsm",
-            "json5",
-            "jsx",
-            "litcoffee",
-            "lua",
-            "m",
-            "mjs",
-            "mm",
-            "nqp",
-            "p6",
-            "pac",
-            "pjs",
-            "pl",
-            "pl6",
-            "pm",
-            "pm6",
-            "psgi",
-            "py",
-            "pyw",
-            "r",
-            "rpy",
-            "rs",
-            "shader",
-            "swift",
-            "ts",
-            "tsx",
-            "v",
-            "vb",
-            "xsjs",
-            "xsjslib"
-        ],
-        "stylesheet": [
-            "css",
-            "less",
-            "sass",
-            "scss",
-            "styl"
-        ],
-        "template": [
-            "ctp",
-            "eco",
-            "ecr",
-            "ejs",
-            "erb",
-            "haml",
-            "hamlc",
-            "handlebars",
-            "hbs",
-            "hjs",
-            "j2",
-            "jade",
-            "jinja2",
-            "mustache",
-            "njk",
-            "pug",
-            "slim",
-            "twig",
-            "xsd"
-        ],
-        "test": [
-            {
-                "names": [
-                    "spec",
-                    "test"
-                ],
-                "templates": [
-                    "${name}.js",
-                    "${name}.jsx",
-                    "${name}.ts",
-                    "${name}.tsx"
-                ]
-            }
-        ],
-        "todo": [
-            "todo"
+  "file": "file",
+  "fileExtensions": {
+    "archive": [
+      "7z",
+      "bz2",
+      "gz",
+      "rar",
+      "tar",
+      "taz",
+      "tbz",
+      "tbz2",
+      "tgz",
+      "tlz",
+      "txz",
+      "tzo",
+      "zip",
+      "xz"
+    ],
+    "binary": ["dll", "exe", "pyc", "so"],
+    "config": [
+      "cake",
+      "cfg",
+      "conf",
+      "directory",
+      "dockerfile",
+      "gradle",
+      "gyp",
+      "gypi",
+      "ini",
+      "mk",
+      "properties",
+      "pssc",
+      "tern-project",
+      "toml"
+    ],
+    "config-src": [
+      "conf.js",
+      "config.cjs",
+      "config.js",
+      "config.json",
+      "config.mjs"
+    ],
+    "ctags": ["ctags", "gemtags", "tags"],
+    "data": [
+      "cabal",
+      "cson",
+      "edn",
+      "env",
+      "eyaml",
+      "eyml",
+      "json",
+      "jsonc",
+      "mod",
+      "psd1",
+      "webmanifest",
+      "yaml",
+      "yml"
+    ],
+    "data-markup": ["xaml", "xml", "xsl", "xslt"],
+    "data-template": ["schema.json"],
+    "database": ["dump", "sqlite", "sqlite3"],
+    "database-src": ["dsql", "sql"],
+    "debug": ["pdb"],
+    "diff": ["diff", "patch"],
+    "doc": ["dvi", "rdoc", "rst", "tex", "txt"],
+    "script": [
+      "bash",
+      "bat",
+      "cmd",
+      "ksh",
+      "ps1",
+      "psm1",
+      "psrc",
+      "sh",
+      "vbs",
+      "vsh",
+      "zsh"
+    ],
+    "font": ["eot", "otf", "ttf", "woff", "woff2"],
+    "headers": ["d.ts", "h", "h++", "hpp", "hxx", "pyi"],
+    "image": ["gif", "ico", "jpg", "png", "svg"],
+    "image-src": ["afdesign", "ai", "indd", "psd", "sketch"],
+    "linker": ["ilk"],
+    "lock": ["lock"],
+    "log": ["log"],
+    "map": ["map"],
+    "markdown": ["markdown", "md"],
+    "markup": [
+      "asp",
+      "aspx",
+      "cshtml",
+      "htm",
+      "html",
+      "jshtm",
+      "jsp",
+      "php",
+      "php4",
+      "php5",
+      "phtml",
+      "pod",
+      "rhtml",
+      "shtml",
+      "svelte",
+      "vue",
+      "xhtml"
+    ],
+    "media": [
+      "avi",
+      "flac",
+      "flv",
+      "m4a",
+      "mov",
+      "mp3",
+      "mp4",
+      "mpg",
+      "ogg",
+      "swf",
+      "wma"
+    ],
+    "notebook": ["ipynb"],
+    "pdf": ["pdf"],
+    "ruby": ["gemspec", "podspec", "rake", "rb", "rbi", "rbx", "ru"],
+    "search": ["code-search"],
+    "sheet": ["csv", "tsv"],
+    "src": [
+      "c",
+      "c++",
+      "cc",
+      "cjs",
+      "clj",
+      "cljc",
+      "cljs",
+      "cljx",
+      "coffee",
+      "cpp",
+      "cpy",
+      "cr",
+      "cs",
+      "csx",
+      "cxx",
+      "es",
+      "es6",
+      "ex",
+      "exs",
+      "fs",
+      "fsi",
+      "fsscript",
+      "fsx",
+      "go",
+      "groovy",
+      "gs",
+      "gvy",
+      "hlsl",
+      "hs",
+      "htc",
+      "hx",
+      "hxsl",
+      "iced",
+      "ipy",
+      "java",
+      "js",
+      "jscad",
+      "jsm",
+      "json5",
+      "jsx",
+      "litcoffee",
+      "lua",
+      "m",
+      "mjs",
+      "mm",
+      "nqp",
+      "p6",
+      "pac",
+      "pjs",
+      "pl",
+      "pl6",
+      "pm",
+      "pm6",
+      "psgi",
+      "py",
+      "pyw",
+      "r",
+      "rpy",
+      "rs",
+      "shader",
+      "swift",
+      "ts",
+      "tsx",
+      "v",
+      "vb",
+      "xsjs",
+      "xsjslib"
+    ],
+    "stylesheet": ["css", "less", "sass", "scss", "styl"],
+    "template": [
+      "ctp",
+      "eco",
+      "ecr",
+      "ejs",
+      "erb",
+      "haml",
+      "hamlc",
+      "handlebars",
+      "hbs",
+      "hjs",
+      "j2",
+      "jade",
+      "jinja2",
+      "mustache",
+      "njk",
+      "pug",
+      "slim",
+      "twig",
+      "xsd"
+    ],
+    "test": [
+      {
+        "names": ["spec", "test"],
+        "templates": ["${name}.js", "${name}.jsx", "${name}.ts", "${name}.tsx"]
+      }
+    ],
+    "todo": ["todo"]
+  },
+  "fileNames": {
+    "changelog": [
+      {
+        "names": ["changelog", "history"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
+    "codeowners": ["authors", "codeowners", "owners"],
+    "config": [
+      ".editorconfig",
+      ".gitattributes",
+      ".gitkeep",
+      ".gitmodules",
+      ".htaccess",
+      ".htmlvalidate.json",
+      ".keep",
+      ".npmrc",
+      ".nvmrc",
+      ".renovaterc",
+      ".renovaterc.json",
+      ".travis.yml",
+      "cmakelists.txt",
+      "cname",
+      "dockerfile",
+      "jakefile",
+      "jenkinsfile",
+      "labeler.yml",
+      "makefile",
+      "procfile",
+      "renovate.json",
+      "renovate.json5",
+      "stale.yml",
+      "tsconfig.json",
+      {
+        "names": ["babel"],
+        "templates": [".${name}rc", ".${name}rc.json"]
+      },
+      {
+        "names": ["eslint", "nyc", "prettier", "remark", "stylelint"],
+        "templates": [
+          ".${name}rc",
+          ".${name}rc.json",
+          ".${name}rc.yaml",
+          ".${name}rc.yml"
         ]
-    },
-    "fileNames": {
-        "changelog": [
-            {
-                "names": [
-                    "changelog",
-                    "history"
-                ],
-                "templates": [
-                    "${name}",
-                    "${name}.md",
-                    "${name}.txt"
-                ]
-            }
-        ],
-        "codeowners": [
-            "authors",
-            "codeowners",
-            "owners"
-        ],
-        "config": [
-            ".editorconfig",
-            ".gitattributes",
-            ".gitkeep",
-            ".gitmodules",
-            ".htaccess",
-            ".htmlvalidate.json",
-            ".keep",
-            ".npmrc",
-            ".nvmrc",
-            ".renovaterc",
-            ".renovaterc.json",
-            ".travis.yml",
-            "cmakelists.txt",
-            "cname",
-            "dockerfile",
-            "jakefile",
-            "jenkinsfile",
-            "labeler.yml",
-            "makefile",
-            "procfile",
-            "renovate.json",
-            "renovate.json5",
-            "stale.yml",
-            "tsconfig.json",
-            {
-                "names": [
-                    "babel"
-                ],
-                "templates": [
-                    ".${name}rc",
-                    ".${name}rc.json"
-                ]
-            },
-            {
-                "names": [
-                    "eslint",
-                    "nyc",
-                    "prettier",
-                    "remark",
-                    "stylelint"
-                ],
-                "templates": [
-                    ".${name}rc",
-                    ".${name}rc.json",
-                    ".${name}rc.yaml",
-                    ".${name}rc.yml"
-                ]
-            },
-            {
-                "names": [
-                    "markdownlint"
-                ],
-                "templates": [
-                    ".${name}rc",
-                    ".${name}.yml",
-                    ".${name}.yaml",
-                    ".${name}.json"
-                ]
-            }
-        ],
-        "config-src": [
-            "gruntfile.js",
-            "gulpfile.js",
-            {
-                "names": [
-                    "eslint",
-                    "nyc",
-                    "prettier",
-                    "remark",
-                    "stylelint"
-                ],
-                "templates": [
-                    ".${name}rc.js"
-                ]
-            },
-            {
-                "names": [
-                    "babel"
-                ],
-                "templates": [
-                    ".${name}rc.cjs",
-                    ".${name}rc.js",
-                    ".${name}rc.mjs"
-                ]
-            }
-        ],
-        "ctags": [
-            "tags"
-        ],
-        "data": [
-            "manifest.in",
-            "pipfile"
-        ],
-        "doc": [
-            "contributing",
-            "code_of_conduct",
-            "issue_template",
-            "pull_request_template"
-        ],
-        "ignore": [
-            {
-                "names": [
-                    "docker",
-                    "eslint",
-                    "git",
-                    "npm",
-                    "nyc",
-                    "prettier",
-                    "remark",
-                    "stylelint",
-                    "vscode"
-                ],
-                "templates": [
-                    ".${name}ignore"
-                ]
-            }
-        ],
-        "info": [
-            {
-                "names": [
-                    "readme"
-                ],
-                "templates": [
-                    "${name}",
-                    "${name}.md",
-                    "${name}.txt"
-                ]
-            }
-        ],
-        "license": [
-            {
-                "names": [
-                    "copying",
-                    "license",
-                    "license-code"
-                ],
-                "templates": [
-                    "${name}",
-                    "${name}.md",
-                    "${name}.txt"
-                ]
-            }
-        ],
-        "lock": [
-            ".vpkg-lock.json",
-            "package-lock.json"
-        ],
-        "ruby": [
-            "capfile",
-            "gemfile",
-            "guardfile",
-            "podfile",
-            "rakefile"
-        ],
-        "script": [
-            "gradlew"
-        ],
-        "src": [
-            "cakefile"
-        ],
-        "security": [
-            "security",
-            "security.md"
-        ],
-        "support": [
-            "funding.yml",
-            "support",
-            "support.md"
-        ],
-        "todo": [
-            "todo",
-            "todo.md",
-            "todo.txt"
+      },
+      {
+        "names": ["markdownlint"],
+        "templates": [
+          ".${name}rc",
+          ".${name}.yml",
+          ".${name}.yaml",
+          ".${name}.json"
         ]
+      }
+    ],
+    "config-src": [
+      "gruntfile.js",
+      "gulpfile.js",
+      {
+        "names": ["eslint", "nyc", "prettier", "remark", "stylelint"],
+        "templates": [".${name}rc.js"]
+      },
+      {
+        "names": ["babel"],
+        "templates": [".${name}rc.cjs", ".${name}rc.js", ".${name}rc.mjs"]
+      }
+    ],
+    "ctags": ["tags"],
+    "data": ["manifest.in", "pipfile"],
+    "doc": [
+      "contributing",
+      "code_of_conduct",
+      "issue_template",
+      "pull_request_template"
+    ],
+    "ignore": [
+      {
+        "names": [
+          "docker",
+          "eslint",
+          "git",
+          "npm",
+          "nyc",
+          "prettier",
+          "remark",
+          "stylelint",
+          "vscode"
+        ],
+        "templates": [".${name}ignore"]
+      }
+    ],
+    "info": [
+      {
+        "names": ["readme"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
+    "license": [
+      {
+        "names": ["copying", "license", "license-code"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
+    "lock": [".vpkg-lock.json", "package-lock.json"],
+    "ruby": ["capfile", "gemfile", "guardfile", "podfile", "rakefile"],
+    "script": ["gradlew"],
+    "src": ["cakefile"],
+    "security": ["security", "security.md"],
+    "support": ["funding.yml", "support", "support.md"],
+    "todo": ["todo", "todo.md", "todo.txt"]
+  },
+  "folder": "folder",
+  "iconDefinitions": {
+    "archive": {
+      "iconColor": "@gray",
+      "iconName": "file-zip"
     },
-    "folder": "folder",
-    "iconDefinitions": {
-        "archive": {
-            "iconColor": "@gray",
-            "iconName": "file-zip"
-        },
-        "binary": {
-            "iconColor": "@gray",
-            "iconName": "file-binary"
-        },
-        "changelog": {
-            "iconColor": "@cyan",
-            "iconName": "history"
-        },
-        "codeowners": {
-            "iconColor": "@cyan",
-            "iconName": "organization"
-        },
-        "config": {
-            "iconColor": "@magenta",
-            "iconName": "gear"
-        },
-        "config-src": {
-            "iconColor": "@green",
-            "iconName": "gear"
-        },
-        "ctags": {
-            "iconColor": "@violet",
-            "iconName": "tag"
-        },
-        "data": {
-            "iconColor": "@violet",
-            "iconName": "file-code"
-        },
-        "data-markup": {
-            "iconColor": "@violet",
-            "iconName": "code"
-        },
-        "data-template": {
-            "iconColor": "@yellow",
-            "iconName": "settings"
-        },
-        "database": {
-            "iconColor": "@violet",
-            "iconName": "database"
-        },
-        "database-src": {
-            "iconColor": "@green",
-            "iconName": "database"
-        },
-        "debug": {
-            "iconColor": "@gray",
-            "iconName": "bug"
-        },
-        "diff": {
-            "iconColor": "@green",
-            "iconName": "diff"
-        },
-        "doc": {
-            "iconColor": "@cyan",
-            "iconName": "file"
-        },
-        "script": {
-            "iconColor": "@orange",
-            "iconName": "terminal"
-        },
-        "file": {
-            "iconColor": "@gray",
-            "iconName": "file"
-        },
-        "folder": {
-            "iconColor": "@gray",
-            "iconName": "folder"
-        },
-        "font": {
-            "iconColor": "@blue",
-            "iconName": "text-size"
-        },
-        "headers": {
-            "iconColor": "@yellow",
-            "iconName": "file-code"
-        },
-        "ignore": {
-            "iconColor": "@magenta",
-            "iconName": "circle-slash"
-        },
-        "image": {
-            "iconColor": "@blue",
-            "iconName": "file-media"
-        },
-        "image-src": {
-            "iconColor": "@green",
-            "iconName": "file-media"
-        },
-        "info": {
-            "iconColor": "@cyan",
-            "iconName": "info"
-        },
-        "license": {
-            "iconColor": "@cyan",
-            "iconName": "law"
-        },
-        "linker": {
-            "iconColor": "@gray",
-            "iconName": "link-external"
-        },
-        "lock": {
-            "iconColor": "@magenta",
-            "iconName": "lock"
-        },
-        "log": {
-            "iconColor": "@blue",
-            "iconName": "bug"
-        },
-        "map": {
-            "iconColor": "@yellow",
-            "iconName": "location"
-        },
-        "markdown": {
-            "iconColor": "@cyan",
-            "iconName": "markdown"
-        },
-        "markup": {
-            "iconColor": "@green",
-            "iconName": "code"
-        },
-        "media": {
-            "iconColor": "@blue",
-            "iconName": "play"
-        },
-        "notebook": {
-            "iconColor": "@violet",
-            "iconName": "note"
-        },
-        "pdf": {
-            "iconColor": "@cyan",
-            "iconName": "file-pdf"
-        },
-        "ruby": {
-            "iconColor": "@magenta",
-            "iconName": "ruby"
-        },
-        "search": {
-            "iconColor": "@green",
-            "iconName": "search"
-        },
-        "sheet": {
-            "iconColor": "@violet",
-            "iconName": "list-unordered"
-        },
-        "src": {
-            "iconColor": "@green",
-            "iconName": "file-code"
-        },
-        "security": {
-            "iconColor": "@cyan",
-            "iconName": "shield"
-        },
-        "stylesheet": {
-            "iconColor": "@yellow",
-            "iconName": "paintcan"
-        },
-        "support": {
-            "iconColor": "@magenta",
-            "iconName": "heart"
-        },
-        "template": {
-            "iconColor": "@yellow",
-            "iconName": "code"
-        },
-        "test": {
-            "iconColor": "@green",
-            "iconName": "beaker"
-        },
-        "todo": {
-            "iconColor": "@cyan",
-            "iconName": "checklist"
-        }
+    "binary": {
+      "iconColor": "@gray",
+      "iconName": "file-binary"
+    },
+    "changelog": {
+      "iconColor": "@cyan",
+      "iconName": "history"
+    },
+    "codeowners": {
+      "iconColor": "@cyan",
+      "iconName": "organization"
+    },
+    "config": {
+      "iconColor": "@magenta",
+      "iconName": "gear"
+    },
+    "config-src": {
+      "iconColor": "@green",
+      "iconName": "gear"
+    },
+    "ctags": {
+      "iconColor": "@violet",
+      "iconName": "tag"
+    },
+    "data": {
+      "iconColor": "@violet",
+      "iconName": "file-code"
+    },
+    "data-markup": {
+      "iconColor": "@violet",
+      "iconName": "code"
+    },
+    "data-template": {
+      "iconColor": "@yellow",
+      "iconName": "settings"
+    },
+    "database": {
+      "iconColor": "@violet",
+      "iconName": "database"
+    },
+    "database-src": {
+      "iconColor": "@green",
+      "iconName": "database"
+    },
+    "debug": {
+      "iconColor": "@gray",
+      "iconName": "bug"
+    },
+    "diff": {
+      "iconColor": "@green",
+      "iconName": "diff"
+    },
+    "doc": {
+      "iconColor": "@cyan",
+      "iconName": "file"
+    },
+    "script": {
+      "iconColor": "@orange",
+      "iconName": "terminal"
+    },
+    "file": {
+      "iconColor": "@gray",
+      "iconName": "file"
+    },
+    "folder": {
+      "iconColor": "@gray",
+      "iconName": "folder"
+    },
+    "font": {
+      "iconColor": "@blue",
+      "iconName": "text-size"
+    },
+    "headers": {
+      "iconColor": "@yellow",
+      "iconName": "file-code"
+    },
+    "ignore": {
+      "iconColor": "@magenta",
+      "iconName": "circle-slash"
+    },
+    "image": {
+      "iconColor": "@blue",
+      "iconName": "file-media"
+    },
+    "image-src": {
+      "iconColor": "@green",
+      "iconName": "file-media"
+    },
+    "info": {
+      "iconColor": "@cyan",
+      "iconName": "info"
+    },
+    "license": {
+      "iconColor": "@cyan",
+      "iconName": "law"
+    },
+    "linker": {
+      "iconColor": "@gray",
+      "iconName": "link-external"
+    },
+    "lock": {
+      "iconColor": "@magenta",
+      "iconName": "lock"
+    },
+    "log": {
+      "iconColor": "@blue",
+      "iconName": "bug"
+    },
+    "map": {
+      "iconColor": "@yellow",
+      "iconName": "location"
+    },
+    "markdown": {
+      "iconColor": "@cyan",
+      "iconName": "markdown"
+    },
+    "markup": {
+      "iconColor": "@green",
+      "iconName": "code"
+    },
+    "media": {
+      "iconColor": "@blue",
+      "iconName": "play"
+    },
+    "notebook": {
+      "iconColor": "@violet",
+      "iconName": "note"
+    },
+    "pdf": {
+      "iconColor": "@cyan",
+      "iconName": "file-pdf"
+    },
+    "ruby": {
+      "iconColor": "@magenta",
+      "iconName": "ruby"
+    },
+    "search": {
+      "iconColor": "@green",
+      "iconName": "search"
+    },
+    "sheet": {
+      "iconColor": "@violet",
+      "iconName": "list-unordered"
+    },
+    "src": {
+      "iconColor": "@green",
+      "iconName": "file-code"
+    },
+    "security": {
+      "iconColor": "@cyan",
+      "iconName": "shield"
+    },
+    "stylesheet": {
+      "iconColor": "@yellow",
+      "iconName": "paintcan"
+    },
+    "support": {
+      "iconColor": "@magenta",
+      "iconName": "heart"
+    },
+    "template": {
+      "iconColor": "@yellow",
+      "iconName": "code"
+    },
+    "test": {
+      "iconColor": "@green",
+      "iconName": "beaker"
+    },
+    "todo": {
+      "iconColor": "@cyan",
+      "iconName": "checklist"
     }
+  }
 }

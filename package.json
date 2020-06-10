@@ -1,59 +1,51 @@
 {
-    "name": "vscode-unfancy-file-icons",
-    "displayName": "Unfancy file icons",
-    "description": "Octicons and Codicons as file icon themes",
-    "categories": [
-        "Themes"
-    ],
-    "keywords": [
-        "icon-theme",
-        "icons",
-        "codicons",
-        "octicons",
-        "customization"
-    ],
-    "icon": "images/icon.png",
-    "version": "3.8.0",
-    "publisher": "alexesprit",
-    "license": "MIT",
-    "engines": {
-        "vscode": "*"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/alexesprit/vscode-unfancy-file-icons.git"
-    },
-    "bugs": {
-        "url": "https://github.com/alexesprit/vscode-unfancy-file-icons/issues"
-    },
-    "contributes": {
-        "iconThemes": [
-            {
-                "id": "vscode-unfancy-file-icons-codicons",
-                "label": "Unfancy file icons (Codicons)",
-                "path": "./theme/unfancy-codicons.icon-theme.json"
-            },
-            {
-                "id": "vscode-unfancy-file-icons",
-                "label": "Unfancy file icons (Octicons)",
-                "path": "./theme/unfancy-octicons.icon-theme.json"
-            }
-        ]
-    },
-    "scripts": {
-        "vscode:prepublish": "npm run build",
-        "build": "node generate-theme.js",
-        "test": "npm run build && ava",
-        "lint": "eslint . && node check-items.js"
-    },
-    "dependencies": {
-        "color": "^3.1.2"
-    },
-    "devDependencies": {
-        "ava": "^2.4.0",
-        "eslint": "^6.8.0",
-        "eslint-config-web-scrobbler": "^0.1.0",
-        "prettier-config-web-scrobbler": "0.1.0"
-    },
-    "prettier": "prettier-config-web-scrobbler"
+  "name": "vscode-unfancy-file-icons",
+  "displayName": "Unfancy file icons",
+  "description": "Octicons and Codicons as file icon themes",
+  "categories": ["Themes"],
+  "keywords": ["icon-theme", "icons", "codicons", "octicons", "customization"],
+  "icon": "images/icon.png",
+  "version": "3.8.0",
+  "publisher": "alexesprit",
+  "license": "MIT",
+  "engines": {
+    "vscode": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexesprit/vscode-unfancy-file-icons.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexesprit/vscode-unfancy-file-icons/issues"
+  },
+  "contributes": {
+    "iconThemes": [
+      {
+        "id": "vscode-unfancy-file-icons-codicons",
+        "label": "Unfancy file icons (Codicons)",
+        "path": "./theme/unfancy-codicons.icon-theme.json"
+      },
+      {
+        "id": "vscode-unfancy-file-icons",
+        "label": "Unfancy file icons (Octicons)",
+        "path": "./theme/unfancy-octicons.icon-theme.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build",
+    "build": "node generate-theme.js",
+    "test": "npm run build && ava",
+    "lint": "eslint . && node check-items.js"
+  },
+  "dependencies": {
+    "color": "^3.1.2"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "eslint": "^6.8.0",
+    "eslint-config-web-scrobbler": "^0.1.0",
+    "prettier-config-web-scrobbler": "0.1.0"
+  },
+  "prettier": "prettier-config-web-scrobbler"
 }

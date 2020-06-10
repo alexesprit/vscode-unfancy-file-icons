@@ -15,26 +15,26 @@ module.exports = { getMissingSamples, createSampleFile };
  * @return {Array} List of missing sample files
  */
 function getMissingSamples(samplesDir) {
-    const existingSamples = getExistingSamples(samplesDir);
-    const sampleFiles = getFlattenSampleFiles();
-    const missingSamples = [];
+	const existingSamples = getExistingSamples(samplesDir);
+	const sampleFiles = getFlattenSampleFiles();
+	const missingSamples = [];
 
-    for (const type in sampleFiles) {
-        const allSampleFiles = sampleFiles[type];
-        let isMissing = true;
+	for (const type in sampleFiles) {
+		const allSampleFiles = sampleFiles[type];
+		let isMissing = true;
 
-        for (const fileName of allSampleFiles) {
-            if (existingSamples.includes(fileName)) {
-                isMissing = false;
-            }
-        }
+		for (const fileName of allSampleFiles) {
+			if (existingSamples.includes(fileName)) {
+				isMissing = false;
+			}
+		}
 
-        if (isMissing) {
-            missingSamples.push(allSampleFiles[0]);
-        }
-    }
+		if (isMissing) {
+			missingSamples.push(allSampleFiles[0]);
+		}
+	}
 
-    return missingSamples;
+	return missingSamples;
 }
 
 /**
@@ -44,8 +44,8 @@ function getMissingSamples(samplesDir) {
  * @param  {String} fileName Sample file name
  */
 function createSampleFile(samplesDir, fileName) {
-    const outPath = join(samplesDir, fileName);
-    closeSync(openSync(outPath, 'w'));
+	const outPath = join(samplesDir, fileName);
+	closeSync(openSync(outPath, 'w'));
 }
 
 /**
@@ -54,7 +54,7 @@ function createSampleFile(samplesDir, fileName) {
  * @param  {String} samplesDir Path to a directory with sample files
  */
 function getExistingSamples(samplesDir) {
-    return readdirSync(samplesDir);
+	return readdirSync(samplesDir);
 }
 
 /**
@@ -63,26 +63,28 @@ function getExistingSamples(samplesDir) {
  * @return {Object} Result data
  */
 function getFlattenSampleFiles() {
-    const { fileNames, fileExtensions } = getExpandedItems();
-    const sampleFiles = {};
+	const { fileNames, fileExtensions } = getExpandedItems();
+	const sampleFiles = {};
 
-    for (const type in fileNames) {
-        if (!(type in sampleFiles)) {
-            sampleFiles[type] = [];
-        }
+	for (const type in fileNames) {
+		if (!(type in sampleFiles)) {
+			sampleFiles[type] = [];
+		}
 
-        sampleFiles[type].push(...fileNames[type]);
-    }
+		sampleFiles[type].push(...fileNames[type]);
+	}
 
-    for (const type in fileExtensions) {
-        if (!(type in sampleFiles)) {
-            sampleFiles[type] = [];
-        }
+	for (const type in fileExtensions) {
+		if (!(type in sampleFiles)) {
+			sampleFiles[type] = [];
+		}
 
-        sampleFiles[type].push(...fileExtensions[type].map((ext) => {
-            return `sample.${ext}`;
-        }));
-    }
+		sampleFiles[type].push(
+			...fileExtensions[type].map((ext) => {
+				return `sample.${ext}`;
+			})
+		);
+	}
 
-    return sampleFiles;
+	return sampleFiles;
 }

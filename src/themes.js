@@ -4,9 +4,12 @@ const { mkdirSync, writeFileSync } = require('fs');
 const Color = require('color');
 
 const {
-    getThemeId, getExpandedItems,
-    getFontColor, getFontCharacter,
-    prefix, light
+	getThemeId,
+	getExpandedItems,
+	getFontColor,
+	getFontCharacter,
+	prefix,
+	light,
 } = require('./utils');
 
 const darkenPercent = 0.4;
@@ -15,7 +18,7 @@ const darkenPercent = 0.4;
  * Exported functions.
  */
 module.exports = {
-    generateIconTheme
+	generateIconTheme,
 };
 
 /**
@@ -24,14 +27,14 @@ module.exports = {
  * @param {Object} theme `contributes.iconThemes` entry from `package.json`
  */
 function generateIconTheme(theme) {
-    const themeId = getThemeId(theme);
-    const iconTheme = getIconTheme(themeId);
-    const contents = JSON.stringify(iconTheme, null, 4);
+	const themeId = getThemeId(theme);
+	const iconTheme = getIconTheme(themeId);
+	const contents = JSON.stringify(iconTheme, null, 4);
 
-    const outPath = theme.path;
-    const targetDir = dirname(outPath);
-    mkdirSync(targetDir, { recursive: true });
-    writeFileSync(outPath, contents);
+	const outPath = theme.path;
+	const targetDir = dirname(outPath);
+	mkdirSync(targetDir, { recursive: true });
+	writeFileSync(outPath, contents);
 }
 
 /**
@@ -41,59 +44,70 @@ function generateIconTheme(theme) {
  * @return {Object} Theme object
  */
 function getIconTheme(themeId) {
-    const items = getExpandedItems();
+	const items = getExpandedItems();
 
-    const fonts = require(`./fonts/${themeId}.json`);
-    const iconMap = require(`./iconmaps/${themeId}.json`);
-    const codepoints = require(`./codepoints/${themeId}.json`);
+	const fonts = require(`./fonts/${themeId}.json`);
+	const iconMap = require(`./iconmaps/${themeId}.json`);
+	const codepoints = require(`./codepoints/${themeId}.json`);
 
-    const iconTheme = {
-        fonts,
+	const iconTheme = {
+		fonts,
 
-        light: {
-            fileNames: { /* empty */ },
-            fileExtensions: { /* empty */ },
-        },
-        fileNames: { /* empty */ },
-        fileExtensions: { /* empty */ },
-        iconDefinitions: { /* empty */ },
-    };
+		light: {
+			fileNames: {
+				/* empty */
+			},
+			fileExtensions: {
+				/* empty */
+			},
+		},
+		fileNames: {
+			/* empty */
+		},
+		fileExtensions: {
+			/* empty */
+		},
+		iconDefinitions: {
+			/* empty */
+		},
+	};
 
-    const { iconDefinitions } = items;
+	const { iconDefinitions } = items;
 
-    for (const iconEntry in iconDefinitions) {
-        let { iconColor, iconName } = iconDefinitions[iconEntry];
+	for (const iconEntry in iconDefinitions) {
+		let { iconColor, iconName } = iconDefinitions[iconEntry];
 
-        if (iconName in iconMap) {
-            iconName = iconMap[iconName];
-        }
+		if (iconName in iconMap) {
+			iconName = iconMap[iconName];
+		}
 
-        const fontColor = getFontColor(iconColor);
-        const fontCharacter = getFontCharacter(iconName, codepoints);
-        const prefixedIconName = prefix(iconEntry);
-        iconTheme.iconDefinitions[prefixedIconName] = {
-            fontColor, fontCharacter
-        };
+		const fontColor = getFontColor(iconColor);
+		const fontCharacter = getFontCharacter(iconName, codepoints);
+		const prefixedIconName = prefix(iconEntry);
+		iconTheme.iconDefinitions[prefixedIconName] = {
+			fontColor,
+			fontCharacter,
+		};
 
-        const lightColor = Color(fontColor).darken(darkenPercent).hex();
-        const lightIconName = light(prefixedIconName);
-        iconTheme.iconDefinitions[lightIconName] = { fontColor: lightColor };
-    }
+		const lightColor = Color(fontColor).darken(darkenPercent).hex();
+		const lightIconName = light(prefixedIconName);
+		iconTheme.iconDefinitions[lightIconName] = { fontColor: lightColor };
+	}
 
-    for (const propName of ['file', 'folder']) {
-        const iconName = items[propName];
-        const prefixedIconName = prefix(iconName);
+	for (const propName of ['file', 'folder']) {
+		const iconName = items[propName];
+		const prefixedIconName = prefix(iconName);
 
-        iconTheme[propName] = prefixedIconName;
-        iconTheme.light[propName] = light(prefixedIconName);
-    }
+		iconTheme[propName] = prefixedIconName;
+		iconTheme.light[propName] = light(prefixedIconName);
+	}
 
-    for (const propName of ['fileNames', 'fileExtensions']) {
-        iconTheme[propName] = convertItems(items[propName]);
-        iconTheme.light[propName] = makeItemsForLightTheme(iconTheme[propName]);
-    }
+	for (const propName of ['fileNames', 'fileExtensions']) {
+		iconTheme[propName] = convertItems(items[propName]);
+		iconTheme.light[propName] = makeItemsForLightTheme(iconTheme[propName]);
+	}
 
-    return iconTheme;
+	return iconTheme;
 }
 
 /**
@@ -102,15 +116,15 @@ function getIconTheme(themeId) {
  * @param {Object} props Source properties
  */
 function convertItems(props) {
-    const newProps = {};
+	const newProps = {};
 
-    for (const key in props) {
-        for (const val of props[key]) {
-            newProps[val] = prefix(key);
-        }
-    }
+	for (const key in props) {
+		for (const val of props[key]) {
+			newProps[val] = prefix(key);
+		}
+	}
 
-    return newProps;
+	return newProps;
 }
 
 /**
@@ -119,11 +133,11 @@ function convertItems(props) {
  * @param {Object} items Source items
  */
 function makeItemsForLightTheme(items) {
-    const newProps = {};
+	const newProps = {};
 
-    for (const key in items) {
-        newProps[key] = light(items[key]);
-    }
+	for (const key in items) {
+		newProps[key] = light(items[key]);
+	}
 
-    return newProps;
+	return newProps;
 }

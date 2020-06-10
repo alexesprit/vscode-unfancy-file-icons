@@ -8,70 +8,70 @@ const skipUnusedIcons = ['file', 'folder'];
 module.exports = { getWarnings };
 
 function getWarnings() {
-    const duplicates = getDuplicates();
-    const unusedIcons = getUnusedIcons();
+	const duplicates = getDuplicates();
+	const unusedIcons = getUnusedIcons();
 
-    const warnings = [];
+	const warnings = [];
 
-    for (const [ext, type] of duplicates) {
-        warnings.push(`Duplicate "${ext}" in "${type}" section`);
-    }
+	for (const [ext, type] of duplicates) {
+		warnings.push(`Duplicate "${ext}" in "${type}" section`);
+	}
 
-    for (const iconName of unusedIcons) {
-        warnings.push(`Unused icon: ${iconName}`);
-    }
+	for (const iconName of unusedIcons) {
+		warnings.push(`Unused icon: ${iconName}`);
+	}
 
-    return warnings;
+	return warnings;
 }
 
 function getUnusedIcons() {
-    const { iconDefinitions, fileExtensions, fileNames } = items;
-    const unusedIcons = [];
+	const { iconDefinitions, fileExtensions, fileNames } = items;
+	const unusedIcons = [];
 
-    const usedIcons = [
-        ...Object.keys(fileNames),
-        ...Object.keys(fileExtensions),
-    ];
+	const usedIcons = [
+		...Object.keys(fileNames),
+		...Object.keys(fileExtensions),
+	];
 
-    for (const iconName in iconDefinitions) {
-        if (skipUnusedIcons.includes(iconName)) {
-            continue;
-        }
+	for (const iconName in iconDefinitions) {
+		if (skipUnusedIcons.includes(iconName)) {
+			continue;
+		}
 
-        if (!usedIcons.includes(iconName)) {
-            unusedIcons.push(iconName);
-        }
-    }
+		if (!usedIcons.includes(iconName)) {
+			unusedIcons.push(iconName);
+		}
+	}
 
-    return unusedIcons;
+	return unusedIcons;
 }
 
 function getDuplicates() {
-    const { fileExtensions, fileNames } = items;
+	const { fileExtensions, fileNames } = items;
 
-    const duplicates = [
-        ...getDuplicatesInProps(fileNames),
-        ...getDuplicatesInProps(fileExtensions),
-    ];
+	const duplicates = [
+		...getDuplicatesInProps(fileNames),
+		...getDuplicatesInProps(fileExtensions),
+	];
 
-    return duplicates;
+	return duplicates;
 }
 
 function getDuplicatesInProps(props) {
-    const checkedItems = [];
-    const duplicates = [];
+	const checkedItems = [];
+	const duplicates = [];
 
-    for (const type in props) {
-        const extensions = props[type];
+	for (const type in props) {
+		const extensions = props[type];
 
-        for (const ext of extensions) {
-            if (checkedItems.includes(ext)) {
-                duplicates.push([ext, type]);
-            } else {
-                checkedItems.push(ext);
-            }
-        }
-    }
+		for (const ext of extensions) {
+			if (checkedItems.includes(ext)) {
+				duplicates.push([ext, type]);
+			} else {
+				checkedItems.push(ext);
+			}
+		}
+	}
 
-    return duplicates;
+	return duplicates;
 }

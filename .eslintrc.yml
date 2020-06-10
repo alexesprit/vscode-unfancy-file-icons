@@ -1,5 +1,3 @@
 extends: 'web-scrobbler'
 parserOptions:
   sourceType: module
-rules:
-  indent: [error, 4, { SwitchCase: 1 }]
