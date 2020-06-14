@@ -252,6 +252,7 @@
       "labeler.yml",
       "makefile",
       "procfile",
+      "release-drafter.yml",
       "renovate.json",
       "renovate.json5",
       "stale.yml",
