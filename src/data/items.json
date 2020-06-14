@@ -245,6 +245,7 @@
       ".travis.yml",
       "cmakelists.txt",
       "cname",
+      "config.yml",
       "dockerfile",
       "jakefile",
       "jenkinsfile",
