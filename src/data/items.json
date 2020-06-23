@@ -281,6 +281,7 @@
       }
     ],
     "config-src": [
+      "cakefile",
       "gruntfile.js",
       "gulpfile.js",
       {
@@ -331,7 +332,6 @@
     "lock": [".vpkg-lock.json", "package-lock.json"],
     "ruby": ["capfile", "gemfile", "guardfile", "podfile", "rakefile"],
     "script": ["gradlew"],
-    "src": ["cakefile"],
     "security": ["security", "security.md"],
     "support": ["funding.yml", "support", "support.md"],
     "todo": ["todo", "todo.md", "todo.txt"]
