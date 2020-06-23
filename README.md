@@ -15,7 +15,7 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
     -   orange for scripts (`sh`, `bat`, `cmd`, etc)
     -   cyan for documentation files (`md`, `tex`, `pdf`, etc)
     -   blue for media files (images, videos, art software files, etc)
-    -   magenta for configuration files (`.gitignore`, `.ruby-version`, etc)
+    -   magenta for ignore and lock files (`.gitignore`, `package-lock.json`, etc)
     -   gray for other files and directories
 -   Use generic icons rather than trying to find one for each file extension
     (except when an icon fits the file type, like with Ruby files)

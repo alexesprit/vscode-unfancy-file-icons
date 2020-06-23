@@ -355,7 +355,7 @@
       "iconName": "organization"
     },
     "config": {
-      "iconColor": "@magenta",
+      "iconColor": "@violet",
       "iconName": "gear"
     },
     "config-src": {
