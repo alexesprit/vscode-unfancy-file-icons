@@ -249,6 +249,7 @@
       "dockerfile",
       "jakefile",
       "jenkinsfile",
+      "jsconfig.json",
       "labeler.yml",
       "makefile",
       "procfile",
