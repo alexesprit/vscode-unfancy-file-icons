@@ -279,6 +279,15 @@
           ".${name}.yaml",
           ".${name}.json"
         ]
+      },
+      {
+        "names": ["mocha"],
+        "templates": [
+          ".${name}.json",
+          ".${name}.jsonc",
+          ".${name}.yaml",
+          ".${name}.yml"
+        ]
       }
     ],
     "config-src": [
@@ -286,11 +295,11 @@
       "gruntfile.js",
       "gulpfile.js",
       {
-        "names": ["eslint", "nyc", "prettier", "remark", "stylelint"],
+        "names": ["eslint", "mocha", "nyc", "prettier", "remark", "stylelint"],
         "templates": [".${name}rc.js"]
       },
       {
-        "names": ["babel"],
+        "names": ["babel", "mocha"],
         "templates": [".${name}rc.cjs", ".${name}rc.js", ".${name}rc.mjs"]
       }
     ],
