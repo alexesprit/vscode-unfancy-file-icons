@@ -101,8 +101,6 @@
       "pod",
       "rhtml",
       "shtml",
-      "svelte",
-      "vue",
       "xhtml"
     ],
     "media": [
@@ -163,7 +161,6 @@
       "jscad",
       "jsm",
       "json5",
-      "jsx",
       "litcoffee",
       "lua",
       "m",
@@ -186,7 +183,6 @@
       "shader",
       "swift",
       "ts",
-      "tsx",
       "v",
       "vb",
       "xsjs",
@@ -207,11 +203,15 @@
       "j2",
       "jade",
       "jinja2",
+      "jsx",
       "mustache",
       "njk",
       "pug",
       "slim",
+      "svelte",
+      "tsx",
       "twig",
+      "vue",
       "xsd"
     ],
     "test": [
