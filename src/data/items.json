@@ -231,6 +231,7 @@
     ],
     "codeowners": ["authors", "codeowners", "owners"],
     "config": [
+      ".appveyor.yml",
       ".editorconfig",
       ".gitattributes",
       ".gitkeep",
@@ -243,6 +244,7 @@
       ".renovaterc",
       ".renovaterc.json",
       ".travis.yml",
+      "appveyor.yml",
       "cmakelists.txt",
       "cname",
       "config.yml",
