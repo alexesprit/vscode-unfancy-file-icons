@@ -260,6 +260,7 @@
       "renovate.json5",
       "stale.yml",
       "tsconfig.json",
+      "vercel.json",
       {
         "names": ["babel"],
         "templates": [".${name}rc", ".${name}rc.json"]
