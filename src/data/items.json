@@ -248,6 +248,7 @@
       "cmakelists.txt",
       "cname",
       "config.yml",
+      "dependabot.yml",
       "dockerfile",
       "jakefile",
       "jenkinsfile",
