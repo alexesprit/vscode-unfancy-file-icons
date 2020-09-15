@@ -109,8 +109,10 @@ function getIconTheme(themeId) {
 	}
 
 	for (const propName of ['fileNames', 'fileExtensions']) {
-		iconTheme[propName] = convertItems(items[propName]);
-		iconTheme.light[propName] = makeItemsForLightTheme(iconTheme[propName]);
+		const convertedItems = convertItems(items[propName]);
+
+		iconTheme[propName] = convertedItems;
+		iconTheme.light[propName] = makeItemsForLightTheme(convertedItems);
 	}
 
 	for (const propName of ['languageIds']) {
