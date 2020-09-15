@@ -60,11 +60,17 @@ function getIconTheme(themeId) {
 			fileExtensions: {
 				/* empty */
 			},
+			languageIds: {
+				/* empty */
+			},
 		},
 		fileNames: {
 			/* empty */
 		},
 		fileExtensions: {
+			/* empty */
+		},
+		languageIds: {
 			/* empty */
 		},
 		iconDefinitions: {
@@ -107,6 +113,13 @@ function getIconTheme(themeId) {
 		iconTheme.light[propName] = makeItemsForLightTheme(iconTheme[propName]);
 	}
 
+	for (const propName of ['languageIds']) {
+		const prefixedItems = prefixItems(items[propName]);
+
+		iconTheme[propName] = prefixedItems;
+		iconTheme.light[propName] = makeItemsForLightTheme(prefixedItems);
+	}
+
 	return iconTheme;
 }
 
@@ -122,6 +135,21 @@ function convertItems(props) {
 		for (const val of props[key]) {
 			newProps[val] = prefix(key);
 		}
+	}
+
+	return newProps;
+}
+
+/**
+ * Add prefix to items values.
+ *
+ * @param {Object} props Source properties
+ */
+function prefixItems(props) {
+	const newProps = {};
+
+	for (const key in props) {
+		newProps[key] = prefix(props[key]);
 	}
 
 	return newProps;
