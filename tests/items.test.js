@@ -6,6 +6,7 @@ const {
 	iconDefinitions,
 	fileExtensions,
 	fileNames,
+	languageIds,
 } = require('./../src/data/items.json');
 const colors = require('./../src/data/colors.json');
 
@@ -16,6 +17,7 @@ function runTests() {
 	testThemeItems();
 
 	testFileDefinitions();
+	testLanguageIds();
 }
 
 function testIconColors() {
@@ -60,6 +62,16 @@ function testFileDefinitions() {
 		const itemType = definitions[entryName];
 
 		test(`${entryName} is valid item type`, (t) => {
+			t.true(itemType in iconDefinitions);
+		});
+	}
+}
+
+function testLanguageIds() {
+	for (const languageId in languageIds) {
+		const itemType = languageIds[languageId];
+
+		test(`${languageId} has a valid ${itemType} value`, (t) => {
 			t.true(itemType in iconDefinitions);
 		});
 	}
