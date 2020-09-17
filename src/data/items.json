@@ -496,7 +496,7 @@
       "iconName": "ruby"
     },
     "search": {
-      "iconColor": "@green",
+      "iconColor": "@gray",
       "iconName": "search"
     },
     "sheet": {
