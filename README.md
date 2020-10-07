@@ -1,4 +1,5 @@
 # Unfancy file icons [![Published version on Marketplace][badge]][marketplace] [![Test status][gabadge]][ga]
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Falexesprit%2Fvscode-unfancy-file-icons.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Falexesprit%2Fvscode-unfancy-file-icons?ref=badge_shield)
 
 > Octicons and Codicons as file icon themes
 
@@ -68,3 +69,6 @@ Other files in this repository are licensed under the [MIT License](./LICENSE.md
 [gabadge]: https://img.shields.io/github/workflow/status/alexesprit/vscode-unfancy-file-icons/Test?label=test&logo=github&logoColor=white
 [codicons-license]: https://github.com/microsoft/vscode-codicons/blob/master/LICENSE
 [octicons-license]: https://github.com/primer/octicons/blob/master/LICENSE
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Falexesprit%2Fvscode-unfancy-file-icons.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Falexesprit%2Fvscode-unfancy-file-icons?ref=badge_large)
