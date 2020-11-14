@@ -234,6 +234,7 @@
     "codeowners": ["authors", "codeowners", "owners"],
     "config": [
       ".appveyor.yml",
+      ".browserslistrc",
       ".editorconfig",
       ".gitattributes",
       ".gitkeep",
