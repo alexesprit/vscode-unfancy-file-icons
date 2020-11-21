@@ -299,6 +299,7 @@
     ],
     "config-src": [
       "cakefile",
+      "gatsby-config.js",
       "gruntfile.js",
       "gulpfile.js",
       {
