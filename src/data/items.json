@@ -235,6 +235,7 @@
     "config": [
       ".appveyor.yml",
       ".browserslistrc",
+      ".coveragerc",
       ".editorconfig",
       ".gitattributes",
       ".gitkeep",
