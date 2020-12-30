@@ -79,7 +79,16 @@
     ],
     "font": ["eot", "otf", "ttf", "woff", "woff2"],
     "headers": ["d.ts", "h", "h++", "hpp", "hxx", "pyi"],
-    "image": ["gif", "ico", "jpg", "jpeg", "png", "svg", "svgz"],
+    "image": [
+      "gif",
+      "ico",
+      "jpeg",
+      "jpg",
+      "png",
+      "shapeshifter",
+      "svg",
+      "svgz"
+    ],
     "image-src": ["afdesign", "ai", "fla", "indd", "psd", "sketch", "xfl"],
     "linker": ["ilk"],
     "lock": ["lock"],
