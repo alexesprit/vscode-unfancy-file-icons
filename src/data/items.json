@@ -367,6 +367,7 @@
       }
     ],
     "lock": [".vpkg-lock.json", "package-lock.json"],
+    "mail": [".mailmap"],
     "ruby": ["capfile", "gemfile", "guardfile", "podfile", "rakefile"],
     "script": ["gradlew"],
     "security": ["security", "security.md"],
@@ -489,6 +490,10 @@
     "lock": {
       "iconColor": "@magenta",
       "iconName": "lock"
+    },
+    "mail": {
+      "iconColor": "@cyan",
+      "iconName": "mail"
     },
     "map": {
       "iconColor": "@yellow",
