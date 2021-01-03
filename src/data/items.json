@@ -257,6 +257,7 @@
       ".gitkeep",
       ".gitmodules",
       ".gitpod.yml",
+      ".hlint.yaml",
       ".htaccess",
       ".htmlvalidate.json",
       ".keep",
