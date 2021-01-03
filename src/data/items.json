@@ -265,6 +265,7 @@
       ".nvmrc",
       ".renovaterc",
       ".renovaterc.json",
+      ".stylish-haskell.yaml",
       ".travis.yml",
       "appveyor.yml",
       "cmakelists.txt",
