@@ -64,7 +64,7 @@
     "database-src": ["dsql", "sql"],
     "debug": ["pdb"],
     "diff": ["diff", "patch"],
-    "doc": ["dvi", "rdoc", "rst", "tex", "txt"],
+    "doc": ["dvi", "log", "rdoc", "rst", "tex", "txt"],
     "script": [
       "bash",
       "bat",
@@ -93,7 +93,6 @@
     "image-src": ["afdesign", "ai", "fla", "indd", "psd", "sketch", "xfl"],
     "linker": ["ilk"],
     "lock": ["lock"],
-    "log": ["log"],
     "map": ["map"],
     "markdown": ["markdown", "md"],
     "markup": [
@@ -479,10 +478,6 @@
     "lock": {
       "iconColor": "@magenta",
       "iconName": "lock"
-    },
-    "log": {
-      "iconColor": "@blue",
-      "iconName": "bug"
     },
     "map": {
       "iconColor": "@yellow",
