@@ -235,6 +235,12 @@
     "todo": ["todo"]
   },
   "fileNames": {
+    "bugs": [
+      {
+        "names": ["bugs"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
     "changelog": [
       {
         "names": ["changelog", "history"],
@@ -378,6 +384,10 @@
     "binary": {
       "iconColor": "@gray",
       "iconName": "file-binary"
+    },
+    "bugs": {
+      "iconColor": "@cyan",
+      "iconName": "bug"
     },
     "changelog": {
       "iconColor": "@cyan",
