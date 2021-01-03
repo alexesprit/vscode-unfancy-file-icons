@@ -1,4 +1,4 @@
-const { getWarnings } = require('./src/warnings');
+const { getWarnings } = require('../src/warnings');
 
 /**
  * Entry point.

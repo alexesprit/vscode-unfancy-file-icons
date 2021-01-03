@@ -3,7 +3,7 @@ const {
 	getUnusedSamples,
 	createSampleFile,
 	removeSampleFile,
-} = require('./src/samples');
+} = require('../src/samples');
 
 const samplesDir = 'samples';
 
