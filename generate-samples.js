@@ -1,4 +1,9 @@
-const { getMissingSamples, createSampleFile } = require('./src/samples');
+const {
+	getMissingSamples,
+	getUnusedSamples,
+	createSampleFile,
+	removeSampleFile,
+} = require('./src/samples');
 
 const samplesDir = 'samples';
 
@@ -6,6 +11,11 @@ const samplesDir = 'samples';
  * Entry point.
  */
 function main() {
+	createMissingSampleFiles();
+	removeUnusedSampleFiles();
+}
+
+function createMissingSampleFiles() {
 	const missingSamples = getMissingSamples(samplesDir);
 
 	if (missingSamples.length > 0) {
@@ -16,6 +26,20 @@ function main() {
 		}
 	} else {
 		console.log('No missing samples are found');
+	}
+}
+
+function removeUnusedSampleFiles() {
+	const unusedSamples = getUnusedSamples(samplesDir);
+
+	if (unusedSamples.length > 0) {
+		for (const sample of unusedSamples) {
+			removeSampleFile(samplesDir, sample);
+
+			console.log(`Removed ${sample}`);
+		}
+	} else {
+		console.log('No unused samples are found');
 	}
 }
 

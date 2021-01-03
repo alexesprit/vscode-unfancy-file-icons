@@ -1,4 +1,4 @@
-const { readdirSync, openSync, closeSync } = require('fs');
+const { readdirSync, openSync, closeSync, unlinkSync } = require('fs');
 const { join } = require('path');
 
 const { getExpandedItems } = require('./utils');
@@ -6,7 +6,12 @@ const { getExpandedItems } = require('./utils');
 /**
  * Exported functions.
  */
-module.exports = { getMissingSamples, createSampleFile };
+module.exports = {
+	getMissingSamples,
+	getUnusedSamples,
+	createSampleFile,
+	removeSampleFile,
+};
 
 /**
  * Return a list of missing sample files.
@@ -37,6 +42,52 @@ function getMissingSamples(samplesDir) {
 	return missingSamples;
 }
 
+function getUnusedSamples(samplesDir) {
+	const existingSamples = getExistingSamples(samplesDir);
+	const sampleFiles = getFlattenSampleFiles();
+	const unusedSamples = [];
+	const samplesForTypes = {};
+
+	for (const type in sampleFiles) {
+		const samplesList = sampleFiles[type];
+		samplesForTypes[type] = [];
+
+		for (const sampleFile of existingSamples) {
+			if (samplesList.includes(sampleFile)) {
+				samplesForTypes[type].push(sampleFile);
+			}
+		}
+	}
+
+	// Find duplicates
+	for (const type in samplesForTypes) {
+		const samplesList = samplesForTypes[type];
+
+		if (samplesList.length > 1) {
+			unusedSamples.push(...samplesList.slice(1));
+		}
+	}
+
+	// Find unused files
+	for (const existingSample of existingSamples) {
+		let isSampleUnused = true;
+
+		for (const type in samplesForTypes) {
+			const samplesList = sampleFiles[type];
+
+			if (samplesList.includes(existingSample)) {
+				isSampleUnused = false;
+			}
+		}
+
+		if (isSampleUnused) {
+			unusedSamples.push(existingSample);
+		}
+	}
+
+	return unusedSamples;
+}
+
 /**
  * Make sample files.
  *
@@ -46,6 +97,11 @@ function getMissingSamples(samplesDir) {
 function createSampleFile(samplesDir, fileName) {
 	const outPath = join(samplesDir, fileName);
 	closeSync(openSync(outPath, 'w'));
+}
+
+function removeSampleFile(samplesDir, fileName) {
+	const outPath = join(samplesDir, fileName);
+	unlinkSync(outPath);
 }
 
 /**
