@@ -25,5 +25,6 @@ jobs:
         uses: test-room-7/action-update-file@v1
         with:
           file-path: samples/*
+          allow-dot: true
           commit-msg: Update sample files
           github-token: ${{ secrets.GITHUB_TOKEN }}
