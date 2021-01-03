@@ -1,0 +1,29 @@
+name: Samples
+on:
+  push:
+    branches: [master]
+jobs:
+  test:
+    name: Update sample files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.13.1
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Update sample files
+        run: npm run samples
+
+      - name: Publish sample files
+        uses: test-room-7/action-update-file@v1
+        with:
+          file-path: samples/*
+          commit-msg: Update sample files
+          github-token: ${{ secrets.GITHUB_TOKEN }}
