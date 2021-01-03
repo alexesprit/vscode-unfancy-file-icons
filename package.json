@@ -45,7 +45,7 @@
     "build": "node ./scripts/generate-theme.js",
     "test": "npm run build && ava",
     "lint": "eslint . && node ./scripts/check-items.js",
-    "samples": "node ./scripts/generate-samples.js"
+    "samples": "node ./scripts/manage-samples.js"
   },
   "dependencies": {
     "color": "^3.1.2"
