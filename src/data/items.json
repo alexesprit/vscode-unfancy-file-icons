@@ -59,7 +59,7 @@
       "yml"
     ],
     "data-markup": ["xaml", "xml", "xsl", "xslt"],
-    "data-template": ["schema.json"],
+    "data-template": ["schema.json", "graphql"],
     "database": ["dump", "sqlite", "sqlite3"],
     "database-src": ["dsql", "sql"],
     "debug": ["pdb"],
