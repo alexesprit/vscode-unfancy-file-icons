@@ -1,6 +1,6 @@
 const items = require('./data/items.json');
 
-const skipUnusedIcons = ['file', 'folder'];
+const skipUnusedIcons = ['file', 'folder', 'folder-opened'];
 
 /**
  * Exported functions.
