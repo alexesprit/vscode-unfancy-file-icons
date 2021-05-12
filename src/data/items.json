@@ -379,6 +379,7 @@
     "search-result": "search"
   },
   "folder": "folder",
+  "folderExpanded": "folder-opened",
   "iconDefinitions": {
     "archive": {
       "iconColor": "@gray",
@@ -455,6 +456,10 @@
     "folder": {
       "iconColor": "@gray",
       "iconName": "folder"
+    },
+    "folder-opened": {
+      "iconColor": "@gray",
+      "iconName": "folder-opened"
     },
     "font": {
       "iconColor": "@blue",

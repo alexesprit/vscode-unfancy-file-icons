@@ -100,7 +100,7 @@ function getIconTheme(themeId) {
 		iconTheme.iconDefinitions[lightIconName] = { fontColor: lightColor };
 	}
 
-	for (const propName of ['file', 'folder']) {
+	for (const propName of ['file', 'folder', 'folderExpanded']) {
 		const iconName = items[propName];
 		const prefixedIconName = prefix(iconName);
 
