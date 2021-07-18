@@ -79,7 +79,7 @@
       "zsh"
     ],
     "font": ["eot", "otf", "ttf", "woff", "woff2"],
-    "headers": ["d.ts", "h", "h++", "hpp", "hxx", "pyi"],
+    "headers": ["d.ts", "h", "h++", "hh", "hpp", "hxx", "pyi"],
     "image": [
       "gif",
       "ico",
