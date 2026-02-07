@@ -44,7 +44,7 @@
     "vscode:prepublish": "npm run build",
     "build": "node ./scripts/generate-theme.js",
     "test": "npm run build && ava",
-    "lint": "eslint . && node ./scripts/check-items.js",
+    "lint": "biome check . && node ./scripts/check-items.js",
     "samples": "node ./scripts/manage-samples.js",
     "package": "vsce package",
     "publish": "vsce publish"
@@ -53,11 +53,8 @@
     "color": "^3.1.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "2.3.14",
     "@vscode/vsce": "3.7.1",
-    "ava": "3.8.2",
-    "eslint": "7.2.0",
-    "eslint-config-web-scrobbler": "0.5.0",
-    "prettier-config-web-scrobbler": "0.1.0"
-  },
-  "prettier": "prettier-config-web-scrobbler"
+    "ava": "3.8.2"
+  }
 }

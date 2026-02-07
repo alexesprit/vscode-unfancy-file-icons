@@ -1,5 +1,5 @@
-const { readdirSync, openSync, closeSync, unlinkSync } = require('fs');
-const { join } = require('path');
+const { readdirSync, openSync, closeSync, unlinkSync } = require('node:fs');
+const { join } = require('node:path');
 
 const { getExpandedItems } = require('./utils');
 
@@ -138,7 +138,7 @@ function getFlattenSampleFiles() {
 		sampleFiles[type].push(
 			...fileExtensions[type].map((ext) => {
 				return `sample.${ext}`;
-			})
+			}),
 		);
 	}
 

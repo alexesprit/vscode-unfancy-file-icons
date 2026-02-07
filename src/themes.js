@@ -1,5 +1,5 @@
-const { dirname } = require('path');
-const { mkdirSync, writeFileSync } = require('fs');
+const { dirname } = require('node:path');
+const { mkdirSync, writeFileSync } = require('node:fs');
 
 const Color = require('color');
 
