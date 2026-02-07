@@ -45,12 +45,15 @@
     "build": "node ./scripts/generate-theme.js",
     "test": "npm run build && ava",
     "lint": "eslint . && node ./scripts/check-items.js",
-    "samples": "node ./scripts/manage-samples.js"
+    "samples": "node ./scripts/manage-samples.js",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "dependencies": {
     "color": "^3.1.2"
   },
   "devDependencies": {
+    "@vscode/vsce": "3.7.1",
     "ava": "3.8.2",
     "eslint": "7.2.0",
     "eslint-config-web-scrobbler": "0.5.0",
