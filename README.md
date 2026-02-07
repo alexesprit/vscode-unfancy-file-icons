@@ -65,6 +65,6 @@ Other files in this repository are licensed under the [MIT License](./LICENSE.md
 [badge]: https://img.shields.io/visual-studio-marketplace/v/alexesprit.vscode-unfancy-file-icons?logo=visual-studio-code&logoColor=white
 [marketplace]: https://marketplace.visualstudio.com/items?itemName=alexesprit.vscode-unfancy-file-icons
 [ga]: https://github.com/alexesprit/vscode-unfancy-file-icons/actions/
-[gabadge]: https://img.shields.io/github/workflow/status/alexesprit/vscode-unfancy-file-icons/Test?label=test&logo=github&logoColor=white
+[gabadge]: https://img.shields.io/github/actions/workflow/status/alexesprit/vscode-unfancy-file-icons/test.yml?branch=master&label=test&logo=github&logoColor=white
 [codicons-license]: https://github.com/microsoft/vscode-codicons/blob/master/LICENSE
 [octicons-license]: https://github.com/primer/octicons/blob/master/LICENSE
