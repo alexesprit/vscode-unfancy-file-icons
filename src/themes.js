@@ -34,88 +34,125 @@ export function generateIconTheme(theme) {
  */
 export function getIconTheme(themeId) {
   const items = getExpandedItems()
-
   const config = loadThemeConfig(themeId)
-  // Update font paths to point to stripped fonts in theme/fonts/
-  const fonts = config.fonts.map((font) => ({
+
+  const fonts = rewriteFontPaths(config.fonts)
+  const iconDefinitions = buildIconDefinitions(
+    items.iconDefinitions,
+    config.iconMap,
+    config.codepoints,
+  )
+  const mappings = buildMappings(items)
+
+  return assembleTheme(fonts, iconDefinitions, mappings)
+}
+
+/**
+ * Rewrite font source paths to point to stripped fonts in theme/fonts/.
+ *
+ * @param {Array} fonts Font face configuration array
+ * @return {Array} Fonts with updated paths
+ */
+function rewriteFontPaths(fonts) {
+  return fonts.map((font) => ({
     ...font,
     src: font.src.map((s) => ({
       ...s,
       path: s.path.replace('./../resources/', './fonts/'),
     })),
   }))
-  const { iconMap, codepoints } = config
+}
 
-  const iconTheme = {
-    fonts,
+/**
+ * Build icon definition entries for both dark and light themes.
+ *
+ * @param {Object} definitions Icon definitions from items.json
+ * @param {Object} iconMap     Icon name remapping table
+ * @param {Object} codepoints  Font codepoints
+ * @return {Object} Combined dark and light icon definitions
+ */
+function buildIconDefinitions(definitions, iconMap, codepoints) {
+  const result = {}
 
-    light: {
-      fileNames: {
-        /* empty */
-      },
-      fileExtensions: {
-        /* empty */
-      },
-      languageIds: {
-        /* empty */
-      },
-    },
-    fileNames: {
-      /* empty */
-    },
-    fileExtensions: {
-      /* empty */
-    },
-    languageIds: {
-      /* empty */
-    },
-    iconDefinitions: {
-      /* empty */
-    },
-  }
-
-  const { iconDefinitions } = items
-
-  for (const iconEntry in iconDefinitions) {
-    const { iconColor } = iconDefinitions[iconEntry]
-    const iconName = resolveIconName(
-      iconDefinitions[iconEntry].iconName,
-      iconMap,
-    )
+  for (const iconEntry in definitions) {
+    const { iconColor } = definitions[iconEntry]
+    const iconName = resolveIconName(definitions[iconEntry].iconName, iconMap)
 
     const fontColor = getFontColor(iconColor)
     const fontCharacter = getFontCharacter(iconName, codepoints)
     const prefixedIconName = prefix(iconEntry)
-    iconTheme.iconDefinitions[prefixedIconName] = {
-      fontColor,
-      fontCharacter,
-    }
+    result[prefixedIconName] = { fontColor, fontCharacter }
 
     const lightColor = Color(fontColor).darken(darkenPercent).hex()
     const lightIconName = light(prefixedIconName)
-    iconTheme.iconDefinitions[lightIconName] = { fontColor: lightColor }
+    result[lightIconName] = { fontColor: lightColor }
+  }
+
+  return result
+}
+
+/**
+ * Build fileNames, fileExtensions, and languageIds mappings for dark and light themes,
+ * along with root icon assignments (file, folder, folderExpanded).
+ *
+ * @param {Object} items Expanded source data
+ * @return {Object} Mappings for dark theme, light theme, and root icons
+ */
+function buildMappings(items) {
+  const dark = { fileNames: {}, fileExtensions: {}, languageIds: {} }
+  const lightMappings = { fileNames: {}, fileExtensions: {}, languageIds: {} }
+  const rootIcons = { dark: {}, light: {} }
+
+  for (const propName of ['fileNames', 'fileExtensions']) {
+    const convertedItems = convertItems(items[propName])
+    dark[propName] = convertedItems
+    lightMappings[propName] = makeItemsForLightTheme(convertedItems)
+  }
+
+  for (const propName of ['languageIds']) {
+    const prefixedItems = prefixItems(items[propName])
+    dark[propName] = prefixedItems
+    lightMappings[propName] = makeItemsForLightTheme(prefixedItems)
   }
 
   for (const propName of ['file', 'folder', 'folderExpanded']) {
     const iconName = items[propName]
     const prefixedIconName = prefix(iconName)
-
-    iconTheme[propName] = prefixedIconName
-    iconTheme.light[propName] = light(prefixedIconName)
+    rootIcons.dark[propName] = prefixedIconName
+    rootIcons.light[propName] = light(prefixedIconName)
   }
 
-  for (const propName of ['fileNames', 'fileExtensions']) {
-    const convertedItems = convertItems(items[propName])
+  return { dark, light: lightMappings, rootIcons }
+}
 
-    iconTheme[propName] = convertedItems
-    iconTheme.light[propName] = makeItemsForLightTheme(convertedItems)
+/**
+ * Assemble the final theme object from its component parts.
+ *
+ * @param {Array}  fonts           Font face configurations
+ * @param {Object} iconDefinitions Dark and light icon definitions
+ * @param {Object} mappings        File/folder mappings from buildMappings()
+ * @return {Object} Complete theme object
+ */
+function assembleTheme(fonts, iconDefinitions, mappings) {
+  const iconTheme = {
+    fonts,
+
+    light: {
+      fileNames: mappings.light.fileNames,
+      fileExtensions: mappings.light.fileExtensions,
+      languageIds: mappings.light.languageIds,
+    },
+
+    fileNames: mappings.dark.fileNames,
+    fileExtensions: mappings.dark.fileExtensions,
+    languageIds: mappings.dark.languageIds,
+
+    iconDefinitions,
   }
 
-  for (const propName of ['languageIds']) {
-    const prefixedItems = prefixItems(items[propName])
-
-    iconTheme[propName] = prefixedItems
-    iconTheme.light[propName] = makeItemsForLightTheme(prefixedItems)
+  for (const propName of ['file', 'folder', 'folderExpanded']) {
+    iconTheme[propName] = mappings.rootIcons.dark[propName]
+    iconTheme.light[propName] = mappings.rootIcons.light[propName]
   }
 
   return iconTheme
