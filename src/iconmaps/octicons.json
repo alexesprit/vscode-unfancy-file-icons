@@ -1,4 +1,8 @@
 {
+  "file-pdf": "file",
   "folder": "file-directory",
-  "folder-opened": "file-directory"
+  "folder-opened": "file-directory",
+  "paintcan": "paintbrush",
+  "settings": "gear",
+  "text-size": "typography"
 }

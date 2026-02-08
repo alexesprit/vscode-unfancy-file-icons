@@ -2,11 +2,9 @@
  * Extract Lucide icon codepoints from lucide-static package.
  *
  * Usage:
- *   1. npm install --save-dev lucide-static@<version>
+ *   1. Update lucide-static to the desired version in package.json
  *   2. node scripts/extract-lucide-codepoints.js
- *   3. Copy node_modules/lucide-static/font/lucide.woff to resources/lucide.woff
- *   4. npm uninstall lucide-static
- *   5. npm test
+ *   3. npm test
  *
  * This script converts lucide-static's info.json format to the project's
  * codepoints format (icon name -> integer codepoint).
@@ -45,12 +43,7 @@ function main() {
 
   console.log(`✓ Extracted ${Object.keys(codepoints).length} codepoints`)
   console.log(`✓ Written to ${OUTPUT_PATH}`)
-  console.log('\nNext steps:')
-  console.log(
-    '  1. cp node_modules/lucide-static/font/lucide.woff resources/lucide.woff',
-  )
-  console.log('  2. npm uninstall lucide-static')
-  console.log('  3. npm test')
+  console.log('\nNext step: npm test')
 }
 
 main()

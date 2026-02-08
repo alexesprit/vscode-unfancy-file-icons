@@ -83,11 +83,11 @@ function getFileNamesFromTemplate(templateObj) {
   const replacedNames = []
   const { names, templates } = templateObj
 
-  if (!names || names.len === 0) {
+  if (!names || names.length === 0) {
     throw new Error('Invalid template object: no names are found')
   }
 
-  if (!templates || templates.len === 0) {
+  if (!templates || templates.length === 0) {
     throw new Error('Invalid template object: no templates are found')
   }
 

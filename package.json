@@ -55,7 +55,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run build",
-    "build": "node ./scripts/generate-theme.js && node ./scripts/subset-fonts.js",
+    "build": "node ./scripts/generate-octicons-font.js && node ./scripts/generate-theme.js && node ./scripts/subset-fonts.js",
     "subset-fonts": "node ./scripts/subset-fonts.js",
     "test": "npm run build && ava",
     "lint": "biome check . && node ./scripts/check-items.js",
@@ -71,10 +71,14 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.14",
+    "@primer/octicons": "^19.21.2",
+    "@vscode/codicons": "0.0.44",
     "@vscode/vsce": "3.7.1",
     "ava": "6.4.1",
     "color": "5.0.3",
+    "fantasticon": "^4.1.0",
     "lefthook": "2.1.0",
+    "lucide-static": "0.563.0",
     "subset-font": "2.4.0"
   }
 }

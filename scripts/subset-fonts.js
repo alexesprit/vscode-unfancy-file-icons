@@ -6,6 +6,18 @@ import { loadItems } from '../src/data/items.js'
 
 const items = loadItems()
 
+/** Source font paths per theme (resolved from npm packages when available) */
+const sourceFontPaths = {
+  codicons: path.join(
+    import.meta.dirname,
+    '../node_modules/@vscode/codicons/dist/codicon.ttf',
+  ),
+  lucide: path.join(
+    import.meta.dirname,
+    '../node_modules/lucide-static/font/lucide.woff',
+  ),
+}
+
 /**
  * Collect all used codepoints for a theme
  * @returns {{ unicodes: number[], missing: string[] }}
@@ -67,12 +79,7 @@ async function subsetFontFile(themeId) {
   const { unicodes, missing } = collectCodepoints(themeId)
   const unicodeList = unicodes.map((u) => String.fromCodePoint(u)).join('')
 
-  const inputPath = path.join(
-    import.meta.dirname,
-    '..',
-    'resources',
-    `${themeId}.woff`,
-  )
+  const inputPath = sourceFontPaths[themeId]
   const outputDir = path.join(import.meta.dirname, '..', 'theme', 'fonts')
   const outputPath = path.join(outputDir, `${themeId}.woff`)
 
@@ -108,7 +115,7 @@ async function subsetFontFile(themeId) {
  * Subset all theme fonts
  */
 async function main() {
-  const themes = ['octicons', 'codicons', 'lucide']
+  const themes = ['codicons', 'lucide']
 
   console.log('Subsetting fonts...\n')
 
