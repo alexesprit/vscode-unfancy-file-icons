@@ -7,6 +7,7 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
 ## What's new in v4
 
 - **Lucide icon theme** — new third theme variant alongside Octicons and Codicons
+- **Updated icon fonts** — Octicons and Codicons updated to latest versions
 - **Smaller extension size** — bundled fonts trimmed to only the glyphs actually used
 - **Expanded file type coverage** — significantly more file extensions, file names, and language IDs recognized
 
