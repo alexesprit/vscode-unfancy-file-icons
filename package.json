@@ -73,7 +73,7 @@
     "@biomejs/biome": "2.3.14",
     "@vscode/vsce": "3.7.1",
     "ava": "6.4.1",
-    "color": "4.2.3",
+    "color": "5.0.3",
     "lefthook": "2.1.0",
     "subset-font": "2.4.0"
   }
