@@ -1,10 +1,11 @@
-import items from './data/items.json' with { type: 'json' }
+import { loadItems } from './data/items.js'
 
 const skipUnusedIcons = ['file', 'folder', 'folder-opened']
 
 export function getWarnings() {
-  const duplicates = getDuplicates()
-  const unusedIcons = getUnusedIcons()
+  const items = loadItems()
+  const duplicates = getDuplicates(items)
+  const unusedIcons = getUnusedIcons(items)
 
   const warnings = []
 
@@ -19,7 +20,7 @@ export function getWarnings() {
   return warnings
 }
 
-function getUnusedIcons() {
+function getUnusedIcons(items) {
   const { iconDefinitions, fileExtensions, fileNames } = items
   const unusedIcons = []
 
@@ -38,7 +39,7 @@ function getUnusedIcons() {
   return unusedIcons
 }
 
-function getDuplicates() {
+function getDuplicates(items) {
   const { fileExtensions, fileNames } = items
 
   const duplicates = [

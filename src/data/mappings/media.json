@@ -1,0 +1,53 @@
+{
+  "fileExtensions": {
+    "font": ["eot", "fnt", "otf", "pfb", "pfm", "ttf", "woff", "woff2"],
+    "image": [
+      "apng",
+      "avif",
+      "bmp",
+      "dds",
+      "exr",
+      "gif",
+      "heic",
+      "heif",
+      "icns",
+      "ico",
+      "jpeg",
+      "jpg",
+      "jxl",
+      "png",
+      "raw",
+      "shapeshifter",
+      "svg",
+      "svgz",
+      "tga",
+      "tif",
+      "tiff",
+      "webp"
+    ],
+    "media": [
+      "3gp",
+      "aac",
+      "avi",
+      "flac",
+      "flv",
+      "m4a",
+      "m4v",
+      "mid",
+      "midi",
+      "mkv",
+      "mov",
+      "mp3",
+      "mp4",
+      "mpg",
+      "ogg",
+      "opus",
+      "spx",
+      "swf",
+      "wav",
+      "webm",
+      "wma",
+      "wmv"
+    ]
+  }
+}

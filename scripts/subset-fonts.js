@@ -2,7 +2,9 @@ import fs from 'node:fs'
 import path from 'node:path'
 import subsetFont from 'subset-font'
 
-import items from '../src/data/items.json' with { type: 'json' }
+import { loadItems } from '../src/data/items.js'
+
+const items = loadItems()
 
 /**
  * Collect all used codepoints for a theme

@@ -1,0 +1,65 @@
+{
+  "fileExtensions": {
+    "doc": [
+      "adoc",
+      "asciidoc",
+      "dvi",
+      "log",
+      "man",
+      "org",
+      "qmd",
+      "rdoc",
+      "rmd",
+      "rst",
+      "rtf",
+      "tex",
+      "txt",
+      "typ",
+      "wiki"
+    ],
+    "markdown": ["markdown", "md", "mdx"],
+    "pdf": ["pdf"],
+    "todo": ["todo"]
+  },
+  "fileNames": {
+    "bugs": [
+      {
+        "names": ["bugs"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
+    "changelog": [
+      {
+        "names": ["changelog", "history"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
+    "codeowners": ["authors", "codeowners", "owners"],
+    "doc": [
+      "architecture.md",
+      "backers.md",
+      "code_of_conduct",
+      "contributing",
+      "contributors",
+      "governance.md",
+      "issue_template",
+      "pull_request_template"
+    ],
+    "info": [
+      {
+        "names": ["readme"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
+    "license": [
+      {
+        "names": ["copying", "license", "license-code"],
+        "templates": ["${name}", "${name}.md", "${name}.txt"]
+      }
+    ],
+    "mail": [".mailmap"],
+    "security": ["security", "security.md", "security.txt"],
+    "support": ["funding.yml", "support", "support.md"],
+    "todo": ["todo", "todo.md", "todo.txt"]
+  }
+}

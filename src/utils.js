@@ -1,5 +1,5 @@
 import colors from './data/colors.json' with { type: 'json' }
-import items from './data/items.json' with { type: 'json' }
+import { loadItems } from './data/items.js'
 
 // eslint-disable-next-line no-template-curly-in-string
 const namePlaceholder = '${name}'
@@ -30,6 +30,8 @@ export function light(str) {
  * @return {Object} Source data
  */
 export function getExpandedItems() {
+  const items = loadItems()
+
   expandItems(items.fileNames)
   expandItems(items.fileExtensions)
 

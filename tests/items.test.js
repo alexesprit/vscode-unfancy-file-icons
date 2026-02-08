@@ -3,10 +3,10 @@ import { join } from 'node:path'
 import test from 'ava'
 import packageFile from './../package.json' with { type: 'json' }
 import colors from './../src/data/colors.json' with { type: 'json' }
-import itemsData from './../src/data/items.json' with { type: 'json' }
+import { loadItems } from './../src/data/items.js'
 import { getThemeId } from './../src/utils.js'
 
-const { iconDefinitions, fileExtensions, fileNames, languageIds } = itemsData
+const { iconDefinitions, fileExtensions, fileNames, languageIds } = loadItems()
 
 runTests()
 

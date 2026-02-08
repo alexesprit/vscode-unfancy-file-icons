@@ -1,0 +1,191 @@
+{
+  "file": "file",
+  "folder": "folder",
+  "folderExpanded": "folder-opened",
+  "iconDefinitions": {
+    "archive": {
+      "iconColor": "@gray",
+      "iconName": "file-zip"
+    },
+    "binary": {
+      "iconColor": "@gray",
+      "iconName": "file-binary"
+    },
+    "bugs": {
+      "iconColor": "@cyan",
+      "iconName": "bug"
+    },
+    "changelog": {
+      "iconColor": "@cyan",
+      "iconName": "history"
+    },
+    "codeowners": {
+      "iconColor": "@cyan",
+      "iconName": "organization"
+    },
+    "config": {
+      "iconColor": "@violet",
+      "iconName": "gear"
+    },
+    "config-src": {
+      "iconColor": "@green",
+      "iconName": "gear"
+    },
+    "ctags": {
+      "iconColor": "@violet",
+      "iconName": "tag"
+    },
+    "data": {
+      "iconColor": "@violet",
+      "iconName": "file-code"
+    },
+    "data-markup": {
+      "iconColor": "@violet",
+      "iconName": "code"
+    },
+    "data-template": {
+      "iconColor": "@yellow",
+      "iconName": "settings"
+    },
+    "database": {
+      "iconColor": "@violet",
+      "iconName": "database"
+    },
+    "database-src": {
+      "iconColor": "@green",
+      "iconName": "database"
+    },
+    "debug": {
+      "iconColor": "@gray",
+      "iconName": "bug"
+    },
+    "diff": {
+      "iconColor": "@green",
+      "iconName": "diff"
+    },
+    "doc": {
+      "iconColor": "@cyan",
+      "iconName": "file"
+    },
+    "script": {
+      "iconColor": "@orange",
+      "iconName": "terminal"
+    },
+    "file": {
+      "iconColor": "@gray",
+      "iconName": "file"
+    },
+    "folder": {
+      "iconColor": "@gray",
+      "iconName": "folder"
+    },
+    "folder-opened": {
+      "iconColor": "@gray",
+      "iconName": "folder-opened"
+    },
+    "font": {
+      "iconColor": "@blue",
+      "iconName": "text-size"
+    },
+    "headers": {
+      "iconColor": "@yellow",
+      "iconName": "file-code"
+    },
+    "ignore": {
+      "iconColor": "@red",
+      "iconName": "circle-slash"
+    },
+    "image": {
+      "iconColor": "@blue",
+      "iconName": "file-media"
+    },
+    "image-src": {
+      "iconColor": "@green",
+      "iconName": "file-media"
+    },
+    "info": {
+      "iconColor": "@cyan",
+      "iconName": "info"
+    },
+    "license": {
+      "iconColor": "@cyan",
+      "iconName": "law"
+    },
+    "linker": {
+      "iconColor": "@gray",
+      "iconName": "link-external"
+    },
+    "lock": {
+      "iconColor": "@red",
+      "iconName": "lock"
+    },
+    "mail": {
+      "iconColor": "@cyan",
+      "iconName": "mail"
+    },
+    "map": {
+      "iconColor": "@yellow",
+      "iconName": "location"
+    },
+    "markdown": {
+      "iconColor": "@cyan",
+      "iconName": "markdown"
+    },
+    "markup": {
+      "iconColor": "@green",
+      "iconName": "code"
+    },
+    "media": {
+      "iconColor": "@blue",
+      "iconName": "play"
+    },
+    "notebook": {
+      "iconColor": "@violet",
+      "iconName": "note"
+    },
+    "pdf": {
+      "iconColor": "@cyan",
+      "iconName": "file-pdf"
+    },
+    "ruby": {
+      "iconColor": "@red",
+      "iconName": "ruby"
+    },
+    "search": {
+      "iconColor": "@gray",
+      "iconName": "search"
+    },
+    "sheet": {
+      "iconColor": "@violet",
+      "iconName": "list-unordered"
+    },
+    "src": {
+      "iconColor": "@green",
+      "iconName": "file-code"
+    },
+    "security": {
+      "iconColor": "@cyan",
+      "iconName": "shield"
+    },
+    "stylesheet": {
+      "iconColor": "@yellow",
+      "iconName": "paintcan"
+    },
+    "support": {
+      "iconColor": "@red",
+      "iconName": "heart"
+    },
+    "template": {
+      "iconColor": "@yellow",
+      "iconName": "code"
+    },
+    "test": {
+      "iconColor": "@green",
+      "iconName": "beaker"
+    },
+    "todo": {
+      "iconColor": "@cyan",
+      "iconName": "checklist"
+    }
+  }
+}
