@@ -15,7 +15,7 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
     -   orange for scripts (`sh`, `bat`, `cmd`, etc)
     -   cyan for documentation files (`md`, `tex`, `pdf`, etc)
     -   blue for media files (images, videos, art software files, etc)
-    -   magenta for ignore and lock files (`.gitignore`, `package-lock.json`, etc)
+    -   red for ignore and lock files (`.gitignore`, `package-lock.json`, etc)
     -   gray for other files and directories
 -   Use generic icons rather than trying to find one for each file extension
     (except when an icon fits the file type, like with Ruby files)
@@ -56,11 +56,17 @@ npm run lint:fix
 ![Screenshot][codicons-light]\
  _Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Codicons)_
 
+![Screenshot][lucide-dark]\
+ _Theme: Dark (Visual Studio), Icon theme: Unfancy file icons (Lucide)_
+
+![Screenshot][lucide-light]\
+ _Theme: Light (Visual Studio), Icon theme: Unfancy file icons (Lucide)_
+
 </details>
 
 ## License
 
-See [LICENSE][codicons-license] for Codicons. See [LICENSE][octicons-license] for Octicons.
+See [LICENSE][codicons-license] for Codicons. See [LICENSE][octicons-license] for Octicons. See [LICENSE][lucide-license] for Lucide.
 
 Other files in this repository are licensed under the [MIT License](./LICENSE.md).
 
@@ -72,9 +78,12 @@ Other files in this repository are licensed under the [MIT License](./LICENSE.md
 [octicons-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-octicons-light.png
 [codicons-dark]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-codicons-dark.png
 [codicons-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-codicons-light.png
+[lucide-dark]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-lucide-dark.png
+[lucide-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-lucide-light.png
 [badge]: https://img.shields.io/visual-studio-marketplace/v/alexesprit.vscode-unfancy-file-icons?logo=visual-studio-code&logoColor=white
 [marketplace]: https://marketplace.visualstudio.com/items?itemName=alexesprit.vscode-unfancy-file-icons
 [ga]: https://github.com/alexesprit/vscode-unfancy-file-icons/actions/
-[gabadge]: https://img.shields.io/github/actions/workflow/status/alexesprit/vscode-unfancy-file-icons/test.yml?branch=master&label=test&logo=github&logoColor=white
+[gabadge]: https://img.shields.io/github/actions/workflow/status/alexesprit/vscode-unfancy-file-icons/ci.yml?branch=master&label=test&logo=github&logoColor=white
 [codicons-license]: https://github.com/microsoft/vscode-codicons/blob/master/LICENSE
+[lucide-license]: https://github.com/lucide-icons/lucide/blob/main/LICENSE
 [octicons-license]: https://github.com/primer/octicons/blob/master/LICENSE
