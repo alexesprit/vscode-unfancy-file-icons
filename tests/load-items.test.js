@@ -1,7 +1,6 @@
 import { join } from 'node:path'
 import test from 'ava'
 import { loadItems } from './../src/data/items.js'
-import itemsData from './../src/data/items.json' with { type: 'json' }
 import { readJsonFile } from './../src/loader.js'
 
 const mappingDir = join(import.meta.dirname, '..', 'src', 'data', 'mappings')
@@ -90,51 +89,6 @@ test('iconDefinitions is a plain object', (t) => {
 })
 
 /**
- * Test 3: Equivalence with original — the merged result matches what
- * items.json currently contains. This is the critical correctness test.
- */
-
-test('merged result matches items.json exactly', (t) => {
-  const result = loadItems()
-  t.deepEqual(result, itemsData)
-})
-
-test('file value matches items.json', (t) => {
-  const result = loadItems()
-  t.is(result.file, itemsData.file)
-})
-
-test('folder value matches items.json', (t) => {
-  const result = loadItems()
-  t.is(result.folder, itemsData.folder)
-})
-
-test('folderExpanded value matches items.json', (t) => {
-  const result = loadItems()
-  t.is(result.folderExpanded, itemsData.folderExpanded)
-})
-
-test('fileExtensions matches items.json', (t) => {
-  const result = loadItems()
-  t.deepEqual(result.fileExtensions, itemsData.fileExtensions)
-})
-
-test('fileNames matches items.json', (t) => {
-  const result = loadItems()
-  t.deepEqual(result.fileNames, itemsData.fileNames)
-})
-
-test('languageIds matches items.json', (t) => {
-  const result = loadItems()
-  t.deepEqual(result.languageIds, itemsData.languageIds)
-})
-
-test('iconDefinitions matches items.json', (t) => {
-  const result = loadItems()
-  t.deepEqual(result.iconDefinitions, itemsData.iconDefinitions)
-})
-
-/**
  * Test 4: Fresh object per call — two calls return different references.
  * loadItems() must not cache or return the same object.
  */
@@ -167,80 +121,6 @@ test('two calls return different languageIds references', (t) => {
   const first = loadItems()
   const second = loadItems()
   t.not(first.languageIds, second.languageIds)
-})
-
-/**
- * Test 5: All mapping categories present — every category key from the
- * original fileExtensions and fileNames appears in the merged result.
- */
-
-test('all original fileExtensions categories are present', (t) => {
-  const result = loadItems()
-  const originalCategories = Object.keys(itemsData.fileExtensions)
-
-  for (const category of originalCategories) {
-    t.true(
-      category in result.fileExtensions,
-      `missing fileExtensions category: ${category}`,
-    )
-  }
-
-  t.is(
-    Object.keys(result.fileExtensions).length,
-    originalCategories.length,
-    'fileExtensions category count mismatch',
-  )
-})
-
-test('all original fileNames categories are present', (t) => {
-  const result = loadItems()
-  const originalCategories = Object.keys(itemsData.fileNames)
-
-  for (const category of originalCategories) {
-    t.true(
-      category in result.fileNames,
-      `missing fileNames category: ${category}`,
-    )
-  }
-
-  t.is(
-    Object.keys(result.fileNames).length,
-    originalCategories.length,
-    'fileNames category count mismatch',
-  )
-})
-
-test('all original iconDefinitions entries are present', (t) => {
-  const result = loadItems()
-  const originalKeys = Object.keys(itemsData.iconDefinitions)
-
-  for (const key of originalKeys) {
-    t.true(
-      key in result.iconDefinitions,
-      `missing iconDefinitions entry: ${key}`,
-    )
-  }
-
-  t.is(
-    Object.keys(result.iconDefinitions).length,
-    originalKeys.length,
-    'iconDefinitions entry count mismatch',
-  )
-})
-
-test('all original languageIds entries are present', (t) => {
-  const result = loadItems()
-  const originalKeys = Object.keys(itemsData.languageIds)
-
-  for (const key of originalKeys) {
-    t.true(key in result.languageIds, `missing languageIds entry: ${key}`)
-  }
-
-  t.is(
-    Object.keys(result.languageIds).length,
-    originalKeys.length,
-    'languageIds entry count mismatch',
-  )
 })
 
 /**
@@ -331,7 +211,7 @@ test('mapping files contain only fileExtensions and fileNames keys', (t) => {
   }
 })
 
-test('union of mapping file categories equals original fileExtensions categories', (t) => {
+test('union of mapping file categories equals loadItems fileExtensions categories', (t) => {
   const mergedCategories = new Set()
 
   for (const name of mappingFileNames) {
@@ -345,11 +225,12 @@ test('union of mapping file categories equals original fileExtensions categories
     }
   }
 
-  const originalCategories = new Set(Object.keys(itemsData.fileExtensions))
-  t.deepEqual([...mergedCategories].sort(), [...originalCategories].sort())
+  const items = loadItems()
+  const loadedCategories = new Set(Object.keys(items.fileExtensions))
+  t.deepEqual([...mergedCategories].sort(), [...loadedCategories].sort())
 })
 
-test('union of mapping file categories equals original fileNames categories', (t) => {
+test('union of mapping file categories equals loadItems fileNames categories', (t) => {
   const mergedCategories = new Set()
 
   for (const name of mappingFileNames) {
@@ -363,6 +244,7 @@ test('union of mapping file categories equals original fileNames categories', (t
     }
   }
 
-  const originalCategories = new Set(Object.keys(itemsData.fileNames))
-  t.deepEqual([...mergedCategories].sort(), [...originalCategories].sort())
+  const items = loadItems()
+  const loadedCategories = new Set(Object.keys(items.fileNames))
+  t.deepEqual([...mergedCategories].sort(), [...loadedCategories].sort())
 })

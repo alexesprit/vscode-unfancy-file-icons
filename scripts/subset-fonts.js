@@ -34,7 +34,7 @@ function collectCodepoints(themeId) {
     usedIcons.add(iconName)
   }
 
-  // Add icons from items.json iconDefinitions (with remapping applied)
+  // Add icons from iconDefinitions (with remapping applied)
   for (const def of Object.values(items.iconDefinitions)) {
     if (def.iconName) {
       const iconName = resolveIconName(def.iconName, iconmap)
