@@ -24,11 +24,15 @@ const OUTPUT_PATH = path.join(
   '../src/codepoints/lucide.json',
 )
 
+/**
+ * Entry point.
+ */
 function main() {
   if (!fs.existsSync(INFO_PATH)) {
     console.error('Error: lucide-static not found.')
     console.error('Run: npm install --save-dev lucide-static')
-    process.exit(1)
+    process.exitCode = 1
+    return
   }
 
   const info = readJsonFile(INFO_PATH)

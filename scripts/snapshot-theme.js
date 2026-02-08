@@ -5,19 +5,25 @@ import { getThemeId } from '../src/naming.js'
 import { getIconTheme } from '../src/themes.js'
 
 const snapshotDir = resolve(import.meta.dirname, '..', 'snapshots')
-const { iconThemes } = packageFile.contributes
 
-mkdirSync(snapshotDir, { recursive: true })
+/**
+ * Entry point.
+ */
+function main() {
+  const { iconThemes } = packageFile.contributes
 
-for (const theme of iconThemes) {
-  const themeId = getThemeId(theme)
-  const iconTheme = getIconTheme(themeId)
+  mkdirSync(snapshotDir, { recursive: true })
 
-  const sorted = sortKeys(iconTheme)
-  const outPath = resolve(snapshotDir, `${themeId}.json`)
-  writeFileSync(outPath, JSON.stringify(sorted, null, 2))
+  for (const theme of iconThemes) {
+    const themeId = getThemeId(theme)
+    const iconTheme = getIconTheme(themeId)
 
-  console.log(`Snapshot saved: snapshots/${themeId}.json`)
+    const sorted = sortKeys(iconTheme)
+    const outPath = resolve(snapshotDir, `${themeId}.json`)
+    writeFileSync(outPath, JSON.stringify(sorted, null, 2))
+
+    console.log(`Snapshot saved: snapshots/${themeId}.json`)
+  }
 }
 
 function sortKeys(obj) {
@@ -35,3 +41,5 @@ function sortKeys(obj) {
 
   return obj
 }
+
+main()

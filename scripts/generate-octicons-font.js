@@ -52,11 +52,15 @@ function collectUsedIcons() {
   return used
 }
 
+/**
+ * Entry point.
+ */
 async function main() {
   if (!fs.existsSync(SVG_DIR)) {
     console.error('Error: @primer/octicons not found.')
     console.error('Run: npm install --save-dev @primer/octicons')
-    process.exit(1)
+    process.exitCode = 1
+    return
   }
 
   const usedIcons = collectUsedIcons()
@@ -77,7 +81,8 @@ async function main() {
 
     if (missing.length > 0) {
       console.error(`✗ Missing SVGs in @primer/octicons: ${missing.join(', ')}`)
-      process.exit(1)
+      process.exitCode = 1
+      return
     }
 
     // Generate woff font directly to theme/fonts/
@@ -115,5 +120,5 @@ async function main() {
 
 main().catch((err) => {
   console.error('Error generating octicons font:', err)
-  process.exit(1)
+  process.exitCode = 1
 })

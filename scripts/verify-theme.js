@@ -6,38 +6,45 @@ import { getThemeId } from '../src/naming.js'
 import { getIconTheme } from '../src/themes.js'
 
 const snapshotDir = resolve(import.meta.dirname, '..', 'snapshots')
-const { iconThemes } = packageFile.contributes
 
-let hasChanges = false
+/**
+ * Entry point.
+ */
+function main() {
+  const { iconThemes } = packageFile.contributes
 
-for (const theme of iconThemes) {
-  const themeId = getThemeId(theme)
-  const snapshotPath = resolve(snapshotDir, `${themeId}.json`)
+  let hasChanges = false
 
-  if (!existsSync(snapshotPath)) {
-    console.error(`No snapshot found: snapshots/${themeId}.json`)
-    console.error('Run "npm run snapshot" first.')
-    process.exit(1)
-  }
+  for (const theme of iconThemes) {
+    const themeId = getThemeId(theme)
+    const snapshotPath = resolve(snapshotDir, `${themeId}.json`)
 
-  const snapshot = readJsonFile(snapshotPath)
-  const current = getIconTheme(themeId)
+    if (!existsSync(snapshotPath)) {
+      console.error(`No snapshot found: snapshots/${themeId}.json`)
+      console.error('Run "npm run snapshot" first.')
+      process.exitCode = 1
+      return
+    }
 
-  const changes = diffThemes(snapshot, current)
-  if (changes.length > 0) {
-    hasChanges = true
-    console.log(`\nTheme: ${themeId}`)
-    for (const line of changes) {
-      console.log(line)
+    const snapshot = readJsonFile(snapshotPath)
+    const current = getIconTheme(themeId)
+
+    const changes = diffThemes(snapshot, current)
+    if (changes.length > 0) {
+      hasChanges = true
+      console.log(`\nTheme: ${themeId}`)
+      for (const line of changes) {
+        console.log(line)
+      }
     }
   }
-}
 
-if (hasChanges) {
-  console.log('')
-  process.exit(1)
-} else {
-  console.log('No changes detected.')
+  if (hasChanges) {
+    console.log('')
+    process.exitCode = 1
+  } else {
+    console.log('No changes detected.')
+  }
 }
 
 /**
@@ -159,3 +166,5 @@ function diffIconDef(a, b) {
   }
   return diffs
 }
+
+main()

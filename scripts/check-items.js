@@ -10,10 +10,8 @@ function main() {
     for (const warning of warnings) {
       console.log(warning)
     }
-    return 1
+    process.exitCode = 1
   }
-
-  return 0
 }
 
-process.exit(main())
+main()

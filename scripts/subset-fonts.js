@@ -103,7 +103,7 @@ async function subsetFontFile(themeId) {
 }
 
 /**
- * Subset all theme fonts
+ * Entry point.
  */
 async function main() {
   const { iconThemes } = packageFile.contributes
@@ -134,5 +134,5 @@ async function main() {
 
 main().catch((err) => {
   console.error('Error subsetting fonts:', err)
-  process.exit(1)
+  process.exitCode = 1
 })
