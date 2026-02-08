@@ -3,9 +3,8 @@
   "@cyan": "#7bd0cd",
   "@gray": "#a3a8ae",
   "@green": "#a1d971",
-  "@magenta": "#e0404f",
   "@orange": "#fc9776",
-  "@red": "#ab7967",
+  "@red": "#e0404f",
   "@violet": "#c280b6",
   "@yellow": "#ebCb8b"
 }

@@ -886,7 +886,7 @@
       "iconName": "file-code"
     },
     "ignore": {
-      "iconColor": "@magenta",
+      "iconColor": "@red",
       "iconName": "circle-slash"
     },
     "image": {
@@ -910,7 +910,7 @@
       "iconName": "link-external"
     },
     "lock": {
-      "iconColor": "@magenta",
+      "iconColor": "@red",
       "iconName": "lock"
     },
     "mail": {
@@ -942,7 +942,7 @@
       "iconName": "file-pdf"
     },
     "ruby": {
-      "iconColor": "@magenta",
+      "iconColor": "@red",
       "iconName": "ruby"
     },
     "search": {
@@ -966,7 +966,7 @@
       "iconName": "paintcan"
     },
     "support": {
-      "iconColor": "@magenta",
+      "iconColor": "@red",
       "iconName": "heart"
     },
     "template": {
