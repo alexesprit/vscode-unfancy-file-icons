@@ -47,7 +47,15 @@ function generateIconTheme(theme) {
 function getIconTheme(themeId) {
 	const items = getExpandedItems();
 
-	const fonts = require(`./fonts/${themeId}.json`);
+	const fontsConfig = require(`./fonts/${themeId}.json`);
+	// Update font paths to point to stripped fonts in theme/fonts/
+	const fonts = fontsConfig.map((font) => ({
+		...font,
+		src: font.src.map((s) => ({
+			...s,
+			path: s.path.replace('./../resources/', './fonts/'),
+		})),
+	}));
 	const iconMap = require(`./iconmaps/${themeId}.json`);
 	const codepoints = require(`./codepoints/${themeId}.json`);
 

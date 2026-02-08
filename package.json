@@ -19,7 +19,6 @@
   "license": "MIT",
   "files": [
     "theme/",
-    "resources/",
     "images/",
     "LICENSE.md",
     "README.md"
@@ -55,7 +54,8 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run build",
-    "build": "node ./scripts/generate-theme.js",
+    "build": "node ./scripts/generate-theme.js && node ./scripts/subset-fonts.js",
+    "subset-fonts": "node ./scripts/subset-fonts.js",
     "test": "npm run build && ava",
     "lint": "biome check . && node ./scripts/check-items.js",
     "lint:fix": "biome check --write . && node ./scripts/check-items.js",
@@ -63,12 +63,14 @@
     "verify": "node ./scripts/verify-theme.js",
     "samples": "node ./scripts/manage-samples.js",
     "package": "vsce package",
-    "publish": "vsce publish"
+    "publish": "vsce publish",
+    "install:local": "npm run build && npm run package && code --install-extension vscode-unfancy-file-icons-$(node -p \"require('./package.json').version\").vsix"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.14",
     "@vscode/vsce": "3.7.1",
     "ava": "6.4.1",
-    "color": "4.2.3"
+    "color": "4.2.3",
+    "subset-font": "2.4.0"
   }
 }
