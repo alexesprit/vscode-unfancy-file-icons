@@ -1,5 +1,6 @@
-import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
+
+import { readJsonFile } from '../loader.js'
 
 const mappingFiles = ['source', 'data', 'docs', 'media', 'build', 'style']
 
@@ -18,7 +19,7 @@ export function loadItems() {
 
   for (const name of mappingFiles) {
     const filePath = join(dir, 'mappings', `${name}.json`)
-    const mapping = JSON.parse(readFileSync(filePath, 'utf-8'))
+    const mapping = readJsonFile(filePath)
 
     if (mapping.fileExtensions) {
       for (const key of Object.keys(mapping.fileExtensions)) {
@@ -44,10 +45,10 @@ export function loadItems() {
   }
 
   const iconDefsPath = join(dir, 'icon-definitions.json')
-  const iconDefs = JSON.parse(readFileSync(iconDefsPath, 'utf-8'))
+  const iconDefs = readJsonFile(iconDefsPath)
 
   const langIdsPath = join(dir, 'language-ids.json')
-  const languageIds = JSON.parse(readFileSync(langIdsPath, 'utf-8'))
+  const languageIds = readJsonFile(langIdsPath)
 
   return {
     file: iconDefs.file,

@@ -13,6 +13,8 @@
 import fs from 'node:fs'
 import path from 'node:path'
 
+import { readJsonFile } from '../src/loader.js'
+
 const INFO_PATH = path.join(
   import.meta.dirname,
   '../node_modules/lucide-static/font/info.json',
@@ -29,7 +31,7 @@ function main() {
     process.exit(1)
   }
 
-  const info = JSON.parse(fs.readFileSync(INFO_PATH, 'utf8'))
+  const info = readJsonFile(INFO_PATH)
   const codepoints = {}
 
   for (const [name, data] of Object.entries(info)) {

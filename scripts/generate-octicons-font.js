@@ -18,6 +18,7 @@ import path from 'node:path'
 import { generateFonts } from 'fantasticon'
 
 import { loadItems } from '../src/data/items.js'
+import { readJsonFile } from '../src/loader.js'
 
 const ROOT = path.join(import.meta.dirname, '..')
 const SVG_DIR = path.join(ROOT, 'node_modules/@primer/octicons/build/svg')
@@ -31,7 +32,7 @@ const CODEPOINTS_OUTPUT = path.join(ROOT, 'src/codepoints/octicons.json')
  */
 function collectUsedIcons() {
   const items = loadItems()
-  const iconmap = JSON.parse(fs.readFileSync(ICONMAP_PATH, 'utf-8'))
+  const iconmap = readJsonFile(ICONMAP_PATH)
   const used = new Set()
 
   // Icons referenced by iconmap targets

@@ -3,6 +3,7 @@ import path from 'node:path'
 import subsetFont from 'subset-font'
 
 import { loadItems } from '../src/data/items.js'
+import { loadThemeConfig } from '../src/loader.js'
 
 const items = loadItems()
 
@@ -23,18 +24,7 @@ const sourceFontPaths = {
  * @returns {{ unicodes: number[], missing: string[] }}
  */
 function collectCodepoints(themeId) {
-  const iconmap = JSON.parse(
-    fs.readFileSync(
-      path.join(import.meta.dirname, `../src/iconmaps/${themeId}.json`),
-      'utf-8',
-    ),
-  )
-  const codepoints = JSON.parse(
-    fs.readFileSync(
-      path.join(import.meta.dirname, `../src/codepoints/${themeId}.json`),
-      'utf-8',
-    ),
-  )
+  const { iconMap: iconmap, codepoints } = loadThemeConfig(themeId)
 
   const usedIcons = new Set()
 

@@ -1,8 +1,8 @@
-import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import test from 'ava'
 
 import packageFile from './../package.json' with { type: 'json' }
+import { readJsonFile } from './../src/loader.js'
 
 const { iconThemes } = packageFile.contributes
 
@@ -16,9 +16,7 @@ function runTests() {
 
 function testTheme(theme) {
   const themeId = theme.id
-  const iconTheme = JSON.parse(
-    readFileSync(join(import.meta.dirname, '..', theme.path), 'utf-8'),
-  )
+  const iconTheme = readJsonFile(join(import.meta.dirname, '..', theme.path))
 
   const { iconDefinitions } = iconTheme
 

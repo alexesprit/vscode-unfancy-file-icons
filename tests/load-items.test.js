@@ -1,8 +1,8 @@
-import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import test from 'ava'
 import { loadItems } from './../src/data/items.js'
 import itemsData from './../src/data/items.json' with { type: 'json' }
+import { readJsonFile } from './../src/loader.js'
 
 const mappingDir = join(import.meta.dirname, '..', 'src', 'data', 'mappings')
 
@@ -254,7 +254,7 @@ test('no duplicate fileExtensions categories across mapping files', (t) => {
 
   for (const name of mappingFileNames) {
     const filePath = join(mappingDir, `${name}.json`)
-    const data = JSON.parse(readFileSync(filePath, 'utf-8'))
+    const data = readJsonFile(filePath)
 
     if (!data.fileExtensions) {
       continue
@@ -279,7 +279,7 @@ test('no duplicate fileNames categories across mapping files', (t) => {
 
   for (const name of mappingFileNames) {
     const filePath = join(mappingDir, `${name}.json`)
-    const data = JSON.parse(readFileSync(filePath, 'utf-8'))
+    const data = readJsonFile(filePath)
 
     if (!data.fileNames) {
       continue
@@ -302,7 +302,7 @@ test('no duplicate fileNames categories across mapping files', (t) => {
 test('every mapping file has at least one section', (t) => {
   for (const name of mappingFileNames) {
     const filePath = join(mappingDir, `${name}.json`)
-    const data = JSON.parse(readFileSync(filePath, 'utf-8'))
+    const data = readJsonFile(filePath)
 
     const hasExtensions =
       data.fileExtensions && Object.keys(data.fileExtensions).length > 0
@@ -320,7 +320,7 @@ test('mapping files contain only fileExtensions and fileNames keys', (t) => {
 
   for (const name of mappingFileNames) {
     const filePath = join(mappingDir, `${name}.json`)
-    const data = JSON.parse(readFileSync(filePath, 'utf-8'))
+    const data = readJsonFile(filePath)
 
     for (const key of Object.keys(data)) {
       t.true(
@@ -336,7 +336,7 @@ test('union of mapping file categories equals original fileExtensions categories
 
   for (const name of mappingFileNames) {
     const filePath = join(mappingDir, `${name}.json`)
-    const data = JSON.parse(readFileSync(filePath, 'utf-8'))
+    const data = readJsonFile(filePath)
 
     if (data.fileExtensions) {
       for (const category of Object.keys(data.fileExtensions)) {
@@ -354,7 +354,7 @@ test('union of mapping file categories equals original fileNames categories', (t
 
   for (const name of mappingFileNames) {
     const filePath = join(mappingDir, `${name}.json`)
-    const data = JSON.parse(readFileSync(filePath, 'utf-8'))
+    const data = readJsonFile(filePath)
 
     if (data.fileNames) {
       for (const category of Object.keys(data.fileNames)) {
