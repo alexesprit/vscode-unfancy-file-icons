@@ -1,10 +1,10 @@
-import colors from './data/colors.json' with { type: 'json' };
-import items from './data/items.json' with { type: 'json' };
+import colors from './data/colors.json' with { type: 'json' }
+import items from './data/items.json' with { type: 'json' }
 
 // eslint-disable-next-line no-template-curly-in-string
-const namePlaceholder = '${name}';
+const namePlaceholder = '${name}'
 
-const themeIdPrefix = 'vscode-unfancy-file-icons';
+const themeIdPrefix = 'vscode-unfancy-file-icons'
 
 /**
  * Add '_' prefix to string.
@@ -12,7 +12,7 @@ const themeIdPrefix = 'vscode-unfancy-file-icons';
  * @param {String} str String
  */
 export function prefix(str) {
-	return `_${str}`;
+  return `_${str}`
 }
 
 /**
@@ -21,7 +21,7 @@ export function prefix(str) {
  * @param {String} str String
  */
 export function light(str) {
-	return `${str}_light`;
+  return `${str}_light`
 }
 
 /**
@@ -30,10 +30,10 @@ export function light(str) {
  * @return {Object} Source data
  */
 export function getExpandedItems() {
-	expandItems(items.fileNames);
-	expandItems(items.fileExtensions);
+  expandItems(items.fileNames)
+  expandItems(items.fileExtensions)
 
-	return items;
+  return items
 }
 
 /**
@@ -42,32 +42,32 @@ export function getExpandedItems() {
  * @param {Object} data Items to expand
  */
 function expandItems(data) {
-	for (const type in data) {
-		const expandedFileNames = [];
+  for (const type in data) {
+    const expandedFileNames = []
 
-		for (const val of data[type]) {
-			switch (typeof val) {
-				case 'string': {
-					expandedFileNames.push(val);
-					break;
-				}
+    for (const val of data[type]) {
+      switch (typeof val) {
+        case 'string': {
+          expandedFileNames.push(val)
+          break
+        }
 
-				case 'object': {
-					const fileNames = getFileNamesFromTemplate(val);
-					for (const name of fileNames) {
-						expandedFileNames.push(name);
-					}
-					break;
-				}
+        case 'object': {
+          const fileNames = getFileNamesFromTemplate(val)
+          for (const name of fileNames) {
+            expandedFileNames.push(name)
+          }
+          break
+        }
 
-				default: {
-					throw new Error(`Invalid property: ${val}`);
-				}
-			}
-		}
+        default: {
+          throw new Error(`Invalid property: ${val}`)
+        }
+      }
+    }
 
-		data[type] = expandedFileNames;
-	}
+    data[type] = expandedFileNames
+  }
 }
 
 /**
@@ -78,25 +78,25 @@ function expandItems(data) {
  * @return {Array} List of config files
  */
 function getFileNamesFromTemplate(templateObj) {
-	const replacedNames = [];
-	const { names, templates } = templateObj;
+  const replacedNames = []
+  const { names, templates } = templateObj
 
-	if (!names || names.len === 0) {
-		throw new Error('Invalid template object: no names are found');
-	}
+  if (!names || names.len === 0) {
+    throw new Error('Invalid template object: no names are found')
+  }
 
-	if (!templates || templates.len === 0) {
-		throw new Error('Invalid template object: no templates are found');
-	}
+  if (!templates || templates.len === 0) {
+    throw new Error('Invalid template object: no templates are found')
+  }
 
-	for (const name of names) {
-		for (const template of templates) {
-			const replacedName = template.replace(namePlaceholder, name);
-			replacedNames.push(replacedName);
-		}
-	}
+  for (const name of names) {
+    for (const template of templates) {
+      const replacedName = template.replace(namePlaceholder, name)
+      replacedNames.push(replacedName)
+    }
+  }
 
-	return replacedNames;
+  return replacedNames
 }
 
 /**
@@ -106,11 +106,11 @@ function getFileNamesFromTemplate(templateObj) {
  * @return {String} Theme ID
  */
 export function getThemeId(theme) {
-	const themeId = theme.id;
-	if (themeId === themeIdPrefix) {
-		return 'octicons';
-	}
-	return themeId.split('-').pop();
+  const themeId = theme.id
+  if (themeId === themeIdPrefix) {
+    return 'octicons'
+  }
+  return themeId.split('-').pop()
 }
 
 /**
@@ -120,11 +120,11 @@ export function getThemeId(theme) {
  * @return {Number} Color
  */
 export function getFontColor(colorName) {
-	if (colorName in colors) {
-		return colors[colorName];
-	}
+  if (colorName in colors) {
+    return colors[colorName]
+  }
 
-	throw new Error(`Invalid color name: ${colorName}`);
+  throw new Error(`Invalid color name: ${colorName}`)
 }
 
 /**
@@ -135,10 +135,10 @@ export function getFontColor(colorName) {
  * @return {String} Font character code in `\\xxxx` format
  */
 export function getFontCharacter(iconName, codepoints) {
-	if (iconName in codepoints) {
-		const iconCodeStr = codepoints[iconName].toString(16);
-		return `\\${iconCodeStr}`;
-	}
+  if (iconName in codepoints) {
+    const iconCodeStr = codepoints[iconName].toString(16)
+    return `\\${iconCodeStr}`
+  }
 
-	throw new Error(`Invalid icon name: ${iconName}`);
+  throw new Error(`Invalid icon name: ${iconName}`)
 }

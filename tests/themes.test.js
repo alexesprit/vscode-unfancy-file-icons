@@ -1,60 +1,60 @@
-import { readFileSync } from 'node:fs';
-import { join } from 'node:path';
-import test from 'ava';
+import { readFileSync } from 'node:fs'
+import { join } from 'node:path'
+import test from 'ava'
 
-import packageFile from './../package.json' with { type: 'json' };
+import packageFile from './../package.json' with { type: 'json' }
 
-const { iconThemes } = packageFile.contributes;
+const { iconThemes } = packageFile.contributes
 
-runTests();
+runTests()
 
 function runTests() {
-	for (const theme of iconThemes) {
-		testTheme(theme);
-	}
+  for (const theme of iconThemes) {
+    testTheme(theme)
+  }
 }
 
 function testTheme(theme) {
-	const themeId = theme.id;
-	const iconTheme = JSON.parse(
-		readFileSync(join(import.meta.dirname, '..', theme.path), 'utf-8'),
-	);
+  const themeId = theme.id
+  const iconTheme = JSON.parse(
+    readFileSync(join(import.meta.dirname, '..', theme.path), 'utf-8'),
+  )
 
-	const { iconDefinitions } = iconTheme;
+  const { iconDefinitions } = iconTheme
 
-	const themes = {
-		dark: iconTheme,
-		light: iconTheme.light,
-	};
+  const themes = {
+    dark: iconTheme,
+    light: iconTheme.light,
+  }
 
-	for (const themeName in themes) {
-		const entries = getThemeEntries(themes[themeName]);
+  for (const themeName in themes) {
+    const entries = getThemeEntries(themes[themeName])
 
-		for (const entryName in entries) {
-			const fullEntryName = `${themeName} > ${entryName}`;
-			const entryType = entries[entryName];
+    for (const entryName in entries) {
+      const fullEntryName = `${themeName} > ${entryName}`
+      const entryType = entries[entryName]
 
-			test(`[${themeId}] ${fullEntryName} has a valid '${entryType}' type`, (t) => {
-				t.true(entryType in iconDefinitions);
-			});
-		}
-	}
+      test(`[${themeId}] ${fullEntryName} has a valid '${entryType}' type`, (t) => {
+        t.true(entryType in iconDefinitions)
+      })
+    }
+  }
 }
 
 function getThemeEntries(theme) {
-	const result = {};
-	const definitions = ['fileNames', 'fileExtensions'];
+  const result = {}
+  const definitions = ['fileNames', 'fileExtensions']
 
-	for (const defName of definitions) {
-		const definition = theme[defName];
+  for (const defName of definitions) {
+    const definition = theme[defName]
 
-		for (const entry in definition) {
-			const type = definition[entry];
-			const entryName = `${defName} > ${entry}`;
+    for (const entry in definition) {
+      const type = definition[entry]
+      const entryName = `${defName} > ${entry}`
 
-			result[entryName] = type;
-		}
-	}
+      result[entryName] = type
+    }
+  }
 
-	return result;
+  return result
 }
