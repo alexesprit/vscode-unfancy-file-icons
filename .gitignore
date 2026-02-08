@@ -1,5 +1,8 @@
+.ai-local
+
 node_modules
 theme
 snapshots
 
+.DS_Store
 *.vsix
