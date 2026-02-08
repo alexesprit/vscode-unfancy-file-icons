@@ -1,10 +1,9 @@
-import { readFileSync } from 'node:fs'
-import { join } from 'node:path'
 import test from 'ava'
 import packageFile from './../package.json' with { type: 'json' }
 import colors from './../src/data/colors.json' with { type: 'json' }
 import { loadItems } from './../src/data/items.js'
-import { getThemeId } from './../src/utils.js'
+import { loadThemeConfig } from './../src/loader.js'
+import { getThemeId } from './../src/naming.js'
 
 const { iconDefinitions, fileExtensions, fileNames, languageIds } = loadItems()
 
@@ -28,18 +27,7 @@ function testThemeItems() {
   for (const theme of iconThemes) {
     const themeId = getThemeId(theme)
 
-    const codepoints = JSON.parse(
-      readFileSync(
-        join(import.meta.dirname, `../src/codepoints/${themeId}.json`),
-        'utf-8',
-      ),
-    )
-    const iconMap = JSON.parse(
-      readFileSync(
-        join(import.meta.dirname, `../src/iconmaps/${themeId}.json`),
-        'utf-8',
-      ),
-    )
+    const { iconMap, codepoints } = loadThemeConfig(themeId)
 
     testIconNames(theme, codepoints, iconMap)
     testIconMaps(theme, codepoints, iconMap)

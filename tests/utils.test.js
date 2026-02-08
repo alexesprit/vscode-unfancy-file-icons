@@ -13,12 +13,9 @@ import codiconsIconMap from './../src/iconmaps/codicons.json' with {
 import octiconsIconMap from './../src/iconmaps/octicons.json' with {
   type: 'json',
 }
-import {
-  getFontCharacter,
-  getFontColor,
-  light,
-  prefix,
-} from './../src/utils.js'
+import { getFontCharacter, getFontColor } from './../src/lookup.js'
+import { light, prefix } from './../src/naming.js'
+import { getFileNamesFromTemplate } from './../src/template.js'
 
 /**
  * Test 1: Template expansion
@@ -33,7 +30,7 @@ test('template expansion: single name, single template', (t) => {
     templates: ['${name}.js'],
   }
 
-  const result = expandTemplate(templateObj)
+  const result = getFileNamesFromTemplate(templateObj)
   t.deepEqual(result, ['spec.js'])
 })
 
@@ -43,7 +40,7 @@ test('template expansion: multiple names, single template', (t) => {
     templates: ['${name}.js'],
   }
 
-  const result = expandTemplate(templateObj)
+  const result = getFileNamesFromTemplate(templateObj)
   t.deepEqual(result, ['spec.js', 'test.js'])
 })
 
@@ -53,7 +50,7 @@ test('template expansion: single name, multiple templates', (t) => {
     templates: ['${name}.js', '${name}.tsx'],
   }
 
-  const result = expandTemplate(templateObj)
+  const result = getFileNamesFromTemplate(templateObj)
   t.deepEqual(result, ['spec.js', 'spec.tsx'])
 })
 
@@ -63,7 +60,7 @@ test('template expansion: multiple names, multiple templates (cartesian product)
     templates: ['${name}.js', '${name}.tsx'],
   }
 
-  const result = expandTemplate(templateObj)
+  const result = getFileNamesFromTemplate(templateObj)
   t.deepEqual(result, ['spec.js', 'spec.tsx', 'test.js', 'test.tsx'])
 })
 
@@ -73,7 +70,7 @@ test('template expansion: template with multiple placeholders', (t) => {
     templates: ['${name}.${name}.js'],
   }
 
-  const result = expandTemplate(templateObj)
+  const result = getFileNamesFromTemplate(templateObj)
   t.deepEqual(result, ['component.component.js'])
 })
 
@@ -83,7 +80,7 @@ test('template expansion: template without placeholder', (t) => {
     templates: ['static.js'],
   }
 
-  const result = expandTemplate(templateObj)
+  const result = getFileNamesFromTemplate(templateObj)
   t.deepEqual(result, ['static.js'])
 })
 
@@ -271,30 +268,3 @@ test('prefix: adds underscore prefix', (t) => {
   t.is(prefix('config'), '_config')
   t.is(prefix(''), '_')
 })
-
-/**
- * Helper function to mimic getFileNamesFromTemplate behavior
- * This replicates the logic from src/utils.js lines 93-113
- */
-function expandTemplate(templateObj) {
-  const replacedNames = []
-  const { names, templates } = templateObj
-  const namePlaceholder = '${name}'
-
-  if (!names || names.length === 0) {
-    throw new Error('Invalid template object: no names are found')
-  }
-
-  if (!templates || templates.length === 0) {
-    throw new Error('Invalid template object: no templates are found')
-  }
-
-  for (const name of names) {
-    for (const template of templates) {
-      const replacedName = template.replaceAll(namePlaceholder, name)
-      replacedNames.push(replacedName)
-    }
-  }
-
-  return replacedNames
-}

@@ -1,8 +1,9 @@
-import { existsSync, readFileSync } from 'node:fs'
+import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
 import packageFile from '../package.json' with { type: 'json' }
+import { readJsonFile } from '../src/loader.js'
+import { getThemeId } from '../src/naming.js'
 import { getIconTheme } from '../src/themes.js'
-import { getThemeId } from '../src/utils.js'
 
 const snapshotDir = resolve(import.meta.dirname, '..', 'snapshots')
 const { iconThemes } = packageFile.contributes
@@ -19,7 +20,7 @@ for (const theme of iconThemes) {
     process.exit(1)
   }
 
-  const snapshot = JSON.parse(readFileSync(snapshotPath, 'utf-8'))
+  const snapshot = readJsonFile(snapshotPath)
   const current = getIconTheme(themeId)
 
   const changes = diffThemes(snapshot, current)

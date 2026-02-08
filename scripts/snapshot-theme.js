@@ -1,8 +1,8 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import packageFile from '../package.json' with { type: 'json' }
+import { getThemeId } from '../src/naming.js'
 import { getIconTheme } from '../src/themes.js'
-import { getThemeId } from '../src/utils.js'
 
 const snapshotDir = resolve(import.meta.dirname, '..', 'snapshots')
 const { iconThemes } = packageFile.contributes

@@ -1,7 +1,7 @@
 import { closeSync, openSync, readdirSync, unlinkSync } from 'node:fs'
 import { join } from 'node:path'
 
-import { getExpandedItems } from './utils.js'
+import { getExpandedItems } from './template.js'
 
 /**
  * Return a list of missing sample files.

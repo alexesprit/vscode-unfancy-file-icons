@@ -1,16 +1,12 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { mkdirSync, writeFileSync } from 'node:fs'
+import { dirname } from 'node:path'
 
 import Color from 'color'
 
-import {
-  getExpandedItems,
-  getFontCharacter,
-  getFontColor,
-  getThemeId,
-  light,
-  prefix,
-} from './utils.js'
+import { loadThemeConfig } from './loader.js'
+import { getFontCharacter, getFontColor } from './lookup.js'
+import { getThemeId, light, prefix } from './naming.js'
+import { getExpandedItems } from './template.js'
 
 const darkenPercent = 0.4
 
@@ -39,29 +35,16 @@ export function generateIconTheme(theme) {
 export function getIconTheme(themeId) {
   const items = getExpandedItems()
 
-  const fontsConfig = JSON.parse(
-    readFileSync(join(import.meta.dirname, `fonts/${themeId}.json`), 'utf-8'),
-  )
+  const config = loadThemeConfig(themeId)
   // Update font paths to point to stripped fonts in theme/fonts/
-  const fonts = fontsConfig.map((font) => ({
+  const fonts = config.fonts.map((font) => ({
     ...font,
     src: font.src.map((s) => ({
       ...s,
       path: s.path.replace('./../resources/', './fonts/'),
     })),
   }))
-  const iconMap = JSON.parse(
-    readFileSync(
-      join(import.meta.dirname, `iconmaps/${themeId}.json`),
-      'utf-8',
-    ),
-  )
-  const codepoints = JSON.parse(
-    readFileSync(
-      join(import.meta.dirname, `codepoints/${themeId}.json`),
-      'utf-8',
-    ),
-  )
+  const { iconMap, codepoints } = config
 
   const iconTheme = {
     fonts,
