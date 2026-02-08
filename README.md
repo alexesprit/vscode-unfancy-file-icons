@@ -20,14 +20,23 @@ File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom
 -   Use generic icons rather than trying to find one for each file extension
     (except when an icon fits the file type, like with Ruby files)
 
-## Build theme
+## Development
 
 ```sh
 # Install dependencies
-> npm install
+npm install
 
 # Build theme
-> npm run build
+npm run build
+
+# Run tests
+npm test
+
+# Lint code
+npm run lint
+
+# Fix linting issues
+npm run lint:fix
 ```
 
 ## Screenshots

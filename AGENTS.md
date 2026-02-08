@@ -12,6 +12,7 @@ VS Code file icon theme extension that uses Octicons and Codicons fonts. Two the
 npm run build        # Generate theme JSON files into theme/
 npm test             # Build + run AVA tests
 npm run lint         # Biome check + validate items (scripts/check-items.js)
+npm run lint:fix     # Auto-fix linting issues with Biome
 ```
 
 Run a single test file: `npx ava tests/themes.test.js`
