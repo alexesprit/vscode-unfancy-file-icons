@@ -16,6 +16,13 @@
   "version": "3.17.0",
   "publisher": "alexesprit",
   "license": "MIT",
+  "files": [
+    "theme/",
+    "resources/",
+    "images/",
+    "LICENSE.md",
+    "README.md"
+  ],
   "engines": {
     "vscode": "*"
   },
