@@ -4,6 +4,7 @@ import subsetFont from 'subset-font'
 
 import { loadItems } from '../src/data/items.js'
 import { loadThemeConfig } from '../src/loader.js'
+import { resolveIconName } from '../src/lookup.js'
 
 const items = loadItems()
 
@@ -36,9 +37,7 @@ function collectCodepoints(themeId) {
   // Add icons from items.json iconDefinitions (with remapping applied)
   for (const def of Object.values(items.iconDefinitions)) {
     if (def.iconName) {
-      // Apply iconmap remapping, same as in themes.js
-      const iconName =
-        def.iconName in iconmap ? iconmap[def.iconName] : def.iconName
+      const iconName = resolveIconName(def.iconName, iconmap)
       usedIcons.add(iconName)
     }
   }

@@ -19,6 +19,7 @@ import { generateFonts } from 'fantasticon'
 
 import { loadItems } from '../src/data/items.js'
 import { readJsonFile } from '../src/loader.js'
+import { resolveIconName } from '../src/lookup.js'
 
 const ROOT = path.join(import.meta.dirname, '..')
 const SVG_DIR = path.join(ROOT, 'node_modules/@primer/octicons/build/svg')
@@ -43,8 +44,7 @@ function collectUsedIcons() {
   // Icons from iconDefinitions (with remapping applied)
   for (const def of Object.values(items.iconDefinitions)) {
     if (def.iconName) {
-      const iconName =
-        def.iconName in iconmap ? iconmap[def.iconName] : def.iconName
+      const iconName = resolveIconName(def.iconName, iconmap)
       used.add(iconName)
     }
   }

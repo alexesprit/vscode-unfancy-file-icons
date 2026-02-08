@@ -4,7 +4,7 @@ import { dirname } from 'node:path'
 import Color from 'color'
 
 import { loadThemeConfig } from './loader.js'
-import { getFontCharacter, getFontColor } from './lookup.js'
+import { getFontCharacter, getFontColor, resolveIconName } from './lookup.js'
 import { getThemeId, light, prefix } from './naming.js'
 import { getExpandedItems } from './template.js'
 
@@ -77,11 +77,11 @@ export function getIconTheme(themeId) {
   const { iconDefinitions } = items
 
   for (const iconEntry in iconDefinitions) {
-    let { iconColor, iconName } = iconDefinitions[iconEntry]
-
-    if (iconName in iconMap) {
-      iconName = iconMap[iconName]
-    }
+    const { iconColor } = iconDefinitions[iconEntry]
+    const iconName = resolveIconName(
+      iconDefinitions[iconEntry].iconName,
+      iconMap,
+    )
 
     const fontColor = getFontColor(iconColor)
     const fontCharacter = getFontCharacter(iconName, codepoints)

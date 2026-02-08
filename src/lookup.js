@@ -15,6 +15,22 @@ export function getFontColor(colorName) {
 }
 
 /**
+ * Resolve an icon name through an icon map, returning the remapped name
+ * if a mapping exists, or the original name otherwise.
+ *
+ * @param {String} iconName Icon name
+ * @param {Object} iconMap  Icon name remapping table
+ * @return {String} Resolved icon name
+ */
+export function resolveIconName(iconName, iconMap) {
+  if (iconName in iconMap) {
+    return iconMap[iconName]
+  }
+
+  return iconName
+}
+
+/**
  * Get font character code by name.
  *
  * @param {String} iconName Icon name
