@@ -19,6 +19,7 @@ const darkenPercent = 0.4;
  */
 module.exports = {
 	generateIconTheme,
+	getIconTheme,
 };
 
 /**
