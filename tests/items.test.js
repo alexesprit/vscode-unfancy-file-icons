@@ -1,8 +1,8 @@
 import test from 'ava'
-import packageFile from './../package.json' with { type: 'json' }
-import colors from './../src/data/colors.json' with { type: 'json' }
-import { loadItems, loadThemeConfig } from './../src/loader.js'
-import { getThemeId } from './../src/naming.js'
+import packageFile from '#package' with { type: 'json' }
+import colors from '#src/data/colors.json' with { type: 'json' }
+import { loadItems, loadThemeConfig } from '#src/loader.js'
+import { getThemeId } from '#src/naming.js'
 
 const { iconDefinitions, fileExtensions, fileNames, languageIds } = loadItems()
 

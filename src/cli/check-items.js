@@ -1,4 +1,4 @@
-import { getWarnings } from '../warnings.js'
+import { getWarnings } from '#src/warnings.js'
 
 /**
  * Entry point.

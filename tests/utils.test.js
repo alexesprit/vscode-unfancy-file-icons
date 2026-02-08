@@ -1,22 +1,22 @@
 import test from 'ava'
 import Color from 'color'
-import codiconsCodepoints from './../.cache/codepoints/codicons.json' with {
+import codiconsCodepoints from '#cache/codepoints/codicons.json' with {
   type: 'json',
 }
-import octiconsCodepoints from './../.cache/codepoints/octicons.json' with {
+import octiconsCodepoints from '#cache/codepoints/octicons.json' with {
   type: 'json',
 }
-import colors from './../src/data/colors.json' with { type: 'json' }
-import codiconsIconMap from './../src/data/iconmaps/codicons.json' with {
+import colors from '#src/data/colors.json' with { type: 'json' }
+import codiconsIconMap from '#src/data/iconmaps/codicons.json' with {
   type: 'json',
 }
-import octiconsIconMap from './../src/data/iconmaps/octicons.json' with {
+import octiconsIconMap from '#src/data/iconmaps/octicons.json' with {
   type: 'json',
 }
-import { getFontCharacter, getFontColor } from './../src/lookup.js'
-import { addThemePrefix, toLightVariant } from './../src/naming.js'
-import { getFileNamesFromTemplate } from './../src/template.js'
-import { darkenPercent } from './../src/themes.js'
+import { getFontCharacter, getFontColor } from '#src/lookup.js'
+import { addThemePrefix, toLightVariant } from '#src/naming.js'
+import { getFileNamesFromTemplate } from '#src/template.js'
+import { darkenPercent } from '#src/themes.js'
 
 /**
  * Test 1: Template expansion

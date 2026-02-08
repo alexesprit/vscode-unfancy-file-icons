@@ -1,6 +1,11 @@
 {
   "type": "module",
   "name": "vscode-unfancy-file-icons",
+  "imports": {
+    "#src/*": "./src/*",
+    "#package": "./package.json",
+    "#cache/*": "./.cache/*"
+  },
   "displayName": "Unfancy file icons",
   "description": "Octicons, Codicons, and Lucide as file icon themes",
   "categories": [

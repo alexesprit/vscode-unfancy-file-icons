@@ -2,10 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import subsetFont from 'subset-font'
 
-import packageFile from '../../package.json' with { type: 'json' }
-import { loadItems, loadThemeConfig } from '../loader.js'
-import { collectUsedIcons } from '../lookup.js'
-import { getThemeId } from '../naming.js'
+import packageFile from '#package' with { type: 'json' }
+import { loadItems, loadThemeConfig } from '#src/loader.js'
+import { collectUsedIcons } from '#src/lookup.js'
+import { getThemeId } from '#src/naming.js'
 
 const items = loadItems()
 

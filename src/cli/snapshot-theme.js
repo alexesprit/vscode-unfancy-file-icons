@@ -1,10 +1,10 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 
-import packageFile from '../../package.json' with { type: 'json' }
-import { getThemeId } from '../naming.js'
-import { sortKeysDeep } from '../sort.js'
-import { getIconTheme } from '../themes.js'
+import packageFile from '#package' with { type: 'json' }
+import { getThemeId } from '#src/naming.js'
+import { sortKeysDeep } from '#src/sort.js'
+import { getIconTheme } from '#src/themes.js'
 
 const snapshotDir = resolve(import.meta.dirname, '../..', 'snapshots')
 

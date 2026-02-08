@@ -9,8 +9,8 @@
  * Adding a new icon pack requires only a new entry in the registry.
  */
 
-import { isCacheStale, isFontStale, writeCodepoints } from '../cache.js'
-import { packs } from '../packs.js'
+import { isCacheStale, isFontStale, writeCodepoints } from '#src/cache.js'
+import { packs } from '#src/packs.js'
 
 /**
  * Phase 1: generate a font from source and write codepoints as byproduct.

@@ -1,8 +1,8 @@
 import { join } from 'node:path'
 import test from 'ava'
 
-import packageFile from './../package.json' with { type: 'json' }
-import { readJsonFile } from './../src/loader.js'
+import packageFile from '#package' with { type: 'json' }
+import { readJsonFile } from '#src/loader.js'
 
 const { iconThemes } = packageFile.contributes
 
