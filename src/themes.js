@@ -8,7 +8,7 @@ import { getFontCharacter, getFontColor, resolveIconName } from './lookup.js'
 import { getThemeId, light, prefix } from './naming.js'
 import { getExpandedItems } from './template.js'
 
-const darkenPercent = 0.4
+export const darkenPercent = 0.4
 
 /**
  * Generate an icon theme from source data.

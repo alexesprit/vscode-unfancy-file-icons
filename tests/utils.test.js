@@ -16,6 +16,7 @@ import octiconsIconMap from './../src/iconmaps/octicons.json' with {
 import { getFontCharacter, getFontColor } from './../src/lookup.js'
 import { light, prefix } from './../src/naming.js'
 import { getFileNamesFromTemplate } from './../src/template.js'
+import { darkenPercent } from './../src/themes.js'
 
 /**
  * Test 1: Template expansion
@@ -90,7 +91,7 @@ test('template expansion: template without placeholder', (t) => {
 
 test('color darkening: @blue darken by 40%', (t) => {
   const originalColor = colors['@blue']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   // Verify it's darker (lower luminosity)
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
@@ -101,7 +102,7 @@ test('color darkening: @blue darken by 40%', (t) => {
 
 test('color darkening: @cyan darken by 40%', (t) => {
   const originalColor = colors['@cyan']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
   t.is(darkenedColor, '#34928F')
@@ -109,7 +110,7 @@ test('color darkening: @cyan darken by 40%', (t) => {
 
 test('color darkening: @gray darken by 40%', (t) => {
   const originalColor = colors['@gray']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
   t.is(darkenedColor, '#5F656C')
@@ -117,7 +118,7 @@ test('color darkening: @gray darken by 40%', (t) => {
 
 test('color darkening: @green darken by 40%', (t) => {
   const originalColor = colors['@green']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
   t.is(darkenedColor, '#5F9C2A')
@@ -125,7 +126,7 @@ test('color darkening: @green darken by 40%', (t) => {
 
 test('color darkening: @orange darken by 40%', (t) => {
   const originalColor = colors['@orange']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
   t.is(darkenedColor, '#D93905')
@@ -133,7 +134,7 @@ test('color darkening: @orange darken by 40%', (t) => {
 
 test('color darkening: @red darken by 40%', (t) => {
   const originalColor = colors['@red']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
   t.is(darkenedColor, '#951824')
@@ -141,7 +142,7 @@ test('color darkening: @red darken by 40%', (t) => {
 
 test('color darkening: @violet darken by 40%', (t) => {
   const originalColor = colors['@violet']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
   t.is(darkenedColor, '#833F76')
@@ -149,7 +150,7 @@ test('color darkening: @violet darken by 40%', (t) => {
 
 test('color darkening: @yellow darken by 40%', (t) => {
   const originalColor = colors['@yellow']
-  const darkenedColor = Color(originalColor).darken(0.4).hex()
+  const darkenedColor = Color(originalColor).darken(darkenPercent).hex()
 
   t.true(Color(darkenedColor).luminosity() < Color(originalColor).luminosity())
   t.is(darkenedColor, '#BF8B21')

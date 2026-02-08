@@ -2,9 +2,11 @@ import fs from 'node:fs'
 import path from 'node:path'
 import subsetFont from 'subset-font'
 
+import packageFile from '../package.json' with { type: 'json' }
 import { loadItems } from '../src/data/items.js'
 import { loadThemeConfig } from '../src/loader.js'
 import { resolveIconName } from '../src/lookup.js'
+import { getThemeId } from '../src/naming.js'
 
 const items = loadItems()
 
@@ -104,7 +106,10 @@ async function subsetFontFile(themeId) {
  * Subset all theme fonts
  */
 async function main() {
-  const themes = ['codicons', 'lucide']
+  const { iconThemes } = packageFile.contributes
+  const themes = iconThemes
+    .map((theme) => getThemeId(theme))
+    .filter((id) => id in sourceFontPaths)
 
   console.log('Subsetting fonts...\n')
 
