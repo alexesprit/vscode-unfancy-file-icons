@@ -4,7 +4,7 @@ import { readJsonFile } from '../loader.js'
 
 const mappingFiles = ['source', 'data', 'docs', 'media', 'build', 'style']
 
-function sortKeys(obj) {
+function sortKeysShallow(obj) {
   const sorted = {}
   for (const key of Object.keys(obj).sort()) {
     sorted[key] = obj[key]
@@ -52,8 +52,8 @@ export function loadItems() {
 
   return {
     file: iconDefs.file,
-    fileExtensions: sortKeys(fileExtensions),
-    fileNames: sortKeys(fileNames),
+    fileExtensions: sortKeysShallow(fileExtensions),
+    fileNames: sortKeysShallow(fileNames),
     languageIds,
     folder: iconDefs.folder,
     folderExpanded: iconDefs.folderExpanded,

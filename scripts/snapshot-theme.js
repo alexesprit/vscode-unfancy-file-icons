@@ -18,7 +18,7 @@ function main() {
     const themeId = getThemeId(theme)
     const iconTheme = getIconTheme(themeId)
 
-    const sorted = sortKeys(iconTheme)
+    const sorted = sortKeysDeep(iconTheme)
     const outPath = resolve(snapshotDir, `${themeId}.json`)
     writeFileSync(outPath, JSON.stringify(sorted, null, 2))
 
@@ -26,15 +26,15 @@ function main() {
   }
 }
 
-function sortKeys(obj) {
+function sortKeysDeep(obj) {
   if (Array.isArray(obj)) {
-    return obj.map(sortKeys)
+    return obj.map(sortKeysDeep)
   }
 
   if (obj !== null && typeof obj === 'object') {
     const sorted = {}
     for (const key of Object.keys(obj).sort()) {
-      sorted[key] = sortKeys(obj[key])
+      sorted[key] = sortKeysDeep(obj[key])
     }
     return sorted
   }

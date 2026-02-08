@@ -5,7 +5,7 @@ import Color from 'color'
 
 import { loadThemeConfig } from './loader.js'
 import { getFontCharacter, getFontColor, resolveIconName } from './lookup.js'
-import { getThemeId, light, prefix } from './naming.js'
+import { addThemePrefix, getThemeId, toLightVariant } from './naming.js'
 import { getExpandedItems } from './template.js'
 
 export const darkenPercent = 0.4
@@ -80,11 +80,11 @@ function buildIconDefinitions(definitions, iconMap, codepoints) {
 
     const fontColor = getFontColor(iconColor)
     const fontCharacter = getFontCharacter(iconName, codepoints)
-    const prefixedIconName = prefix(iconEntry)
+    const prefixedIconName = addThemePrefix(iconEntry)
     result[prefixedIconName] = { fontColor, fontCharacter }
 
     const lightColor = Color(fontColor).darken(darkenPercent).hex()
-    const lightIconName = light(prefixedIconName)
+    const lightIconName = toLightVariant(prefixedIconName)
     result[lightIconName] = { fontColor: lightColor }
   }
 
@@ -104,7 +104,7 @@ function buildMappings(items) {
   const rootIcons = { dark: {}, light: {} }
 
   for (const propName of ['fileNames', 'fileExtensions']) {
-    const convertedItems = convertItems(items[propName])
+    const convertedItems = invertItemMapping(items[propName])
     dark[propName] = convertedItems
     lightMappings[propName] = makeItemsForLightTheme(convertedItems)
   }
@@ -117,9 +117,9 @@ function buildMappings(items) {
 
   for (const propName of ['file', 'folder', 'folderExpanded']) {
     const iconName = items[propName]
-    const prefixedIconName = prefix(iconName)
+    const prefixedIconName = addThemePrefix(iconName)
     rootIcons.dark[propName] = prefixedIconName
-    rootIcons.light[propName] = light(prefixedIconName)
+    rootIcons.light[propName] = toLightVariant(prefixedIconName)
   }
 
   return { dark, light: lightMappings, rootIcons }
@@ -163,12 +163,12 @@ function assembleTheme(fonts, iconDefinitions, mappings) {
  *
  * @param {Object} props Source properties
  */
-function convertItems(props) {
+function invertItemMapping(props) {
   const newProps = {}
 
   for (const key in props) {
     for (const val of props[key]) {
-      newProps[val] = prefix(key)
+      newProps[val] = addThemePrefix(key)
     }
   }
 
@@ -184,7 +184,7 @@ function prefixItems(props) {
   const newProps = {}
 
   for (const key in props) {
-    newProps[key] = prefix(props[key])
+    newProps[key] = addThemePrefix(props[key])
   }
 
   return newProps
@@ -199,7 +199,7 @@ function makeItemsForLightTheme(items) {
   const newProps = {}
 
   for (const key in items) {
-    newProps[key] = light(items[key])
+    newProps[key] = toLightVariant(items[key])
   }
 
   return newProps

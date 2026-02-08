@@ -14,7 +14,7 @@ import octiconsIconMap from './../src/iconmaps/octicons.json' with {
   type: 'json',
 }
 import { getFontCharacter, getFontColor } from './../src/lookup.js'
-import { light, prefix } from './../src/naming.js'
+import { addThemePrefix, toLightVariant } from './../src/naming.js'
 import { getFileNamesFromTemplate } from './../src/template.js'
 import { darkenPercent } from './../src/themes.js'
 
@@ -156,17 +156,17 @@ test('color darkening: @yellow darken by 40%', (t) => {
   t.is(darkenedColor, '#BF8B21')
 })
 
-test('light suffix: adds _light to icon name', (t) => {
+test('toLightVariant: adds _light to icon name', (t) => {
   const iconName = '_config'
-  const lightName = light(iconName)
+  const lightName = toLightVariant(iconName)
 
   t.is(lightName, '_config_light')
 })
 
-test('light suffix: works with prefix function', (t) => {
+test('toLightVariant: works with addThemePrefix function', (t) => {
   const iconName = 'config'
-  const prefixedName = prefix(iconName)
-  const lightName = light(prefixedName)
+  const prefixedName = addThemePrefix(iconName)
+  const lightName = toLightVariant(prefixedName)
 
   t.is(prefixedName, '_config')
   t.is(lightName, '_config_light')
@@ -264,8 +264,8 @@ test('getFontColor: throws error for invalid color name', (t) => {
   t.true(error.message.includes('Invalid color name'))
 })
 
-test('prefix: adds underscore prefix', (t) => {
-  t.is(prefix('test'), '_test')
-  t.is(prefix('config'), '_config')
-  t.is(prefix(''), '_')
+test('addThemePrefix: adds underscore prefix', (t) => {
+  t.is(addThemePrefix('test'), '_test')
+  t.is(addThemePrefix('config'), '_config')
+  t.is(addThemePrefix(''), '_')
 })

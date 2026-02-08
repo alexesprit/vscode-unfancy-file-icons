@@ -11,7 +11,7 @@ import { getExpandedItems } from './template.js'
  */
 export function getMissingSamples(samplesDir) {
   const existingSamples = getExistingSamples(samplesDir)
-  const sampleFiles = getFlattenSampleFiles()
+  const sampleFiles = getSampleFilesByType()
   const missingSamples = []
 
   for (const type in sampleFiles) {
@@ -34,7 +34,7 @@ export function getMissingSamples(samplesDir) {
 
 export function getUnusedSamples(samplesDir) {
   const existingSamples = getExistingSamples(samplesDir)
-  const sampleFiles = getFlattenSampleFiles()
+  const sampleFiles = getSampleFilesByType()
   const unusedSamples = []
   const samplesForTypes = {}
 
@@ -104,11 +104,11 @@ function getExistingSamples(samplesDir) {
 }
 
 /**
- * Generate an object contains lists of sample files for each file type.
+ * Generate an object containing lists of sample files grouped by icon type.
  *
  * @return {Object} Result data
  */
-function getFlattenSampleFiles() {
+function getSampleFilesByType() {
   const { fileNames, fileExtensions } = getExpandedItems()
   const sampleFiles = {}
 

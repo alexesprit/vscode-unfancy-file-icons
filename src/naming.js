@@ -9,16 +9,16 @@ const themeIdMap = {
  *
  * @param {String} str String
  */
-export function prefix(str) {
+export function addThemePrefix(str) {
   return `_${str}`
 }
 
 /**
- * Add 'light' suffix to string.
+ * Add '_light' suffix to string.
  *
  * @param {String} str String
  */
-export function light(str) {
+export function toLightVariant(str) {
   return `${str}_light`
 }
 
