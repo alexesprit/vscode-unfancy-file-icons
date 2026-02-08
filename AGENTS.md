@@ -27,7 +27,6 @@ scripts/generate-theme.js          Entry point — iterates package.json iconThe
        ├─ src/utils.js             getExpandedItems() expands template patterns in items.json
        ├─ src/data/items.json      Icon definitions: fileExtensions, fileNames, languageIds, iconDefinitions
        ├─ src/data/colors.json     8-color palette (@blue, @cyan, @gray, @green, @magenta, @orange, @red, @violet, @yellow)
-       ├─ src/codepoints/{id}.json Font character codes per theme (octicons / codicons / lucide)
        ├─ src/iconmaps/{id}.json   Remap icon names between fonts (e.g. codicons "edit" ← octicons "pencil")
        └─ src/fonts/{id}.json      Font face configuration
 ```

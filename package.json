@@ -55,7 +55,7 @@
   },
   "scripts": {
     "vscode:prepublish": "npm run build",
-    "build": "node ./scripts/generate-octicons-font.js && node ./scripts/generate-theme.js && node ./scripts/subset-fonts.js",
+    "build": "node ./scripts/generate-codepoints.js && node ./scripts/generate-theme.js && node ./scripts/subset-fonts.js",
     "subset-fonts": "node ./scripts/subset-fonts.js",
     "test": "npm run build && ava",
     "lint": "biome check . && node ./scripts/check-items.js",

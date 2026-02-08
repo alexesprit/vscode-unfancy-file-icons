@@ -1,4 +1,5 @@
 .ai-local
+.cache
 
 node_modules
 theme

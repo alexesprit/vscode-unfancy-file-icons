@@ -1,9 +1,9 @@
 import test from 'ava'
 import Color from 'color'
-import codiconsCodepoints from './../src/codepoints/codicons.json' with {
+import codiconsCodepoints from './../.cache/codepoints/codicons.json' with {
   type: 'json',
 }
-import octiconsCodepoints from './../src/codepoints/octicons.json' with {
+import octiconsCodepoints from './../.cache/codepoints/octicons.json' with {
   type: 'json',
 }
 import colors from './../src/data/colors.json' with { type: 'json' }

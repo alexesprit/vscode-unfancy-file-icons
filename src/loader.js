@@ -1,6 +1,8 @@
 import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 
+import { getCodepointsPath } from './cache.js'
+
 const srcDir = import.meta.dirname
 
 /**
@@ -22,6 +24,6 @@ export function readJsonFile(filePath) {
 export function loadThemeConfig(themeId) {
   const fonts = readJsonFile(join(srcDir, `fonts/${themeId}.json`))
   const iconMap = readJsonFile(join(srcDir, `iconmaps/${themeId}.json`))
-  const codepoints = readJsonFile(join(srcDir, `codepoints/${themeId}.json`))
+  const codepoints = readJsonFile(getCodepointsPath(themeId))
   return { fonts, iconMap, codepoints }
 }
