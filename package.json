@@ -1,7 +1,7 @@
 {
   "name": "vscode-unfancy-file-icons",
   "displayName": "Unfancy file icons",
-  "description": "Octicons and Codicons as file icon themes",
+  "description": "Octicons, Codicons, and Lucide as file icon themes",
   "categories": [
     "Themes"
   ],
@@ -9,6 +9,7 @@
     "icon-theme",
     "icons",
     "codicons",
+    "lucide",
     "octicons",
     "customization"
   ],
@@ -39,6 +40,11 @@
         "id": "vscode-unfancy-file-icons-codicons",
         "label": "Unfancy file icons (Codicons)",
         "path": "./theme/unfancy-codicons.icon-theme.json"
+      },
+      {
+        "id": "vscode-unfancy-file-icons-lucide",
+        "label": "Unfancy file icons (Lucide)",
+        "path": "./theme/unfancy-lucide.icon-theme.json"
       },
       {
         "id": "vscode-unfancy-file-icons",

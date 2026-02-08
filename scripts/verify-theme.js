@@ -62,8 +62,8 @@ function diffThemes(snapshot, current) {
 		reportMappingDiff(
 			changes,
 			`light.${section}`,
-			(snapshot.light || {})[section],
-			(current.light || {})[section],
+			snapshot.light?.[section],
+			current.light?.[section],
 		);
 	}
 
@@ -77,8 +77,8 @@ function diffThemes(snapshot, current) {
 		if (snapshot[prop] !== current[prop]) {
 			changes.push(`  ${prop}: ${snapshot[prop]} -> ${current[prop]}`);
 		}
-		const snapLight = (snapshot.light || {})[prop];
-		const curLight = (current.light || {})[prop];
+		const snapLight = snapshot.light?.[prop];
+		const curLight = current.light?.[prop];
 		if (snapLight !== curLight) {
 			changes.push(`  light.${prop}: ${snapLight} -> ${curLight}`);
 		}

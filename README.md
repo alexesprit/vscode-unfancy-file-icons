@@ -1,12 +1,12 @@
 # Unfancy file icons [![Published version on Marketplace][badge]][marketplace] [![Test status][gabadge]][ga]
 
-> Octicons and Codicons as file icon themes
+> Octicons, Codicons, and Lucide as file icon themes
 
 File icon themes for Visual Studio Code. Based on [atom-unfancy-file-icons][atom-extension] package.
 
 ## Rules
 
--   Use icons from [Octicons][octicons] and [Codicons][codicons] only
+-   Use icons from [Octicons][octicons], [Codicons][codicons], and [Lucide][lucide] only
 -   Use a simple color code (with a few exceptions when it make more sense,
     like for Ruby files) which works as follow:
     -   green for source files
@@ -66,6 +66,7 @@ Other files in this repository are licensed under the [MIT License](./LICENSE.md
 
 [octicons]: https://octicons.github.com/
 [codicons]: https://microsoft.github.io/vscode-codicons/dist/codicon.html
+[lucide]: https://lucide.dev/
 [atom-extension]: https://github.com/abe33/atom-unfancy-file-icons
 [octicons-dark]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-octicons-dark.png
 [octicons-light]: https://raw.githubusercontent.com/alexesprit/vscode-unfancy-file-icons/master/media/screenshot-octicons-light.png

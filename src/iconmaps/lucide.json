@@ -1,0 +1,22 @@
+{
+  "beaker": "flask-conical",
+  "checklist": "list-checks",
+  "circle-slash": "ban",
+  "diff": "file-diff",
+  "file-binary": "file-digit",
+  "file-media": "file-image",
+  "file-pdf": "file-text",
+  "file-zip": "file-archive",
+  "folder-opened": "folder-open",
+  "gear": "cog",
+  "law": "scale",
+  "link-external": "external-link",
+  "list-unordered": "list",
+  "location": "map-pin",
+  "markdown": "file-text",
+  "note": "notebook",
+  "organization": "users",
+  "paintcan": "palette",
+  "ruby": "gem",
+  "text-size": "a-large-small"
+}

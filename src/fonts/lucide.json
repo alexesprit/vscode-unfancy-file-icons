@@ -1,0 +1,14 @@
+[
+  {
+    "id": "lucide",
+    "size": "120%",
+    "src": [
+      {
+        "format": "woff",
+        "path": "./../resources/lucide.woff"
+      }
+    ],
+    "style": "normal",
+    "weight": "normal"
+  }
+]
