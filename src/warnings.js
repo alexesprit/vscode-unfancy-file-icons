@@ -24,14 +24,18 @@ function getUnusedIcons(items) {
   const { iconDefinitions, fileExtensions, fileNames } = items
   const unusedIcons = []
 
-  const usedIcons = [...Object.keys(fileNames), ...Object.keys(fileExtensions)]
+  const usedIcons = new Set([
+    ...Object.keys(fileNames),
+    ...Object.keys(fileExtensions),
+  ])
+  const skipSet = new Set(skipUnusedIcons)
 
-  for (const iconName in iconDefinitions) {
-    if (skipUnusedIcons.includes(iconName)) {
+  for (const iconName of Object.keys(iconDefinitions)) {
+    if (skipSet.has(iconName)) {
       continue
     }
 
-    if (!usedIcons.includes(iconName)) {
+    if (!usedIcons.has(iconName)) {
       unusedIcons.push(iconName)
     }
   }
@@ -51,17 +55,15 @@ function getDuplicates(items) {
 }
 
 function getDuplicatesInProps(props) {
-  const checkedItems = []
+  const checkedItems = new Set()
   const duplicates = []
 
-  for (const type in props) {
-    const extensions = props[type]
-
+  for (const [type, extensions] of Object.entries(props)) {
     for (const ext of extensions) {
-      if (checkedItems.includes(ext)) {
+      if (checkedItems.has(ext)) {
         duplicates.push([ext, type])
       } else {
-        checkedItems.push(ext)
+        checkedItems.add(ext)
       }
     }
   }

@@ -23,10 +23,10 @@ export function getExpandedItems() {
  * @param {Object} data Items to expand
  */
 function expandItems(data) {
-  for (const type in data) {
+  for (const [type, values] of Object.entries(data)) {
     const expandedFileNames = []
 
-    for (const val of data[type]) {
+    for (const val of values) {
       switch (typeof val) {
         case 'string': {
           expandedFileNames.push(val)

@@ -41,8 +41,7 @@ function testIconNames(theme, codepoints, iconMap) {
 }
 
 function testIconMaps(theme, codepoints, iconMap) {
-  for (const key in iconMap) {
-    const value = iconMap[key]
+  for (const [key, value] of Object.entries(iconMap)) {
     const fullEntryName = `[${theme.id}] iconmaps > ${key}`
 
     test(`${fullEntryName} has a valid ${value} value`, (t) => {
@@ -53,9 +52,7 @@ function testIconMaps(theme, codepoints, iconMap) {
 
 function testFileDefinitions() {
   const definitions = getFileDefinitions()
-  for (const entryName in definitions) {
-    const itemType = definitions[entryName]
-
+  for (const [entryName, itemType] of Object.entries(definitions)) {
     test(`${entryName} is valid item type`, (t) => {
       t.true(itemType in iconDefinitions)
     })
@@ -63,9 +60,7 @@ function testFileDefinitions() {
 }
 
 function testLanguageIds() {
-  for (const languageId in languageIds) {
-    const itemType = languageIds[languageId]
-
+  for (const [languageId, itemType] of Object.entries(languageIds)) {
     test(`${languageId} has a valid ${itemType} value`, (t) => {
       t.true(itemType in iconDefinitions)
     })
@@ -74,8 +69,7 @@ function testLanguageIds() {
 
 function testIconProp(themeId, propName, condition) {
   const iconProps = getIconProps(propName)
-  for (const entryName in iconProps) {
-    const propValue = iconProps[entryName]
+  for (const [entryName, propValue] of Object.entries(iconProps)) {
     const fullEntryName = `[${themeId}] ${entryName}`
 
     test(`${fullEntryName} has a valid '${propValue}' value`, (t) => {
@@ -87,8 +81,8 @@ function testIconProp(themeId, propName, condition) {
 function getIconProps(propName) {
   const result = {}
 
-  for (const iconEntry in iconDefinitions) {
-    const propValue = iconDefinitions[iconEntry][propName]
+  for (const [iconEntry, definition] of Object.entries(iconDefinitions)) {
+    const propValue = definition[propName]
 
     const entryName = `iconDefinitions > ${iconEntry} > ${propName}`
     result[entryName] = propValue
@@ -101,10 +95,8 @@ function getFileDefinitions() {
   const result = {}
   const definitions = { fileNames, fileExtensions }
 
-  for (const defName in definitions) {
-    const definition = definitions[defName]
-
-    for (const itemType in definition) {
+  for (const [defName, definition] of Object.entries(definitions)) {
+    for (const itemType of Object.keys(definition)) {
       const entryName = `${defName} > ${itemType}`
       result[entryName] = itemType
     }

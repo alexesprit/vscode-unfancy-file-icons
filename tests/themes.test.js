@@ -25,12 +25,11 @@ function testTheme(theme) {
     light: iconTheme.light,
   }
 
-  for (const themeName in themes) {
-    const entries = getThemeEntries(themes[themeName])
+  for (const [themeName, theme] of Object.entries(themes)) {
+    const entries = getThemeEntries(theme)
 
-    for (const entryName in entries) {
+    for (const [entryName, entryType] of Object.entries(entries)) {
       const fullEntryName = `${themeName} > ${entryName}`
-      const entryType = entries[entryName]
 
       test(`[${themeId}] ${fullEntryName} has a valid '${entryType}' type`, (t) => {
         t.true(entryType in iconDefinitions)
@@ -46,8 +45,7 @@ function getThemeEntries(theme) {
   for (const defName of definitions) {
     const definition = theme[defName]
 
-    for (const entry in definition) {
-      const type = definition[entry]
+    for (const [entry, type] of Object.entries(definition)) {
       const entryName = `${defName} > ${entry}`
 
       result[entryName] = type

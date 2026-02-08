@@ -74,9 +74,9 @@ function rewriteFontPaths(fonts) {
 function buildIconDefinitions(definitions, iconMap, codepoints) {
   const result = {}
 
-  for (const iconEntry in definitions) {
-    const { iconColor } = definitions[iconEntry]
-    const iconName = resolveIconName(definitions[iconEntry].iconName, iconMap)
+  for (const [iconEntry, definition] of Object.entries(definitions)) {
+    const { iconColor } = definition
+    const iconName = resolveIconName(definition.iconName, iconMap)
 
     const fontColor = getFontColor(iconColor)
     const fontCharacter = getFontCharacter(iconName, codepoints)
@@ -166,8 +166,8 @@ function assembleTheme(fonts, iconDefinitions, mappings) {
 function invertItemMapping(props) {
   const newProps = {}
 
-  for (const key in props) {
-    for (const val of props[key]) {
+  for (const [key, values] of Object.entries(props)) {
+    for (const val of values) {
       newProps[val] = addThemePrefix(key)
     }
   }
@@ -183,8 +183,8 @@ function invertItemMapping(props) {
 function prefixItems(props) {
   const newProps = {}
 
-  for (const key in props) {
-    newProps[key] = addThemePrefix(props[key])
+  for (const [key, value] of Object.entries(props)) {
+    newProps[key] = addThemePrefix(value)
   }
 
   return newProps
@@ -198,8 +198,8 @@ function prefixItems(props) {
 function makeItemsForLightTheme(items) {
   const newProps = {}
 
-  for (const key in items) {
-    newProps[key] = toLightVariant(items[key])
+  for (const [key, value] of Object.entries(items)) {
+    newProps[key] = toLightVariant(value)
   }
 
   return newProps
