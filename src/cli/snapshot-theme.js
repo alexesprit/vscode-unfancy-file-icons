@@ -1,10 +1,12 @@
 import { mkdirSync, writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import packageFile from '../package.json' with { type: 'json' }
-import { getThemeId } from '../src/naming.js'
-import { getIconTheme } from '../src/themes.js'
 
-const snapshotDir = resolve(import.meta.dirname, '..', 'snapshots')
+import packageFile from '../../package.json' with { type: 'json' }
+import { getThemeId } from '../naming.js'
+import { sortKeysDeep } from '../sort.js'
+import { getIconTheme } from '../themes.js'
+
+const snapshotDir = resolve(import.meta.dirname, '../..', 'snapshots')
 
 /**
  * Entry point.
@@ -24,22 +26,6 @@ function main() {
 
     console.log(`Snapshot saved: snapshots/${themeId}.json`)
   }
-}
-
-function sortKeysDeep(obj) {
-  if (Array.isArray(obj)) {
-    return obj.map(sortKeysDeep)
-  }
-
-  if (obj !== null && typeof obj === 'object') {
-    const sorted = {}
-    for (const key of Object.keys(obj).sort()) {
-      sorted[key] = sortKeysDeep(obj[key])
-    }
-    return sorted
-  }
-
-  return obj
 }
 
 main()

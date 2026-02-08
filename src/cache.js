@@ -49,6 +49,34 @@ export function isCacheStale(packageName, cacheId) {
 }
 
 /**
+ * Check whether a generated font file needs regeneration.
+ *
+ * @param {string} packageName  npm package to read installed version from
+ * @param {string} id           Pack identifier (e.g. "octicons")
+ * @param {string} fontOutputPath  Relative path to the generated font file
+ * @returns {{ stale: boolean, version: string }}
+ */
+export function isFontStale(packageName, id, fontOutputPath) {
+  const pkgPath = join(rootDir, 'node_modules', packageName, 'package.json')
+  const version = readJsonFile(pkgPath).version
+
+  const fontPath = join(rootDir, fontOutputPath)
+  if (!existsSync(fontPath)) {
+    return { stale: true, version }
+  }
+
+  const versionFile = join(rootDir, '.cache/fonts', `${id}.version`)
+  try {
+    const cached = readFileSync(versionFile, 'utf-8').trim()
+    if (cached === version) {
+      return { stale: false, version }
+    }
+  } catch {}
+
+  return { stale: true, version }
+}
+
+/**
  * Write codepoints to cache and record the package version.
  *
  * @param {String} cacheId Cache identifier (e.g. "octicons")

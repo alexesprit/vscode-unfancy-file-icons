@@ -1,7 +1,6 @@
 import { join } from 'node:path'
 import test from 'ava'
-import { loadItems } from './../src/data/items.js'
-import { readJsonFile } from './../src/loader.js'
+import { loadItems, readJsonFile } from './../src/loader.js'
 
 const mappingDir = join(import.meta.dirname, '..', 'src', 'data', 'mappings')
 

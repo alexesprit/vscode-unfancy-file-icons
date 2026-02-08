@@ -1,4 +1,4 @@
-import { loadItems } from './data/items.js'
+import { loadItems } from './loader.js'
 
 // eslint-disable-next-line no-template-curly-in-string
 const namePlaceholder = '${name}'

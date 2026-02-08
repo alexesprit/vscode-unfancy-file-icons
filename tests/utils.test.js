@@ -7,10 +7,10 @@ import octiconsCodepoints from './../.cache/codepoints/octicons.json' with {
   type: 'json',
 }
 import colors from './../src/data/colors.json' with { type: 'json' }
-import codiconsIconMap from './../src/iconmaps/codicons.json' with {
+import codiconsIconMap from './../src/data/iconmaps/codicons.json' with {
   type: 'json',
 }
-import octiconsIconMap from './../src/iconmaps/octicons.json' with {
+import octiconsIconMap from './../src/data/iconmaps/octicons.json' with {
   type: 'json',
 }
 import { getFontCharacter, getFontColor } from './../src/lookup.js'

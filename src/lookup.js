@@ -31,6 +31,33 @@ export function resolveIconName(iconName, iconMap) {
 }
 
 /**
+ * Collect the set of icon names used by a theme.
+ *
+ * Gathers icons from both the iconMap (remapped names) and iconDefinitions
+ * (with remapping applied via resolveIconName).
+ *
+ * @param {Object} iconDefinitions  Icon definitions from items
+ * @param {Object} iconMap          Icon name remapping table
+ * @returns {Set<string>} Set of resolved icon names
+ */
+export function collectUsedIcons(iconDefinitions, iconMap) {
+  const usedIcons = new Set()
+
+  for (const iconName of Object.values(iconMap)) {
+    usedIcons.add(iconName)
+  }
+
+  for (const def of Object.values(iconDefinitions)) {
+    if (def.iconName) {
+      const iconName = resolveIconName(def.iconName, iconMap)
+      usedIcons.add(iconName)
+    }
+  }
+
+  return usedIcons
+}
+
+/**
  * Get font character code by name.
  *
  * @param {String} iconName Icon name

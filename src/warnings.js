@@ -1,4 +1,4 @@
-import { loadItems } from './data/items.js'
+import { loadItems } from './loader.js'
 
 const skipUnusedIcons = ['file', 'folder', 'folder-opened']
 

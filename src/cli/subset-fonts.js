@@ -2,11 +2,10 @@ import fs from 'node:fs'
 import path from 'node:path'
 import subsetFont from 'subset-font'
 
-import packageFile from '../package.json' with { type: 'json' }
-import { loadItems } from '../src/data/items.js'
-import { loadThemeConfig } from '../src/loader.js'
-import { resolveIconName } from '../src/lookup.js'
-import { getThemeId } from '../src/naming.js'
+import packageFile from '../../package.json' with { type: 'json' }
+import { loadItems, loadThemeConfig } from '../loader.js'
+import { collectUsedIcons } from '../lookup.js'
+import { getThemeId } from '../naming.js'
 
 const items = loadItems()
 
@@ -14,11 +13,11 @@ const items = loadItems()
 const sourceFontPaths = {
   codicons: path.join(
     import.meta.dirname,
-    '../node_modules/@vscode/codicons/dist/codicon.ttf',
+    '../../node_modules/@vscode/codicons/dist/codicon.ttf',
   ),
   lucide: path.join(
     import.meta.dirname,
-    '../node_modules/lucide-static/font/lucide.woff',
+    '../../node_modules/lucide-static/font/lucide.woff',
   ),
 }
 
@@ -27,24 +26,9 @@ const sourceFontPaths = {
  * @returns {{ unicodes: number[], missing: string[] }}
  */
 function collectCodepoints(themeId) {
-  const { iconMap: iconmap, codepoints } = loadThemeConfig(themeId)
+  const { iconMap, codepoints } = loadThemeConfig(themeId)
+  const usedIcons = collectUsedIcons(items.iconDefinitions, iconMap)
 
-  const usedIcons = new Set()
-
-  // Add icons from iconmap (remapped names)
-  for (const iconName of Object.values(iconmap)) {
-    usedIcons.add(iconName)
-  }
-
-  // Add icons from iconDefinitions (with remapping applied)
-  for (const def of Object.values(items.iconDefinitions)) {
-    if (def.iconName) {
-      const iconName = resolveIconName(def.iconName, iconmap)
-      usedIcons.add(iconName)
-    }
-  }
-
-  // Map icon names to Unicode codepoints
   const unicodes = []
   const missing = []
 
@@ -71,7 +55,7 @@ async function subsetFontFile(themeId) {
   const unicodeList = unicodes.map((u) => String.fromCodePoint(u)).join('')
 
   const inputPath = sourceFontPaths[themeId]
-  const outputDir = path.join(import.meta.dirname, '..', 'theme', 'fonts')
+  const outputDir = path.join(import.meta.dirname, '../..', 'theme', 'fonts')
   const outputPath = path.join(outputDir, `${themeId}.woff`)
 
   // Ensure output directory exists

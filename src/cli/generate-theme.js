@@ -1,6 +1,6 @@
-import packageFile from '../package.json' with { type: 'json' }
-import { getThemeId } from '../src/naming.js'
-import { generateIconTheme } from '../src/themes.js'
+import packageFile from '../../package.json' with { type: 'json' }
+import { getThemeId } from '../naming.js'
+import { generateIconTheme } from '../themes.js'
 
 /**
  * Entry point.

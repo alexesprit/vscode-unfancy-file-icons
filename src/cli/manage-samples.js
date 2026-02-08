@@ -3,7 +3,7 @@ import {
   getMissingSamples,
   getUnusedSamples,
   removeSampleFile,
-} from '../src/samples.js'
+} from '../samples.js'
 
 const samplesDir = 'samples'
 

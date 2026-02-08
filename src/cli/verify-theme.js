@@ -1,11 +1,12 @@
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
-import packageFile from '../package.json' with { type: 'json' }
-import { readJsonFile } from '../src/loader.js'
-import { getThemeId } from '../src/naming.js'
-import { getIconTheme } from '../src/themes.js'
 
-const snapshotDir = resolve(import.meta.dirname, '..', 'snapshots')
+import packageFile from '../../package.json' with { type: 'json' }
+import { readJsonFile } from '../loader.js'
+import { getThemeId } from '../naming.js'
+import { getIconTheme } from '../themes.js'
+
+const snapshotDir = resolve(import.meta.dirname, '../..', 'snapshots')
 
 /**
  * Entry point.

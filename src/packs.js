@@ -18,33 +18,11 @@ import fs from 'node:fs'
 import os from 'node:os'
 import path from 'node:path'
 
-import { loadItems } from './items.js'
+import { loadItems, readJsonFile } from './loader.js'
+import { collectUsedIcons } from './lookup.js'
+import { sortKeys } from './sort.js'
 
-const ROOT = path.join(import.meta.dirname, '../..')
-
-/**
- * Sort object keys alphabetically, returning a new object.
- *
- * @param {Record<string, number>} obj Codepoints object
- * @returns {Record<string, number>} Sorted codepoints object
- */
-function sortKeys(obj) {
-  const sorted = {}
-  for (const key of Object.keys(obj).sort()) {
-    sorted[key] = obj[key]
-  }
-  return sorted
-}
-
-/**
- * Read and parse a JSON file.
- *
- * @param {string} filePath Absolute path to the JSON file
- * @returns {object} Parsed JSON content
- */
-function readJson(filePath) {
-  return JSON.parse(fs.readFileSync(filePath, 'utf-8'))
-}
+const ROOT = path.join(import.meta.dirname, '..')
 
 /** @type {Array<{ id: string, packageName: string, extract: (version: string) => Promise<Record<string, number>>, generateFont?: (version: string) => Promise<Record<string, number>>, fontOutputPath?: string }>} */
 export const packs = [
@@ -88,7 +66,7 @@ export const packs = [
         throw new Error('lucide-static not found. Run: npm install')
       }
 
-      const info = readJson(infoPath)
+      const info = readJsonFile(infoPath)
       const codepoints = {}
 
       for (const [name, data] of Object.entries(info)) {
@@ -111,24 +89,14 @@ export const packs = [
         throw new Error('@primer/octicons not found. Run: npm install')
       }
 
-      const iconmapPath = path.join(ROOT, 'src/iconmaps/octicons.json')
+      const iconmapPath = path.join(ROOT, 'src/data/iconmaps/octicons.json')
       const fontOutputDir = path.join(ROOT, 'theme/fonts')
       const fontOutput = path.join(fontOutputDir, 'octicons.woff')
 
       // Collect icons used by the octicons theme
       const items = loadItems()
-      const iconmap = readJson(iconmapPath)
-      const used = new Set()
-
-      for (const iconName of Object.values(iconmap)) {
-        used.add(iconName)
-      }
-      for (const def of Object.values(items.iconDefinitions)) {
-        if (def.iconName) {
-          const resolved = iconmap[def.iconName] ?? def.iconName
-          used.add(resolved)
-        }
-      }
+      const iconmap = readJsonFile(iconmapPath)
+      const used = collectUsedIcons(items.iconDefinitions, iconmap)
 
       // Copy needed 16px SVGs to a temp directory
       const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'octicons-'))
@@ -188,7 +156,9 @@ export const packs = [
     },
 
     async extract() {
-      return readJson(path.join(ROOT, '.cache/fonts/octicons-codepoints.json'))
+      return readJsonFile(
+        path.join(ROOT, '.cache/fonts/octicons-codepoints.json'),
+      )
     },
   },
 ]
