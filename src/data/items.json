@@ -48,6 +48,7 @@
       "pyc",
       "pyo",
       "so",
+      "spv",
       "wasm"
     ],
     "config": [
@@ -154,6 +155,7 @@
       "rtf",
       "tex",
       "txt",
+      "typ",
       "wiki"
     ],
     "script": [
@@ -330,6 +332,7 @@
       "fsi",
       "fsscript",
       "fsx",
+      "gleam",
       "glsl",
       "go",
       "groovy",
@@ -388,6 +391,7 @@
       "res",
       "resi",
       "rkt",
+      "roc",
       "rpy",
       "rs",
       "sc",
@@ -432,6 +436,7 @@
       "leex",
       "liquid",
       "marko",
+      "mdc",
       "mustache",
       "njk",
       "pug",
@@ -447,6 +452,12 @@
       "xsd"
     ],
     "test": [
+      "Spec.kt",
+      "Test.java",
+      "Test.kt",
+      "_spec.rb",
+      "_test.go",
+      "_test.rb",
       {
         "names": ["spec", "test"],
         "templates": ["${name}.js", "${name}.jsx", "${name}.ts", "${name}.tsx"]
@@ -472,9 +483,12 @@
       ".appveyor.yml",
       ".browserslistrc",
       ".clang-format",
+      ".codecov.yml",
       ".clang-tidy",
       ".coveragerc",
+      ".devcontainer.json",
       ".editorconfig",
+      ".envrc",
       ".flake8",
       ".gitattributes",
       ".gitkeep",
@@ -496,6 +510,7 @@
       ".node-version",
       ".npmrc",
       ".nvmrc",
+      ".oxlintrc.json",
       ".pre-commit-config.yaml",
       ".pylintrc",
       ".python-version",
@@ -519,27 +534,43 @@
       "biome.jsonc",
       "buf.gen.yaml",
       "buf.yaml",
+      "bunfig.toml",
       "cargo.toml",
       "clippy.toml",
       "cmakelists.txt",
       "cname",
+      "codecov.yml",
+      "compose.override.yaml",
+      "compose.override.yml",
       "compose.yaml",
       "compose.yml",
       "config.yml",
       "deno.json",
       "deno.jsonc",
       "dependabot.yml",
+      "devcontainer.json",
+      "docker-compose.override.yaml",
+      "docker-compose.override.yml",
       "docker-compose.yaml",
       "docker-compose.yml",
       "dockerfile",
+      "dockerfile.dev",
+      "dockerfile.prod",
+      "dockerfile.production",
+      "dockerfile.staging",
+      "flake.nix",
       "fly.toml",
       "jakefile",
       "jenkinsfile",
       "jsconfig.json",
+      "justfile",
+      "knip.json",
+      "knip.jsonc",
       "labeler.yml",
       "lefthook.yml",
       "lerna.json",
       "makefile",
+      "moon.yml",
       "netlify.toml",
       "nx.json",
       "ormconfig.json",
@@ -606,16 +637,22 @@
       "gulpfile.js",
       "knexfile.js",
       "svelte.config.js",
+      "svelte.config.ts",
       {
         "names": ["astro"],
-        "templates": ["${name}.config.mjs", "${name}.config.ts"]
+        "templates": [
+          "${name}.config.cjs",
+          "${name}.config.mjs",
+          "${name}.config.ts"
+        ]
       },
       {
         "names": ["babel", "lint-staged", "postcss", "prettier", "stylelint"],
         "templates": [
           "${name}.config.cjs",
           "${name}.config.js",
-          "${name}.config.mjs"
+          "${name}.config.mjs",
+          "${name}.config.ts"
         ]
       },
       {
@@ -645,7 +682,7 @@
         ]
       },
       {
-        "names": ["nuxt"],
+        "names": ["nuxt", "panda", "uno"],
         "templates": ["${name}.config.js", "${name}.config.ts"]
       },
       {
@@ -712,9 +749,11 @@
     ],
     "lock": [
       ".vpkg-lock.json",
+      "bun.lock",
       "bun.lockb",
       "cargo.lock",
       "composer.lock",
+      "deno.lock",
       "flake.lock",
       "gemfile.lock",
       "go.sum",
@@ -749,6 +788,7 @@
     "script": ["gradlew"],
     "security": ["security", "security.md", "security.txt"],
     "support": ["funding.yml", "support", "support.md"],
+    "test": ["conftest.py"],
     "todo": ["todo", "todo.md", "todo.txt"]
   },
   "languageIds": {
