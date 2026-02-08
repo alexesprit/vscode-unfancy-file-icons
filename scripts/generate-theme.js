@@ -1,11 +1,11 @@
-const { generateIconTheme } = require('../src/themes');
-const { getThemeId } = require('../src/utils');
+import packageFile from '../package.json' with { type: 'json' };
+import { generateIconTheme } from '../src/themes.js';
+import { getThemeId } from '../src/utils.js';
 
 /**
  * Entry point.
  */
 function main() {
-	const packageFile = require('../package.json');
 	const { iconThemes } = packageFile.contributes;
 
 	for (const theme of iconThemes) {

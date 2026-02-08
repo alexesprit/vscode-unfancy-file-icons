@@ -1,6 +1,9 @@
-const test = require('ava');
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import test from 'ava';
 
-const packageFile = require('./../package.json');
+import packageFile from './../package.json' with { type: 'json' };
+
 const { iconThemes } = packageFile.contributes;
 
 runTests();
@@ -13,7 +16,9 @@ function runTests() {
 
 function testTheme(theme) {
 	const themeId = theme.id;
-	const iconTheme = require(`./../${theme.path}`);
+	const iconTheme = JSON.parse(
+		readFileSync(join(import.meta.dirname, '..', theme.path), 'utf-8'),
+	);
 
 	const { iconDefinitions } = iconTheme;
 

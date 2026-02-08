@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "name": "vscode-unfancy-file-icons",
   "displayName": "Unfancy file icons",
   "description": "Octicons, Codicons, and Lucide as file icon themes",

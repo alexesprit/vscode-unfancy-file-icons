@@ -1,9 +1,9 @@
-const {
+import {
+	createSampleFile,
 	getMissingSamples,
 	getUnusedSamples,
-	createSampleFile,
 	removeSampleFile,
-} = require('../src/samples');
+} from '../src/samples.js';
 
 const samplesDir = 'samples';
 

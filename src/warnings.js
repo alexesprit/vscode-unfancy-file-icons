@@ -1,13 +1,8 @@
-const items = require('./data/items.json');
+import items from './data/items.json' with { type: 'json' };
 
 const skipUnusedIcons = ['file', 'folder', 'folder-opened'];
 
-/**
- * Exported functions.
- */
-module.exports = { getWarnings };
-
-function getWarnings() {
+export function getWarnings() {
 	const duplicates = getDuplicates();
 	const unusedIcons = getUnusedIcons();
 

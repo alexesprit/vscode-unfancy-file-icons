@@ -1,19 +1,24 @@
-const test = require('ava');
-const Color = require('color');
-
-const {
-	prefix,
-	light,
-	getFontColor,
+import test from 'ava';
+import Color from 'color';
+import codiconsCodepoints from './../src/codepoints/codicons.json' with {
+	type: 'json',
+};
+import octiconsCodepoints from './../src/codepoints/octicons.json' with {
+	type: 'json',
+};
+import colors from './../src/data/colors.json' with { type: 'json' };
+import codiconsIconMap from './../src/iconmaps/codicons.json' with {
+	type: 'json',
+};
+import octiconsIconMap from './../src/iconmaps/octicons.json' with {
+	type: 'json',
+};
+import {
 	getFontCharacter,
-} = require('./../src/utils');
-const colors = require('./../src/data/colors.json');
-
-// Codepoints and iconmaps for each theme
-const octiconsCodepoints = require('./../src/codepoints/octicons.json');
-const octiconsIconMap = require('./../src/iconmaps/octicons.json');
-const codiconsCodepoints = require('./../src/codepoints/codicons.json');
-const codiconsIconMap = require('./../src/iconmaps/codicons.json');
+	getFontColor,
+	light,
+	prefix,
+} from './../src/utils.js';
 
 /**
  * Test 1: Template expansion

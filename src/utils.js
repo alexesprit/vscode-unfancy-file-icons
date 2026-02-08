@@ -1,28 +1,17 @@
-const themeIdPrefix = 'vscode-unfancy-file-icons';
-
-const colors = require('./data/colors.json');
+import colors from './data/colors.json' with { type: 'json' };
+import items from './data/items.json' with { type: 'json' };
 
 // eslint-disable-next-line no-template-curly-in-string
 const namePlaceholder = '${name}';
 
-/**
- * Exported functions.
- */
-module.exports = {
-	prefix,
-	light,
-	getExpandedItems,
-	getThemeId,
-	getFontColor,
-	getFontCharacter,
-};
+const themeIdPrefix = 'vscode-unfancy-file-icons';
 
 /**
  * Add '_' prefix to string.
  *
  * @param {String} str String
  */
-function prefix(str) {
+export function prefix(str) {
 	return `_${str}`;
 }
 
@@ -31,7 +20,7 @@ function prefix(str) {
  *
  * @param {String} str String
  */
-function light(str) {
+export function light(str) {
 	return `${str}_light`;
 }
 
@@ -40,9 +29,7 @@ function light(str) {
  *
  * @return {Object} Source data
  */
-function getExpandedItems() {
-	const items = require('./data/items.json');
-
+export function getExpandedItems() {
 	expandItems(items.fileNames);
 	expandItems(items.fileExtensions);
 
@@ -118,7 +105,7 @@ function getFileNamesFromTemplate(templateObj) {
  * @param  {Object} theme `contributes.iconThemes` entry from `package.json`
  * @return {String} Theme ID
  */
-function getThemeId(theme) {
+export function getThemeId(theme) {
 	const themeId = theme.id;
 	if (themeId === themeIdPrefix) {
 		return 'octicons';
@@ -132,7 +119,7 @@ function getThemeId(theme) {
  * @param {String} colorName Color name defined in `colors.json`
  * @return {Number} Color
  */
-function getFontColor(colorName) {
+export function getFontColor(colorName) {
 	if (colorName in colors) {
 		return colors[colorName];
 	}
@@ -147,7 +134,7 @@ function getFontColor(colorName) {
  * @param {Object} codepoints Object contains font codepoints
  * @return {String} Font character code in `\\xxxx` format
  */
-function getFontCharacter(iconName, codepoints) {
+export function getFontCharacter(iconName, codepoints) {
 	if (iconName in codepoints) {
 		const iconCodeStr = codepoints[iconName].toString(16);
 		return `\\${iconCodeStr}`;

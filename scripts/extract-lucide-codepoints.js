@@ -12,14 +12,17 @@
  * codepoints format (icon name -> integer codepoint).
  */
 
-const fs = require('node:fs');
-const path = require('node:path');
+import fs from 'node:fs';
+import path from 'node:path';
 
 const INFO_PATH = path.join(
-	__dirname,
+	import.meta.dirname,
 	'../node_modules/lucide-static/font/info.json',
 );
-const OUTPUT_PATH = path.join(__dirname, '../src/codepoints/lucide.json');
+const OUTPUT_PATH = path.join(
+	import.meta.dirname,
+	'../src/codepoints/lucide.json',
+);
 
 function main() {
 	if (!fs.existsSync(INFO_PATH)) {

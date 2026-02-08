@@ -1,15 +1,26 @@
-const fs = require('node:fs');
-const path = require('node:path');
-const subsetFont = require('subset-font');
+import fs from 'node:fs';
+import path from 'node:path';
+import subsetFont from 'subset-font';
+
+import items from '../src/data/items.json' with { type: 'json' };
 
 /**
  * Collect all used codepoints for a theme
  * @returns {{ unicodes: number[], missing: string[] }}
  */
 function collectCodepoints(themeId) {
-	const iconmap = require(`../src/iconmaps/${themeId}.json`);
-	const codepoints = require(`../src/codepoints/${themeId}.json`);
-	const items = require('../src/data/items.json');
+	const iconmap = JSON.parse(
+		fs.readFileSync(
+			path.join(import.meta.dirname, `../src/iconmaps/${themeId}.json`),
+			'utf-8',
+		),
+	);
+	const codepoints = JSON.parse(
+		fs.readFileSync(
+			path.join(import.meta.dirname, `../src/codepoints/${themeId}.json`),
+			'utf-8',
+		),
+	);
 
 	const usedIcons = new Set();
 
@@ -55,12 +66,12 @@ async function subsetFontFile(themeId) {
 	const unicodeList = unicodes.map((u) => String.fromCodePoint(u)).join('');
 
 	const inputPath = path.join(
-		__dirname,
+		import.meta.dirname,
 		'..',
 		'resources',
 		`${themeId}.woff`,
 	);
-	const outputDir = path.join(__dirname, '..', 'theme', 'fonts');
+	const outputDir = path.join(import.meta.dirname, '..', 'theme', 'fonts');
 	const outputPath = path.join(outputDir, `${themeId}.woff`);
 
 	// Ensure output directory exists

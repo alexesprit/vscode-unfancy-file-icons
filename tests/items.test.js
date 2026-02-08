@@ -1,14 +1,12 @@
-const test = require('ava');
+import { readFileSync } from 'node:fs';
+import { join } from 'node:path';
+import test from 'ava';
+import packageFile from './../package.json' with { type: 'json' };
+import colors from './../src/data/colors.json' with { type: 'json' };
+import itemsData from './../src/data/items.json' with { type: 'json' };
+import { getThemeId } from './../src/utils.js';
 
-const { getThemeId } = require('./../src/utils');
-
-const {
-	iconDefinitions,
-	fileExtensions,
-	fileNames,
-	languageIds,
-} = require('./../src/data/items.json');
-const colors = require('./../src/data/colors.json');
+const { iconDefinitions, fileExtensions, fileNames, languageIds } = itemsData;
 
 runTests();
 
@@ -25,14 +23,23 @@ function testIconColors() {
 }
 
 function testThemeItems() {
-	const packageFile = require('./../package.json');
 	const { iconThemes } = packageFile.contributes;
 
 	for (const theme of iconThemes) {
 		const themeId = getThemeId(theme);
 
-		const codepoints = require(`./../src/codepoints/${themeId}.json`);
-		const iconMap = require(`./../src/iconmaps/${themeId}.json`);
+		const codepoints = JSON.parse(
+			readFileSync(
+				join(import.meta.dirname, `../src/codepoints/${themeId}.json`),
+				'utf-8',
+			),
+		);
+		const iconMap = JSON.parse(
+			readFileSync(
+				join(import.meta.dirname, `../src/iconmaps/${themeId}.json`),
+				'utf-8',
+			),
+		);
 
 		testIconNames(theme, codepoints, iconMap);
 		testIconMaps(theme, codepoints, iconMap);

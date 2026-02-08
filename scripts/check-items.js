@@ -1,4 +1,4 @@
-const { getWarnings } = require('../src/warnings');
+import { getWarnings } from '../src/warnings.js';
 
 /**
  * Entry point.

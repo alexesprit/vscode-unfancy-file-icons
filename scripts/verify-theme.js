@@ -1,12 +1,10 @@
-const { readFileSync, existsSync } = require('node:fs');
-const { resolve } = require('node:path');
+import { existsSync, readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import packageFile from '../package.json' with { type: 'json' };
+import { getIconTheme } from '../src/themes.js';
+import { getThemeId } from '../src/utils.js';
 
-const { getIconTheme } = require('../src/themes');
-const { getThemeId } = require('../src/utils');
-
-const packageFile = require('../package.json');
-
-const snapshotDir = resolve(__dirname, '..', 'snapshots');
+const snapshotDir = resolve(import.meta.dirname, '..', 'snapshots');
 const { iconThemes } = packageFile.contributes;
 
 let hasChanges = false;

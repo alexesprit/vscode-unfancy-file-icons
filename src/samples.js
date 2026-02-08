@@ -1,17 +1,7 @@
-const { readdirSync, openSync, closeSync, unlinkSync } = require('node:fs');
-const { join } = require('node:path');
+import { closeSync, openSync, readdirSync, unlinkSync } from 'node:fs';
+import { join } from 'node:path';
 
-const { getExpandedItems } = require('./utils');
-
-/**
- * Exported functions.
- */
-module.exports = {
-	getMissingSamples,
-	getUnusedSamples,
-	createSampleFile,
-	removeSampleFile,
-};
+import { getExpandedItems } from './utils.js';
 
 /**
  * Return a list of missing sample files.
@@ -19,7 +9,7 @@ module.exports = {
  * @param  {String} samplesDir Path to a directory with sample files
  * @return {Array} List of missing sample files
  */
-function getMissingSamples(samplesDir) {
+export function getMissingSamples(samplesDir) {
 	const existingSamples = getExistingSamples(samplesDir);
 	const sampleFiles = getFlattenSampleFiles();
 	const missingSamples = [];
@@ -42,7 +32,7 @@ function getMissingSamples(samplesDir) {
 	return missingSamples;
 }
 
-function getUnusedSamples(samplesDir) {
+export function getUnusedSamples(samplesDir) {
 	const existingSamples = getExistingSamples(samplesDir);
 	const sampleFiles = getFlattenSampleFiles();
 	const unusedSamples = [];
@@ -94,12 +84,12 @@ function getUnusedSamples(samplesDir) {
  * @param  {String} samplesDir Path to a directory with sample files
  * @param  {String} fileName Sample file name
  */
-function createSampleFile(samplesDir, fileName) {
+export function createSampleFile(samplesDir, fileName) {
 	const outPath = join(samplesDir, fileName);
 	closeSync(openSync(outPath, 'w'));
 }
 
-function removeSampleFile(samplesDir, fileName) {
+export function removeSampleFile(samplesDir, fileName) {
 	const outPath = join(samplesDir, fileName);
 	unlinkSync(outPath);
 }

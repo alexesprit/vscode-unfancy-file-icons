@@ -1,33 +1,25 @@
-const { dirname } = require('node:path');
-const { mkdirSync, writeFileSync } = require('node:fs');
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
 
-const Color = require('color');
+import Color from 'color';
 
-const {
-	getThemeId,
+import {
 	getExpandedItems,
-	getFontColor,
 	getFontCharacter,
-	prefix,
+	getFontColor,
+	getThemeId,
 	light,
-} = require('./utils');
+	prefix,
+} from './utils.js';
 
 const darkenPercent = 0.4;
-
-/**
- * Exported functions.
- */
-module.exports = {
-	generateIconTheme,
-	getIconTheme,
-};
 
 /**
  * Generate an icon theme from source data.
  *
  * @param {Object} theme `contributes.iconThemes` entry from `package.json`
  */
-function generateIconTheme(theme) {
+export function generateIconTheme(theme) {
 	const themeId = getThemeId(theme);
 	const iconTheme = getIconTheme(themeId);
 	const contents = JSON.stringify(iconTheme, null, 4);
@@ -44,10 +36,15 @@ function generateIconTheme(theme) {
  * @param  {String} themeId Theme ID
  * @return {Object} Theme object
  */
-function getIconTheme(themeId) {
+export function getIconTheme(themeId) {
 	const items = getExpandedItems();
 
-	const fontsConfig = require(`./fonts/${themeId}.json`);
+	const fontsConfig = JSON.parse(
+		readFileSync(
+			join(import.meta.dirname, `fonts/${themeId}.json`),
+			'utf-8',
+		),
+	);
 	// Update font paths to point to stripped fonts in theme/fonts/
 	const fonts = fontsConfig.map((font) => ({
 		...font,
@@ -56,8 +53,18 @@ function getIconTheme(themeId) {
 			path: s.path.replace('./../resources/', './fonts/'),
 		})),
 	}));
-	const iconMap = require(`./iconmaps/${themeId}.json`);
-	const codepoints = require(`./codepoints/${themeId}.json`);
+	const iconMap = JSON.parse(
+		readFileSync(
+			join(import.meta.dirname, `iconmaps/${themeId}.json`),
+			'utf-8',
+		),
+	);
+	const codepoints = JSON.parse(
+		readFileSync(
+			join(import.meta.dirname, `codepoints/${themeId}.json`),
+			'utf-8',
+		),
+	);
 
 	const iconTheme = {
 		fonts,
