@@ -143,7 +143,6 @@
       "buf.gen.yaml",
       "buf.yaml",
       "bunfig.toml",
-      "cargo.toml",
       "clippy.toml",
       "cmakelists.txt",
       "cname",
@@ -183,7 +182,6 @@
       "nx.json",
       "ormconfig.json",
       "procfile",
-      "pyproject.toml",
       "pyrightconfig.json",
       "release-drafter.yml",
       "renovate.json",
@@ -191,7 +189,6 @@
       "ruff.toml",
       "rust-toolchain.toml",
       "rustfmt.toml",
-      "setup.cfg",
       "stale.yml",
       "tox.ini",
       "tsconfig.json",
@@ -239,6 +236,23 @@
       }
     ],
     "ctags": ["tags"],
-    "data": ["deps.edn", "manifest.in", "mix.exs", "pipfile", "project.clj"]
+    "package": [
+      "cargo.toml",
+      "composer.json",
+      "deps.edn",
+      "go.mod",
+      "manifest.in",
+      "mix.exs",
+      "package.json",
+      "pipfile",
+      "pom.xml",
+      "project.clj",
+      "pubspec.yaml",
+      "pyproject.toml",
+      "setup.cfg",
+      "setup.py",
+      "shard.yml",
+      "vcpkg.json"
+    ]
   }
 }

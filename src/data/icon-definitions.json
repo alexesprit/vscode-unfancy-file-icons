@@ -143,6 +143,10 @@
       "iconColor": "@violet",
       "iconName": "note"
     },
+    "package": {
+      "iconColor": "@violet",
+      "iconName": "package"
+    },
     "pdf": {
       "iconColor": "@cyan",
       "iconName": "file-pdf"
