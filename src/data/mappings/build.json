@@ -33,6 +33,7 @@
       "zip",
       "zst"
     ],
+    "cache": ["tsbuildinfo"],
     "binary": [
       "a",
       "beam",
@@ -78,6 +79,7 @@
     "search": ["code-search"]
   },
   "fileNames": {
+    "cache": [".eslintcache", ".prettiercache", ".stylelintcache"],
     "ignore": [
       ".bazelignore",
       ".cvsignore",

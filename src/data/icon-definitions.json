@@ -15,6 +15,10 @@
       "iconColor": "@cyan",
       "iconName": "bug"
     },
+    "cache": {
+      "iconColor": "@gray",
+      "iconName": "database"
+    },
     "changelog": {
       "iconColor": "@cyan",
       "iconName": "history"
