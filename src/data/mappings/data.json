@@ -171,8 +171,10 @@
       "jenkinsfile",
       "jsconfig.json",
       "justfile",
-      "knip.json",
-      "knip.jsonc",
+      {
+        "names": ["knip"],
+        "templates": [".${name}.json", "${name}.json", "${name}.jsonc"]
+      },
       "labeler.yml",
       "lefthook.yml",
       "lerna.json",
